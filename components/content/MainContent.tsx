@@ -2,7 +2,7 @@
 
 import React from 'react'
 import {motion} from "framer-motion";
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/ulti/motion';
+import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from '@/ulti/motion';
 import { SparklesIcon } from "@heroicons/react/24/solid";
 const MainContent = () => {
   return (
@@ -57,7 +57,7 @@ const MainContent = () => {
         
         
         <motion.div
-            variants={slideInFromTop}
+            variants={slideInFromBottom}
             className='h-full w-full justify-center items-center flex'>
             <img src="/logomain.svg" width={600} height={600} alt="logomain" />
         </motion.div>

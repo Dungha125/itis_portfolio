@@ -1,7 +1,4 @@
-"use client";
 import { useEffect } from "react";
-
-
 const Carousel = () => {
   useEffect(() => {
     const init = async () => {
@@ -11,14 +8,16 @@ const Carousel = () => {
     init();
   }, []);
 
+
   return (
     <div
   id="carouselExampleCaptions"
-  className="relative"
+  className="relative mt-6 items-center flex justify-center"
   data-twe-carousel-init
   data-twe-ride="carousel">
+
   <div
-    className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+    className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-2 lg:mb-4 flex list-none justify-center p-0"
     data-twe-carousel-indicators>
     <button
       type="button"
@@ -42,8 +41,10 @@ const Carousel = () => {
       aria-label="Slide 3"></button>
   </div>
 
+
   <div
-    className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+    className="relative w-full lg:w-[70%] Image-box overflow-hidden after:clear-both after:block after:content-['']">
+    
     <div
       className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
       data-twe-carousel-active
@@ -55,12 +56,12 @@ const Carousel = () => {
         alt="..." />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-        <h5 className="text-xl">First slide label</h5>
-        <p>
-          Some representative placeholder content for the first slide.
-        </p>
+        <h5 className={`text-3xl font-bold relative z-10`}>ITIS: NGÀY TRỞ VỀ</h5>
+        
       </div>
+      <div className="w-full h-full inset-0 absolute bg-gradient-to-t from-[#000000a0] to-transparent"></div>
     </div>
+
     <div
       className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
       data-twe-carousel-item
@@ -71,11 +72,9 @@ const Carousel = () => {
         alt="..." />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-        <h5 className="text-xl">Second slide label</h5>
-        <p>
-          Some representative placeholder content for the second slide.
-        </p>
+        <h5 className="text-3xl font-bold relative z-10">BIGGAME ITIS</h5>
       </div>
+      <div className="w-full h-full inset-0 absolute bg-gradient-to-t from-[#000000a0] to-transparent"></div>
     </div>
 
     <div
@@ -88,11 +87,9 @@ const Carousel = () => {
         alt="..." />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-        <h5 className="text-xl">Third slide label</h5>
-        <p>
-          Some representative placeholder content for the third slide.
-        </p>
+        <h5 className="text-3xl font-bold relative z-10">ITIS CUP 2020</h5>
       </div>
+      <div className="w-full h-full inset-0 absolute bg-gradient-to-t from-[#000000a0] to-transparent"></div>
     </div>
   </div>
 

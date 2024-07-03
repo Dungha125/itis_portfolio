@@ -5,7 +5,6 @@ const Main = () => {
   return (
     <div className='relative flex flex-col h-full w-full'>
         <MainContent></MainContent>
-      
     </div>
   )
 }

@@ -70,4 +70,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.Image-box{
+  border-radius: 20px;
+  box-shadow:  0 7px 10px #10446f85;
 
+}
+
+
+@media screen and (min-width: 992px) {
+  .Image-box{
+    border-radius: 40px;
+    box-shadow:  0 7px 10px #10446f85;
+  }
+
+
+  
+}
