@@ -57,7 +57,7 @@ const MainContent = () => {
         
         
         <motion.div
-            variants={slideInFromRight(0.8)}
+            variants={slideInFromTop}
             className='h-full w-full justify-center items-center flex'>
             <img src="/logomain.svg" width={600} height={600} alt="logomain" />
         </motion.div>
