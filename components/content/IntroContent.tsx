@@ -33,7 +33,7 @@ const IntroContent = () => {
     >
 
 
-      <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center mt-[5rem]'>
+      <motion.h3  variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center mt-[5rem]'>
           Giới thiệu
         </motion.h3>
         <motion.h1 variants={slideInFromTop} className='font-bold text-4xl text-white text-center mt-3 mx-6'>
@@ -60,8 +60,18 @@ const IntroContent = () => {
         </div>
         
         </div>
-      
+        <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center my-6'>
+          Video giới thiệu
+        </motion.h3>
+        <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 px-10 lg:px-20 justify-center items-center" >
+        <video width="1080" controls poster='/anh1.jpg'>
+            <source src="/Facebook.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        </motion.div>
+        <img src="/gradient.png" width={1100} alt="back2" className='absolute top-4 left-1 lg:top-[20rem] lg:left-1/2 -z-10' />
     </motion.div>
+    
   );
 };
 

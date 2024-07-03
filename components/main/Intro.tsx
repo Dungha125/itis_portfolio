@@ -10,8 +10,8 @@ const Intro = () => {
         <div
         className='h-full w-full bg-[#040224] lg:-translate-y-[2.5rem] pb-6 lg:pb-12 '>
             <IntroContent ></IntroContent>
-        </div>
-
+               </div>
+        
     </section>
   )
 }
