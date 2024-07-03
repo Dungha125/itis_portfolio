@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { slideInFromLeft } from '@/ulti/motion';
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/ulti/motion';
 import Carousel from '../src/Carousel';
 
 const IntroContent = () => {
@@ -31,21 +31,36 @@ const IntroContent = () => {
       variants={containerVariants}
       className="flex flex-col items-center justify-center w-full z-[30]"
     >
-      <div className='flex flex-col gap-3 px-10 lg:px-20 text-white text-justify'>
-        <motion.h1 variants={slideInFromLeft(0.5)} className='font-bold text-4xl'>
+
+
+      <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center mt-[5rem]'>
           Giới thiệu
+        </motion.h3>
+        <motion.h1 variants={slideInFromTop} className='font-bold text-4xl text-white text-center mt-3 mx-6'>
+          Liên chi Đoàn Khoa CNTT1 - PTIT
         </motion.h1>
-        <motion.p variants={slideInFromLeft(0.7)} className='text-xs lg:text-xl'>
-          Liên Chi Đoàn khoa CNTT1 là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
-        </motion.p>
-        <motion.p variants={slideInFromLeft(0.9)} className='text-xs lg:text-xl'>
-          Được sự hỗ trợ trực tiếp từ các thầy cô trong khoa, khi trở thành thành viên của Liên chi, các bạn sẽ được tiếp xúc và làm việc trực tiếp cùng các thầy cô. Được tham gia các hoạt động vui chơi được tổ chức một cách chuyên nghiệp. Ngoài ra sẽ được học các kĩ năng như: kĩ năng tổ chức sự kiện, kĩ năng thuyết trình, kĩ năng làm việc nhóm,...Đặc biệt trực tiếp tham gia tổ chức các hoạt động quy mô Khoa và Học viện.
-        </motion.p>
-        <motion.div variants={slideInFromLeft(0.5)} className='w-full lg:px-6 z-30'>
+
+
+      <div className='flex flex-col lg:flex-row w-full mb-10 items-center justify-center gap-5 px-10 lg:px-20'>
+        <motion.div variants={slideInFromLeft(0.5)} className='w-full lg:min-w-[450px] z-30 mb-6'>
             <Carousel ></Carousel>
         </motion.div>
+
+
+      <div className='flex flex-col gap-3 lg:max-w-[550px] text-neutral-300 text-justify lg:ml-6'>
+        <motion.p variants={slideInFromRight(0.7)} className='text-base lg:text-xl'>
+          Liên Chi Đoàn khoa CNTT1 là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
+        </motion.p>
+        <motion.p variants={slideInFromRight(0.9)} className='text-base lg:text-xl'>
+          Liên chi Đoàn Khoa CNTT1 là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
+          Với mục đích mang lại lợi ích của sinh viên trong khoa, đẩy mạnh các hoạt động của khoa CNTT1, 
+          Liên chi Đoàn Khoa CNTT1 tạo ra nhiều sân chơi giúp sinh viên trong khoa trở nên năng động hơn trong mọi hoạt động. 
+          Là là nơi hội tụ của các bạn sinh viên 2 ngành CNTT và KHMT.
+        </motion.p>
+        </div>
         
-      </div>
+        </div>
+      
     </motion.div>
   );
 };

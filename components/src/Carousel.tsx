@@ -17,7 +17,7 @@ const Carousel = () => {
   data-twe-ride="carousel">
 
   <div
-    className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-2 lg:mb-4 flex list-none justify-center p-0"
+    className="absolute bottom-0 left-0 right-0 z-[2] mx-[10%] mb-2 lg:mb-4 flex list-none justify-center p-0"
     data-twe-carousel-indicators>
     <button
       type="button"
@@ -43,7 +43,7 @@ const Carousel = () => {
 
 
   <div
-    className="relative w-full lg:w-[70%] Image-box overflow-hidden after:clear-both after:block after:content-['']">
+    className="relative w-full Image-box overflow-hidden after:clear-both after:block after:content-['']">
     
     <div
       className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"

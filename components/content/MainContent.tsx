@@ -17,7 +17,7 @@ const MainContent = () => {
                     <span>
                         Welcome!
                         <br />We are 
-                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500'>
+                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#ce48a6] to-[#0f8eaa]'>
                             {" "}ITIS
                         </span>
                     </span>
@@ -25,10 +25,7 @@ const MainContent = () => {
             <motion.p
                 variants={slideInFromLeft(0.6)}
                 className='text-xs lg:text-lg text-neutral-400 my-5 max-w-[700px]'>
-                Liên chi Đoàn Khoa CNTT1 là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
-                Với mục đích mang lại lợi ích của sinh viên trong khoa, đẩy mạnh các hoạt động của khoa CNTT1, 
-                Liên chi Đoàn Khoa CNTT1 tạo ra nhiều sân chơi giúp sinh viên trong khoa trở nên năng động hơn trong mọi hoạt động. 
-                Là là nơi hội tụ của các bạn sinh viên 2 ngành CNTT và KHMT.
+                Học viện Công nghệ Bưu chính Viễn thông
             </motion.p>
             <motion.div
                 variants={slideInFromLeft(0.6)}
