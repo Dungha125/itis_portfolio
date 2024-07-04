@@ -5,6 +5,7 @@ import {motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { slideInFromBottom, slideInFromLeft } from '@/ulti/motion';
 import { benefittext } from "../src";
+import ClipPath from "@/public/ClipPath";
 
 const BenefitContent = () => {
 
@@ -39,7 +40,7 @@ const BenefitContent = () => {
           Thành viên Liên chi Đoàn Khoa CNTT1
         </motion.h1>
 
-        <div className='flex flex-wrap px-10 lg:px-20 gap-4 mt-8'>
+        <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-8'>
           {benefittext.map((item)=>(
             <motion.div
             variants={slideInFromLeft(0.6 + 0.1*parseInt(item.id))}
@@ -49,24 +50,31 @@ const BenefitContent = () => {
               backgroundImage: `url("/card-1.svg")`,
             }}
           >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-                  <p className="body-2 mb-6 text-n-3 text-neutral-100">{item.text}</p>
+            <div className="relative z-2 flex flex-col  min-h-[22rem] p-[2.4rem] pointer-events-none">
+                  <p className="body-2 mb-6 text-xl text-neutral-700 font-medium">{item.text}</p>
             </div>
             <div
-                  className="absolute inset-0.5 bg-n-8"
+                  className="absolute inset-0.5 bg-n-8 -z-10 "
                   style={{ clipPath: "url(#benefits)" }}
                 >
-                  <div className="absolute inset-0 opacity-20">
+                  <div className="absolute inset-0">
                     {item.imageUrl && (
                       <img
                         src={item.imageUrl}
-                        width={360}
-                        height={360}
+                        width={900}
+                        height={900}
                         className="w-full h-full object-cover"
                       />
                     )}
+                    
                   </div>
-                </div>
+                  </div>
+                  <div className='h-full w-full absolute top-8 -z-30 left-1/3 -translate-x-12'>
+                      <img src="/gradient.png" width={1000} alt="" className=''/>
+                  </div>
+            
+            <ClipPath></ClipPath>
+            
           </motion.div>
           ))}
         </div>
