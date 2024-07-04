@@ -1,5 +1,5 @@
 
-import Main from '@/components/main/Main'
+import Main from '@/components/main/ActivityMain/Main'
 import React from 'react'
 
 const page = () => {
