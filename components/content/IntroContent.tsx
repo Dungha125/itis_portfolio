@@ -9,7 +9,7 @@ import Carousel from '../src/Carousel';
 const IntroContent = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.15,
   });
 
   const containerVariants = {

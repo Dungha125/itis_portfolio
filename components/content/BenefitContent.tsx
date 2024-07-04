@@ -11,7 +11,7 @@ const BenefitContent = () => {
 
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.1,
+        threshold: 0.15,
       });
     
       const containerVariants = {
@@ -40,7 +40,7 @@ const BenefitContent = () => {
           Thành viên Liên chi Đoàn Khoa CNTT1
         </motion.h1>
 
-        <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-8'>
+        <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-4'>
           {benefittext.map((item)=>(
             <motion.div
             variants={slideInFromLeft(0.6 + 0.1*parseInt(item.id))}
@@ -51,12 +51,15 @@ const BenefitContent = () => {
             }}
           >
             <div className="relative z-2 flex flex-col  min-h-[22rem] p-[2.4rem] pointer-events-none">
-                  <p className="body-2 mb-6 text-xl text-neutral-700 font-medium">{item.text}</p>
+                  <p className="body-2 mb-6 text-xl font-semibold text-neutral-700 ">{item.text}</p>
             </div>
             <div
                   className="absolute inset-0.5 bg-n-8 -z-10 "
                   style={{ clipPath: "url(#benefits)" }}
                 >
+                  <div className='absolute z-20 bg-white h-full w-full bottom-0 flex items-center'>
+                    <img src={item.src} width={900} height={900} alt="" className='opacity-10'/>
+                    </div>
                   <div className="absolute inset-0">
                     {item.imageUrl && (
                       <img
