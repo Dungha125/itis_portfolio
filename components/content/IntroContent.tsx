@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/ulti/motion';
+import { slideInFromBottom, slideInFromLeft, slideInFromRight, slideInFromTop } from '@/ulti/motion';
 import Carousel from '../src/Carousel';
 
 const IntroContent = () => {
@@ -33,15 +33,15 @@ const IntroContent = () => {
     >
 
 
-      <motion.h3  variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center mt-[5rem]'>
+      <motion.h3  variants={slideInFromBottom} className='font-normal text-2xl text-neutral-400 text-center mt-[3rem]'>
           Giới thiệu
         </motion.h3>
-        <motion.h1 variants={slideInFromTop} className='font-bold text-4xl text-white text-center mt-3 mx-6'>
+        <motion.h1 variants={slideInFromBottom} className='font-bold text-4xl text-white text-center my-3 mx-6'>
           Liên chi Đoàn Khoa CNTT1 - PTIT
         </motion.h1>
 
 
-      <div className='flex flex-col lg:flex-row w-full mb-10 items-center justify-center gap-5 px-10 lg:px-20'>
+      <div className='flex flex-col lg:flex-row w-full lg:my-10 items-center justify-center gap-5 px-10 lg:px-20'>
         <motion.div variants={slideInFromLeft(0.5)} className='w-full lg:min-w-[450px] z-30 mb-6'>
             <Carousel ></Carousel>
         </motion.div>
@@ -49,10 +49,10 @@ const IntroContent = () => {
 
       <div className='flex flex-col gap-3 lg:max-w-[550px] text-neutral-300 text-justify lg:ml-6'>
         <motion.p variants={slideInFromRight(0.7)} className='text-base lg:text-xl'>
-          Liên Chi Đoàn khoa CNTT1 là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
+          <span className='font-bold'>Liên Chi Đoàn khoa CNTT1</span> là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
         </motion.p>
         <motion.p variants={slideInFromRight(0.9)} className='text-base lg:text-xl'>
-          Liên chi Đoàn Khoa CNTT1 là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
+        <span className='font-bold'>Liên Chi Đoàn khoa CNTT1</span> là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
           Với mục đích mang lại lợi ích của sinh viên trong khoa, đẩy mạnh các hoạt động của khoa CNTT1, 
           Liên chi Đoàn Khoa CNTT1 tạo ra nhiều sân chơi giúp sinh viên trong khoa trở nên năng động hơn trong mọi hoạt động. 
           Là là nơi hội tụ của các bạn sinh viên 2 ngành CNTT và KHMT.
@@ -60,16 +60,16 @@ const IntroContent = () => {
         </div>
         
         </div>
-        <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center my-6'>
+        <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center my-3 lg:my-6'>
           Video giới thiệu
         </motion.h3>
-        <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 px-10 lg:px-20 justify-center items-center" >
+        <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 mb-6 px-10 lg:px-20 justify-center items-center " >
         <video width="1080" controls poster='/anh1.jpg'>
             <source src="/Facebook.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
         </motion.div>
-        <img src="/gradient.png" width={1100} alt="back2" className='absolute top-4 left-1 lg:top-[20rem] lg:left-1/2 -z-10' />
+        
     </motion.div>
     
   );

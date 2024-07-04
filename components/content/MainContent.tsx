@@ -13,7 +13,7 @@ const MainContent = () => {
         <div className='flex flex-col items-center gap-3 lg:items-start text-justify h-full w-full'>
             <motion.div
             variants={slideInFromLeft(0.5)}
-                className='text-neutral-50 font-bold flex flex-col text-center lg:text-justify gap-6 mt-6 text-6xl h-auto w-auto'>
+                className='text-neutral-50 font-bold flex flex-col text-center lg:text-justify gap-6 mt-6 text-6xl h-auto w-auto lg:px-16'>
                     <span>
                         Welcome!
                         <br />We are 
@@ -24,12 +24,12 @@ const MainContent = () => {
             </motion.div>
             <motion.p
                 variants={slideInFromLeft(0.6)}
-                className='text-xs lg:text-lg text-neutral-400 my-5 max-w-[700px]'>
+                className='text-xs lg:text-lg text-neutral-400 my-5 max-w-[700px] lg:px-16'>
                 Học viện Công nghệ Bưu chính Viễn thông
             </motion.p>
             <motion.div
                 variants={slideInFromLeft(0.6)}
-                className='flex flex-col lg:flex-row w-full h-full gap-2'>
+                className='flex flex-col items-center lg:flex-row w-full h-full gap-2 lg:px-16'>
                     <motion.div
                     variants={slideInFromLeft(0.7)}
                     className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"

@@ -8,10 +8,10 @@ const Intro = () => {
     >
         <img src="/section.svg" width={1920} alt="" className='mb-0'/>
         <div
-        className='h-full w-full bg-[#040224] lg:-translate-y-[2.5rem] pb-6 lg:pb-12 '>
+        className='h-full w-full bg-[#040224] '>
             <IntroContent ></IntroContent>
-               </div>
-        
+        </div>
+        <img src="/section.svg" width={1920} alt="" className='rotate-180 mb-0 relative'/>
     </section>
   )
 }
