@@ -3,10 +3,13 @@ import AvtivityHomeContent from '../content/AvtivityHomeContent'
 
 const Activity = () => {
   return (
+    <>
     <section
-    className='flex flex-col items-center justify-center h-full relative bg-white overflow-hidden z-30 pb-4'>
+    className='flex flex-col items-center justify-center h-full relative bg-white overflow-hidden z-30 -translate-y-1'>
         <AvtivityHomeContent></AvtivityHomeContent>
-    </section>
+        
+    
+    </section><img src="/section_white.png" alt="" className='rotate-180 w-full -translate-y-2'/></>
   )
 }
 
