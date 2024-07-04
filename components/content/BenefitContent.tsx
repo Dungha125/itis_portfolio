@@ -35,7 +35,7 @@ const BenefitContent = () => {
         <motion.h5 variants={slideInFromBottom} className='font-medium text-xs lg:text-xl text-neutral-400 text-center  px-10 lg:px-20'>
           Bạn sẽ nhận được gì khi trở thành
         </motion.h5>
-        <motion.h1 variants={slideInFromBottom} className='font-bold text-2xl lg:text-4xl text-white px-10 lg:px-20'>
+        <motion.h1 variants={slideInFromBottom} className='font-bold text-center text-2xl lg:text-4xl text-white px-10 lg:px-20'>
           Thành viên Liên chi Đoàn Khoa CNTT1
         </motion.h1>
 
