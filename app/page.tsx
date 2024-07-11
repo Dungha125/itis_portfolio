@@ -3,6 +3,7 @@ import Benefit from "@/components/main/Benefit";
 import Intro from "@/components/main/Intro";
 import Main from "@/components/main/Main";
 import Manage from "@/components/main/Manage";
+import Room from "@/components/main/Room";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Benefit></Benefit>
         <Activity></Activity>
         <Manage></Manage>
+        <Room></Room> 
       </div>
     </main>
   );

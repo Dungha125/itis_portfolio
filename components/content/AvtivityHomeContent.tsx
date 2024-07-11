@@ -37,17 +37,17 @@ const AvtivityHomeContent = () => {
             Hằng năm, Liên chi tham gia tổ chức và hỗ trợ nhiều hoạt động của Đoàn, Khoa và Học viện
         </motion.p>
 
-        <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-4'>
+        <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-4 lg:pt-8'>
           {activity.map((item)=>(
             <motion.div
             variants={slideInFromLeft(0.6 + 0.1*parseInt(item.id))}
-            className="block relative bg-no-repeat bg-[length:100%_100%] min-w-[20rem]"
+            className="block relative hover:min-w-[21rem]  bg-no-repeat bg-[length:100%_100%] min-w-[20rem]"
             key={item.id}
             style={{
               backgroundImage: `url("/card-1.svg")`,
             }}
           >
-            <div className="relative z-2 flex flex-col w-full min-h-[16rem] p-[2.4rem] pointer-events-none">
+            <div className="relative z-2 flex flex-col w-full min-h-[16rem] p-[2.4rem]">
                   
             </div>
             <div

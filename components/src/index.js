@@ -55,3 +55,46 @@ export const benefittext = [
       imageUrl: "/anh3.jpg",
     },
   ];
+
+  export const roomgroup = [
+    {
+      id: "0",
+      tittle: "BAN TRUYỀN THÔNG",
+      text: 'Với slogan Ban "Truyền thông - Không sợ deadline, làm việc nhiệt tình, chơi hết mình" cùng các thành viên vô cùng năng động, sáng tạo và nhiệt huyết, ban Truyền thông mang trên mình sứ mệnh xây dựng, gìn giữ những hình ảnh đẹp về Liên chi, đồng thời là nơi lan tỏa những thông tin của Liên chi Đoàn nói riêng và khoa CNTT1 nói chung đến các bạn sinh viên trong và ngoài Học viện.',
+      style: "bg-[#3c86f6] ",
+      sour: "/truyenthong.png",
+      order: "order-1",
+      order1: "order-2",
+
+    },
+    {
+      id: "1",
+      tittle: "BAN HẬU CẦN",
+      text: "Ban Hậu Cần của ITIS bới những thành viênđáng tin cậy và năng động, chịu trách nhiệm chủ yếu trong việc chuẩn bị các điều kiện vật chất cần thiết để đảm bảo mỗi sự kiện diễn ra suôn sẻ. Với tinh thần hợp tác, chúng tôi là khả năng kết nối mạch lạc giữa các bộ phận khác và là nguồn động viên quan trọng đằng sau mỗi thành công của tổ chức. Ban Hậu Cần là những người góp phần tạo nên không gian hoàn hảo cho mỗi sự kiện, đảm bảo rằng mọi điều kiện cần thiết sẽ được sắp xếp và chuẩn bị sẵn sàng.",
+      style: "bg-[#f6ba3c]",
+      sour: "/haucan.png",
+      order: "order-2",
+      order1: "order-1",
+
+    },
+    {
+      id: "2",
+      tittle: "BAN NỘI DUNG",
+      text: "Ban Nội dung - sân chơi của các tài năng được tỏa sáng, với những ý tưởng độc đáo, đặc sắc được gọi tên. Đây là nơi hội tụ của những con người nhiệt tình, tự tin và đam mê với lĩnh vực tổ chức các sự kiện, là nơi lên ý tưởng và kế hoạch cho các sự kiện của khoa và theo sát chương trình ngay từ những ngày đầu tiên. Là một lực lượng nòng cốt của Liên chi Đoàn, ban Nội dung giữ vai trò quan trọng trong việc công tác tổ chức các sự kiện như: xây dựng kế hoạch tổ chức, lên timeline chương trình, dự trù kinh phí cũng như xử lý các tình huống phát sinh.",
+      style: "bg-[#fd8484]",
+      sour: "/noidung.png",
+      order: "order-1",
+      order1: "order-2",
+
+    },
+    {
+      id: "3",
+      tittle: "BAN NHÂN SỰ",
+      text: "Với slogan “Không ngại khó, chỉ sợ không có” cùng các thành viên hết sức năng động và nhiệt huyết, Ban Nhân sự đã, đang và sẽ hướng tới một hình mẫu đẹp và phù hợp, để đóng góp vào hình ảnh của Liên chi, đồng thời là cầu nối quan trọng giữa các bạn sinh viên trong Khoa và Liên chi Đoàn Khoa CNTT1, giúp cho các bạn sinh viên nắm bắt được những thông tin quan trọng, cũng như được tư vấn, hỗ trợ và giúp đỡ trong quá trình học tập tại Học viện.",
+      style: "bg-[#84fda7]",
+      sour: "/nhansu.png",
+      order: "order-2",
+      order1: "order-1",
+
+    },
+  ];

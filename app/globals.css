@@ -86,3 +86,20 @@ html {
 
   
 }
+
+.boxed {
+  position: relative;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+  background-color: #191a28;
+  border-radius: 20px;
+}
+.boxed:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -10px;
+  background-image: linear-gradient(to right top, #2979ff, #07a787);
+  border-radius: inherit;
+}
