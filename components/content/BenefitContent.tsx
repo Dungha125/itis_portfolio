@@ -51,7 +51,7 @@ const BenefitContent = () => {
             }}
           >
             <div className="relative z-2 flex flex-col  min-h-[22rem] p-[2.4rem] pointer-events-none">
-                  <p className="body-2 mb-6 text-xl font-semibold text-neutral-700 ">{item.text}</p>
+                  <p className="body-2 mb-6 text-xl font-semibold text-neutral-700 text-justify">{item.text}</p>
             </div>
             <div
                   className="absolute inset-0.5 bg-n-8 -z-10 "
