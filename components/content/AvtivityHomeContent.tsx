@@ -3,7 +3,7 @@
 import React from 'react'
 import {motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer';
-import { slideInFromBottom, slideInFromLeft } from '@/ulti/motion';
+import { slideInFromBottom, slideInFromBottomtime, slideInFromLeft } from '@/ulti/motion';
 import ClipPath from '@/public/ClipPath';
 import { activity } from '../src';
 
@@ -41,7 +41,7 @@ const AvtivityHomeContent = () => {
           {activity.map((item)=>(
             <motion.div
             variants={slideInFromLeft(0.6 + 0.1*parseInt(item.id))}
-            className="block relative hover:min-w-[21rem]  bg-no-repeat bg-[length:100%_100%] min-w-[20rem]"
+            className="block relative  bg-no-repeat bg-[length:100%_100%] min-w-[20rem]"
             key={item.id}
             style={{
               backgroundImage: `url("/card-1.svg")`,
@@ -78,11 +78,11 @@ const AvtivityHomeContent = () => {
           </motion.div>
           ))}
         </div>
-        <div className='my-4 flex px-10 lg:px-20 w-full justify-center items-center relative'>
+        <motion.div variants={slideInFromBottom} className='my-4 flex px-10 lg:px-20 w-full justify-center items-center relative'>
           <button type='button' className='w-[12rem] h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl text-center text-white rounded-2xl'>
             <a href="/Activity">Xem thêm</a>
           </button>
-        </div>
+        </motion.div>
       </motion.div>
   )
 }

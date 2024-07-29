@@ -1,5 +1,6 @@
 import Activity from "@/components/main/Activity";
 import Benefit from "@/components/main/Benefit";
+import Contact from "@/components/main/Contact";
 import Intro from "@/components/main/Intro";
 import Main from "@/components/main/Main";
 import Manage from "@/components/main/Manage";
@@ -14,8 +15,8 @@ export default function Home() {
         <Intro></Intro>
         <Benefit></Benefit>
         <Activity></Activity>
-        <Manage></Manage>
         <Room></Room> 
+        <Contact></Contact>
       </div>
     </main>
   );
