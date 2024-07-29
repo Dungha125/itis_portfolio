@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="h-full w-full">
       <div className="flex flex-col ">
-        <Main></Main>
+        <Main ></Main>
         <Intro></Intro>
         <Benefit></Benefit>
         <Activity></Activity>

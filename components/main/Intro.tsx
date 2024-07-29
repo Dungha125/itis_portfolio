@@ -3,7 +3,7 @@ import IntroContent from '../content/IntroContent'
 
 const Intro = () => {
   return (
-    <section
+    <section id='Intro' 
     className='flex flex-col items-center justify-center mt-2 h-full relative overflow-hidden z-30 pb-10'
     >
         <img src="/section.svg" width={1920} alt="" className='mb-0'/>

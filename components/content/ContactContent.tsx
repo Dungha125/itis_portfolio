@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 const ContactContent = () => {
   return (
-    <div className='w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] z-20'>
+    <div id='Contact' className='w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] z-20'>
       <div className='w-full flex flex-col items-center justify-center m-auto'>
         <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
           <img src="/logomain.svg" width={300} height={300} alt="Main Logo" />
