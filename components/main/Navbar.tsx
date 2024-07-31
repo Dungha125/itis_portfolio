@@ -20,7 +20,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
     };
 
     return (
-        <div className='w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213fb] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10'>
+        <div className='w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10'>
             <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
                 <a href={`#${linkto}`} className='h-full w-auto flex flex-row items-center'>
                     <Image
@@ -54,9 +54,10 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                             </Link>
                         )}
                         <Link
-                            to={isActivity ? 'main' : 'Activity'}
+                            to={isActivity ? 'annual' : 'Activity'}
                             smooth={true}
                             duration={500}
+                            offset={isActivity ? -70 : 0}
                             className='cursor-pointer'
                         >
                             {isActivity ? 'Thường niên':'Hoạt động' }
