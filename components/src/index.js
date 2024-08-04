@@ -40,32 +40,43 @@ export const benefittext = [
   export const activityannual = [
     {
       id: "0",
-      text: "ITIS: NGÀY TRỞ VỀ",
+      text: "PICNIC",
       imageUrl: "/anh1.jpg",
     },
     {
       id: "1",
-      text: "BIGGAME",
+      text: "TUYỂN CTV",
       imageUrl: "/anh2.jpg",
     },
     {
       id: "2",
-      text: "ITIS CUP 2020",
+      text: "CHÀO TÂN KHOA (2 IN 1)",
       imageUrl: "/anh3.jpg",
-    },    {
+    },    
+    {
       id: "3",
-      text: "ITIS: NGÀY TRỞ VỀ",
+      text: "BIGGAME",
       imageUrl: "/anh1.jpg",
     },
     {
       id: "4",
-      text: "BIGGAME",
+      text: "MALIBU",
       imageUrl: "/anh2.jpg",
     },
     {
       id: "5",
-      text: "ITIS CUP 2020",
+      text: "ITIS CUP",
       imageUrl: "/anh3.jpg",
+    },
+    {
+      id: "6",
+      text: "NEW YEAR CODE WAR",
+      imageUrl: "/anh1.jpg",
+    },
+    {
+      id: "7",
+      text: "ITIS CHAMPIONSHIP",
+      imageUrl: "/anh2.jpg",
     },
   ];
 
