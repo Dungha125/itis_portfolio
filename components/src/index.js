@@ -41,27 +41,27 @@ export const benefittext = [
     {
       id: "0",
       text: "PICNIC",
-      imageUrl: "/anh1.jpg",
+      imageUrl: "/activity/picnic.jpeg",
     },
     {
       id: "1",
       text: "TUYỂN CTV",
-      imageUrl: "/anh2.jpg",
+      imageUrl: "/activity/tuyenctv.JPG",
     },
     {
       id: "2",
       text: "CHÀO TÂN KHOA (2 IN 1)",
-      imageUrl: "/anh3.jpg",
+      imageUrl: "/activity/2in1.JPG",
     },    
     {
       id: "3",
       text: "BIGGAME",
-      imageUrl: "/anh1.jpg",
+      imageUrl: "/activity/biggame.JPG",
     },
     {
       id: "4",
       text: "MALIBU",
-      imageUrl: "/anh2.jpg",
+      imageUrl: "/activity/malibu.JPG",
     },
     {
       id: "5",
@@ -71,12 +71,12 @@ export const benefittext = [
     {
       id: "6",
       text: "NEW YEAR CODE WAR",
-      imageUrl: "/anh1.jpg",
+      imageUrl: "/activity/nycw.JPG",
     },
     {
       id: "7",
       text: "ITIS CHAMPIONSHIP",
-      imageUrl: "/anh2.jpg",
+      imageUrl: "/activity/itiscpion.JPG",
     },
   ];
 
