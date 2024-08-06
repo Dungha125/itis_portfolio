@@ -24,6 +24,7 @@ const ActivityAnualContent = () => {
         },
       };
   return (
+    <div className="flex flex-col items-center justify-center gap-4 w-full bg-white z-[30] pb-[4rem]">
     <motion.div  
       id='annual'
       ref={ref}
@@ -77,6 +78,7 @@ const ActivityAnualContent = () => {
           ))}
         </div>
     </motion.div>
+    </div>
   )
 }
 
