@@ -56,12 +56,12 @@ export const benefittext = [
     {
       id: "3",
       text: "BIGGAME",
-      imageUrl: "/activity/biggame.JPG",
+      imageUrl: "/activity/biggame.jpg",
     },
     {
       id: "4",
       text: "MALIBU",
-      imageUrl: "/activity/malibu.JPG",
+      imageUrl: "/activity/malibu.jpg",
     },
     {
       id: "5",
@@ -71,12 +71,12 @@ export const benefittext = [
     {
       id: "6",
       text: "NEW YEAR CODE WAR",
-      imageUrl: "/activity/nycw.JPG",
+      imageUrl: "/activity/nycw.jpg",
     },
     {
       id: "7",
       text: "ITIS CHAMPIONSHIP",
-      imageUrl: "/activity/itiscpion.JPG",
+      imageUrl: "/activity/itiscpion.jpg",
     },
   ];
 

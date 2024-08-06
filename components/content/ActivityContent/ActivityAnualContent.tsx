@@ -34,7 +34,9 @@ const ActivityAnualContent = () => {
         <motion.h1 variants={slideInFromBottom} className='font-bold text-center px-10 lg:px-20 text-2xl lg:text-4xl mt-4 pt-8'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-cyan-900'>Hoạt động thường niên</span>
         </motion.h1>
-
+        <motion.h3 variants={slideInFromBottom} className='font-normal max-w-[800px] text-center px-10 lg:px-20 text-xs lg:text-xl '>
+            <span className='text-neutral-800'>Khi trở thành thành viên của Liên chi, các bạn sẽ được tham gia rất nhiều các hoạt động thú vị, lành mạnh, đa dạng sắc màu từ các hoạt động học tập, đến thể thao và giải trí ...</span>
+        </motion.h3>
         <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 lg:pt-8'>
           {activityannual.map((item)=>(
             <motion.div
