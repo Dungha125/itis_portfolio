@@ -6,7 +6,7 @@ const ActivityAnnual = () => {
     <section className='flex flex-col items-center justify-center w-full z-20 overflow-hidden'>
         <img src="/section_white.png" width={1920} alt="" className='w-full relative' />
         <ActivityAnualContent></ActivityAnualContent>
-        <img src="/section_white.png" width={1920} alt="" className='w-full rotate-180 relative -translate-y-2' />
+        <img src="/section_white.png" width={1920} alt="" className='w-full rotate-180 relative -translate-y-1' />
     </section>
   )
 }

@@ -41,6 +41,7 @@ const IntroContent = () => {
         </motion.h1>
 
 
+      
       <div className='flex flex-col lg:flex-row w-full lg:my-10 items-center justify-center gap-5 px-10 lg:px-20'>
         <motion.div variants={slideInFromLeft(0.5)} className='w-full lg:min-w-[450px] max-w-[650px] z-30 mb-6'>
             <Carousel ></Carousel>
@@ -69,7 +70,6 @@ const IntroContent = () => {
             Your browser does not support the video tag.
         </video>
         </motion.div>
-        
     </motion.div>
     
   );

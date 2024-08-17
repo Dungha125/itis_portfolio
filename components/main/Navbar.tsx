@@ -29,11 +29,11 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         width={40}
                         height={40}
                     />
-                    <span className='font-bold ml-[10px] hidden md:block text-gray-300'>
+                    <span className='font-bold ml-[10px] hidden md:block text-gray-800'>
                         {isActivity ? 'HOẠT ĐỘNG':'INFORMATION TECHNOLOGY INFORMATION SECURITY'  }
                     </span>
                 </a>
-                <div className='w-[500px] h-full hidden md:flex flex-row items-center justify-between md:mr-10'>
+                <div className='w-[500px] h-full hidden lg:flex flex-row items-center justify-between md:mr-10'>
                     <div className='flex items-center justify-between border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-50 gap-4 z-50'>
                     {isActivity ? (
                             <a
@@ -47,7 +47,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 to="Intro"
                                 smooth={true}
                                 duration={500}
-                                offset={175}
+                                offset={-70}
                                 className='cursor-pointer'
                             >
                                 Giới thiệu

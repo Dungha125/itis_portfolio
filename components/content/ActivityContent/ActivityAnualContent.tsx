@@ -31,7 +31,7 @@ const ActivityAnualContent = () => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants} 
-      className="flex flex-col items-center justify-center gap-4 w-full bg-white z-[30] pb-[4rem]">
+      className="flex flex-col items-center justify-center gap-4 w-full bg-white z-[30] ">
         <motion.h1 variants={slideInFromBottom} className='font-bold text-center px-10 lg:px-20 text-2xl lg:text-4xl mt-4 pt-8'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-cyan-900'>Hoạt động thường niên</span>
         </motion.h1>
