@@ -1,7 +1,29 @@
 import React, { useState } from 'react';
 
-const FormRegister = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  Hovaten: string;
+  gioitinh: string;
+  ngaysinh: string;
+  quequan: string;
+  Lop: string;
+  MSV: string;
+  email: string;
+  facebook: string;
+  Gioithieu: string;
+  point: string;
+  bietden: string;
+  reason: string;
+  wish: string;
+  cauhoi: string;
+}
+
+interface FormErrors {
+  ngaysinh?: string;
+  email?: string;
+}
+
+const FormRegister: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     Hovaten: '',
     gioitinh: '',
     ngaysinh: '',
@@ -18,12 +40,9 @@ const FormRegister = () => {
     cauhoi: '',
   });
 
-  const [errors, setErrors] = useState({
-    ngaysinh: '',
-    email: '',
-  });
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -31,9 +50,9 @@ const FormRegister = () => {
     });
   };
 
-  const validate = () => {
+  const validate = (): boolean => {
     let valid = true;
-    let errors = {};
+    let errors: FormErrors = {};
 
     // Validate Date of Birth
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -60,7 +79,7 @@ const FormRegister = () => {
     return valid;
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
       // Proceed with form submission
@@ -226,30 +245,31 @@ const FormRegister = () => {
               value={formData.reason}
               onChange={handleChange}
               className='w-full p-2 border border-gray-300 rounded-md h-24'
-            />
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="wish" className='block mb-2 font-bold'>Mong muốn khi trở thành CTV:</label>
-            <textarea
-              name="wish"
-              placeholder=""
-              value={formData.wish}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'
-            />
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="cauhoi" className='block mb-2 font-bold'>Bạn có câu hỏi cho chúng mình không?</label>
-            <textarea
-              name="cauhoi"
-              placeholder=""
-              value={formData.cauhoi}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'/>
+              />
               </div>
-
+    
+              <div className='mb-4'>
+                <label htmlFor="wish" className='block mb-2 font-bold'>Mong muốn khi trở thành CTV:</label>
+                <textarea
+                  name="wish"
+                  placeholder=""
+                  value={formData.wish}
+                  onChange={handleChange}
+                  className='w-full p-2 border border-gray-300 rounded-md h-24'
+                />
+              </div>
+    
+              <div className='mb-4'>
+                <label htmlFor="cauhoi" className='block mb-2 font-bold'>Bạn có câu hỏi cho chúng mình không?</label>
+                <textarea
+                  name="cauhoi"
+                  placeholder=""
+                  value={formData.cauhoi}
+                  onChange={handleChange}
+                  className='w-full p-2 border border-gray-300 rounded-md h-24'
+                />
+              </div>
+    
               <button type="submit" className='bg-blue-500 text-white p-2 rounded-md'>
                 Submit
               </button>
@@ -260,3 +280,4 @@ const FormRegister = () => {
     };
     
     export default FormRegister;
+    
