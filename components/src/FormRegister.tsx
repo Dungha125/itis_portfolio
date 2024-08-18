@@ -60,7 +60,7 @@ const FormRegister = () => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     if (validate()) {
       // Proceed with form submission
