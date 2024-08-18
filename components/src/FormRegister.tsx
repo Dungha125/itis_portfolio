@@ -1,274 +1,262 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const FormRegister = () => {
+  const [formData, setFormData] = useState({
+    Hovaten: '',
+    gioitinh: '',
+    ngaysinh: '',
+    quequan: '',
+    Lop: '',
+    MSV: '',
+    email: '',
+    facebook: '',
+    Gioithieu: '',
+    point: '',
+    bietden: '',
+    reason: '',
+    wish: '',
+    cauhoi: '',
+  });
+
+  const [errors, setErrors] = useState({
+    ngaysinh: '',
+    email: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validate = () => {
+    let valid = true;
+    let errors = {};
+
+    // Validate Date of Birth
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    if (!datePattern.test(formData.ngaysinh)) {
+      errors.ngaysinh = 'Ngày sinh không hợp lệ (định dạng: YYYY-MM-DD).';
+      valid = false;
+    } else {
+      const date = new Date(formData.ngaysinh);
+      const today = new Date();
+      if (isNaN(date.getTime()) || date > today) {
+        errors.ngaysinh = 'Ngày sinh không tồn tại hoặc lớn hơn ngày hiện tại.';
+        valid = false;
+      }
+    }
+
+    // Validate Email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      errors.email = 'Email không hợp lệ.';
+      valid = false;
+    }
+
+    setErrors(errors);
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      // Proceed with form submission
+      console.log('Form data is valid:', formData);
+    }
+  };
+
   return (
-    <div className='w-full h-full absolute flex flex-col items-center mt-[10rem]'>
-        <div className='w-[500px] h-auto bg-slate-100 flex flex-col z-[50] rounded-xl px-8'>
-            <h1 className='text-neutral-900 w-full text-center font-bold text-2xl my-4'>Đăng ký</h1>
-            <form style={formStyle}>
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="Hovaten" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Họ và tên:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Họ và tên" 
-              name="Hovaten" 
-              style={inputStyle}
+    <div className='w-full h-full flex flex-col items-center'>
+      <div className='w-full h-auto bg-slate-100 flex flex-col z-[50] rounded-xl px-8 py-6 overflow-y-auto max-h-[70vh]'>
+        <h1 className='text-neutral-900 w-full text-center font-bold text-2xl mb-4'>ĐĂNG KÝ</h1>
+        <form className='w-full' onSubmit={handleSubmit}>
+          <div className='mb-4'>
+            <label htmlFor="Hovaten" className='block mb-2 font-bold'>Họ và tên:</label>
+            <input
+              type="text"
+              placeholder="Họ và tên"
+              name="Hovaten"
+              value={formData.Hovaten}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="gioitinh" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Giới tính:
-            </label>
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              <input type="radio" name="gioitinh" value="Nam" /> Nam
-              <input 
-                type="radio" 
-                name="gioitinh" 
-                value="Nữ" 
-                style={{ marginLeft: '10px' }}
-              /> Nữ
+          <div className='mb-4'>
+            <label htmlFor="gioitinh" className='block mb-2 font-bold'>Giới tính:</label>
+            <div className='flex gap-4 items-center'>
+              <label className='flex items-center'>
+                <input
+                  type="radio"
+                  name="gioitinh"
+                  value="Nam"
+                  checked={formData.gioitinh === 'Nam'}
+                  onChange={handleChange}
+                  className='mr-2'
+                /> Nam
+              </label>
+              <label className='flex items-center'>
+                <input
+                  type="radio"
+                  name="gioitinh"
+                  value="Nữ"
+                  checked={formData.gioitinh === 'Nữ'}
+                  onChange={handleChange}
+                  className='mr-2'
+                /> Nữ
+              </label>
             </div>
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="ngaysinh" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Ngày sinh:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Ngày sinh" 
-              name="ngaysinh" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="ngaysinh" className='block mb-2 font-bold'>Ngày sinh:</label>
+            <input
+              type="text"
+              placeholder="YYYY-MM-DD"
+              name="ngaysinh"
+              value={formData.ngaysinh}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
+            />
+            {errors.ngaysinh && <p className='text-red-500'>{errors.ngaysinh}</p>}
+          </div>
+
+          <div className='mb-4'>
+            <label htmlFor="quequan" className='block mb-2 font-bold'>Quê quán:</label>
+            <input
+              type="text"
+              placeholder="Quê quán"
+              name="quequan"
+              value={formData.quequan}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="quequan" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Quê quán:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Quê quán" 
-              name="quequan" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="Lop" className='block mb-2 font-bold'>Lớp:</label>
+            <input
+              type="text"
+              placeholder="Lớp"
+              name="Lop"
+              value={formData.Lop}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="Lop" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Lớp:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Lớp" 
-              name="Lop" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="MSV" className='block mb-2 font-bold'>Mã sinh viên:</label>
+            <input
+              type="text"
+              placeholder="Mã sinh viên"
+              name="MSV"
+              value={formData.MSV}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="MSV" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Mã sinh viên:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Mã sinh viên" 
-              name="MSV" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="email" className='block mb-2 font-bold'>Email:</label>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
+            />
+            {errors.email && <p className='text-red-500'>{errors.email}</p>}
+          </div>
+
+          <div className='mb-4'>
+            <label htmlFor="facebook" className='block mb-2 font-bold'>Facebook:</label>
+            <input
+              type="text"
+              placeholder="Facebook"
+              name="facebook"
+              value={formData.facebook}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="email" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Email:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Email" 
-              name="email" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="Gioithieu" className='block mb-2 font-bold'>Giới thiệu bản thân:</label>
+            <textarea
+              name="Gioithieu"
+              placeholder="Giới thiệu đôi nét về bản thân"
+              value={formData.Gioithieu}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="facebook" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Facebook:
-            </label>
-            <input 
-              type="text" 
-              placeholder="Facebook" 
-              name="facebook" 
-              style={inputStyle}
+          <div className='mb-4'>
+            <label htmlFor="point" className='block mb-2 font-bold'>Điểm mạnh - Điểm yếu:</label>
+            <textarea
+              name="point"
+              placeholder="Điểm mạnh - Điểm yếu"
+              value={formData.point}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="Gioithieu" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Giới thiệu bản thân:
-            </label>
-            <textarea 
-              name="Gioithieu" 
-              placeholder="Giới thiệu đôi nét về bản thân" 
-              style={textareaStyle}
-            ></textarea>
+          <div className='mb-4'>
+            <label htmlFor="bietden" className='block mb-2 font-bold'>Bạn biết tới Liên chi qua đâu?</label>
+            <textarea
+              name="bietden"
+              placeholder=""
+              value={formData.bietden}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'
+            />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="point" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Điểm mạnh - Điểm yếu:
-            </label>
-            <textarea 
-              name="point" 
-              placeholder="Điểm mạnh - Điểm yếu" 
-              style={textareaStyle}
-            ></textarea>
+          <div className='mb-4'>
+            <label htmlFor="reason" className='block mb-2 font-bold'>Tại sao bạn quyết định tham gia ứng tuyển Liên chi?</label>
+            <textarea
+              name="reason"
+              placeholder=""
+              value={formData.reason}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'
+            />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="bietden" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Bạn biết tới Liên chi qua đâu?
-            </label>
-            <textarea 
-              name="bietden" 
-              placeholder="" 
-              style={textareaStyle}
-            ></textarea>
+          <div className='mb-4'>
+            <label htmlFor="wish" className='block mb-2 font-bold'>Mong muốn khi trở thành CTV:</label>
+            <textarea
+              name="wish"
+              placeholder=""
+              value={formData.wish}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'
+            />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="reason" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Tại sao bạn quyết định tham gia ứng tuyển Liên chi?
-            </label>
-            <textarea 
-              name="reason" 
-              placeholder="" 
-              style={textareaStyle}
-            ></textarea>
-          </div>
+          <div className='mb-4'>
+            <label htmlFor="cauhoi" className='block mb-2 font-bold'>Bạn có câu hỏi cho chúng mình không?</label>
+            <textarea
+              name="cauhoi"
+              placeholder=""
+              value={formData.cauhoi}
+              onChange={handleChange}
+              className='w-full p-2 border border-gray-300 rounded-md h-24'/>
+              </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="wish" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Mong muốn khi trở thành CTV:
-            </label>
-            <textarea 
-              name="wish" 
-              placeholder="" 
-              style={textareaStyle}
-            ></textarea>
+              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md'>
+                Submit
+              </button>
+            </form>
           </div>
-
-          <div style={{ marginBottom: '15px' }}>
-            <label 
-              htmlFor="cauhoi" 
-              style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}
-            >
-              Bạn có câu hỏi cho chúng mình không?
-            </label>
-            <textarea 
-              name="cauhoi" 
-              placeholder="" 
-              style={textareaStyle}
-            ></textarea>
-          </div>
-        </form>
         </div>
-    </div>
-  )
-}
-
-export default FormRegister
-
-
-const overlayStyle: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  zIndex: 1000,
-};
-
-const formContainerStyle: React.CSSProperties = {
-  position: 'relative',
-  width: '90%',
-  maxWidth: '500px',
-  backgroundColor: '#fff',
-  padding: '20px',
-  borderRadius: '10px',
-  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-};
-
-const closeButtonStyle: React.CSSProperties = {
-  position: 'absolute',
-  top: '10px',
-  right: '10px',
-  background: 'transparent',
-  border: 'none',
-  fontSize: '20px',
-  cursor: 'pointer',
-};
-
-const formStyle: React.CSSProperties = {
-  width: '100%',
-};
-
-const inputStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '8px',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-};
-
-const textareaStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '8px',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-  height: '100px',
-};
+      );
+    };
+    
+    export default FormRegister;

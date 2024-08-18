@@ -2,19 +2,28 @@
 
 import React, { useState } from 'react'
 import {motion} from "framer-motion";
-import { slideInFromBottom, slideInFromBottomtime, slideInFromLeft } from '@/ulti/motion';
+import { slideInFromBottom, slideInFromBottomtime, slideInFromLeft, slideInFromRight } from '@/ulti/motion';
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import FormRegister from '../src/FormRegister';
 
-interface MainContentProps {
-  onClick: () => void;
-}
 
-const MainContent: React.FC<MainContentProps> = ({onClick}) => {
 
+const MainContent= () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const toggleForm = () => {
+    setIsFormVisible(!isFormVisible);
+  };
+
+  const closeForm = (e) => {
+    if (e.target.id === "formOverlay") {
+      setIsFormVisible(false);
+    }
+  };
  
 
   return (
+    <>
     <motion.div
       initial="hidden"
       animate="visible"
@@ -66,7 +75,7 @@ const MainContent: React.FC<MainContentProps> = ({onClick}) => {
         </motion.div>
         
         <motion.div variants={slideInFromBottom} className='my-4 flex lg:px-16 xl:px-20 2xl:px-24 w-full items-center justify-center lg:justify-start relative'>
-          <button onClick={onClick} type='button' className='w-[12rem] xl:w-[14rem] 2xl:w-[16rem] h-[3rem] xl:h-[3.5rem] 2xl:h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl xl:text-xl 2xl:text-2xl text-center text-white rounded-2xl'>
+          <button onClick={toggleForm} type='button' className='w-[12rem] xl:w-[14rem] 2xl:w-[16rem] h-[3rem] xl:h-[3.5rem] 2xl:h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl xl:text-xl 2xl:text-2xl text-center text-white rounded-2xl'>
             Ứng tuyển ngay
           </button>
         </motion.div>
@@ -82,8 +91,27 @@ const MainContent: React.FC<MainContentProps> = ({onClick}) => {
           ' 
         />
       </div>
+      </motion.div>
+      {isFormVisible && (
+        <motion.div
+          id="formOverlay"
+          onClick={closeForm}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.3 }}
+          className=" absolute inset-0 h-screen bg-black backdrop-blur-md bg-opacity-50 flex items-center justify-center z-[30]"
+        >
+          <motion.div
+            className="bg-white rounded-lg p-8 w-[90%] mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <FormRegister />
+          </motion.div>
+        </motion.div>
+      )}
       
-    </motion.div>
+      </>
   )
 }
 //max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px]
