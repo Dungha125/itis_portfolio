@@ -15,8 +15,8 @@ const MainContent= () => {
     setIsFormVisible(!isFormVisible);
   };
 
-  const closeForm = (e) => {
-    if (e.target.id === "formOverlay") {
+  const closeForm = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget.id === "formOverlay") {
       setIsFormVisible(false);
     }
   };
