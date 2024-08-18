@@ -100,7 +100,7 @@ const MainContent= () => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.3 }}
-          className=" absolute inset-0 h-screen bg-black backdrop-blur-md bg-opacity-50 flex items-center justify-center z-[30]"
+          className=" absolute inset-0 bg-black backdrop-blur-md bg-opacity-50 flex items-center justify-center z-[30]"
         >
           <motion.div
             className="bg-white rounded-lg p-8 w-[90%] mx-auto"
