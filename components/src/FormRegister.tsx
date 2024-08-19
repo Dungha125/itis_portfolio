@@ -55,9 +55,9 @@ const FormRegister: React.FC = () => {
     let errors: FormErrors = {};
 
     // Validate Date of Birth
-    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
     if (!datePattern.test(formData.ngaysinh)) {
-      errors.ngaysinh = 'Ngày sinh không hợp lệ (định dạng: YYYY-MM-DD).';
+      errors.ngaysinh = 'Ngày sinh không hợp lệ (định dạng: DD/MM/YYYY).';
       valid = false;
     } else {
       const date = new Date(formData.ngaysinh);
@@ -89,9 +89,11 @@ const FormRegister: React.FC = () => {
 
   return (
     <div className='w-full h-full flex flex-col items-center'>
-      <div className='w-full h-auto bg-slate-100 flex flex-col z-[50] rounded-xl px-8 py-6 overflow-y-auto max-h-[70vh]'>
-        <h1 className='text-neutral-900 w-full text-center font-bold text-2xl mb-4'>ĐĂNG KÝ</h1>
+      <h1 className='text-neutral-900 w-full text-center font-bold text-2xl mb-4'>ĐĂNG KÝ</h1>
+      <div className='w-full h-auto flex flex-col z-[50] rounded-xl overflow-y-auto max-h-[70vh]'>
+        
         <form className='w-full' onSubmit={handleSubmit}>
+          <div className='bg-slate-200 w-full rounded-md px-8 pt-6 pb-4 mb-4 shadow-lg shadow-[#b3b3b3]/50 '>
           <div className='mb-4'>
             <label htmlFor="Hovaten" className='block mb-2 font-bold'>Họ và tên:</label>
             <input
@@ -103,8 +105,8 @@ const FormRegister: React.FC = () => {
               className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
-
-          <div className='mb-4'>
+          <div className='w-full flex flex-col md:flex-row items-center justify-between gap-4'>
+          <div className='mb-4 w-full'>
             <label htmlFor="gioitinh" className='block mb-2 font-bold'>Giới tính:</label>
             <div className='flex gap-4 items-center'>
               <label className='flex items-center'>
@@ -130,11 +132,11 @@ const FormRegister: React.FC = () => {
             </div>
           </div>
 
-          <div className='mb-4'>
+          <div className='mb-4 w-full'>
             <label htmlFor="ngaysinh" className='block mb-2 font-bold'>Ngày sinh:</label>
             <input
               type="text"
-              placeholder="YYYY-MM-DD"
+              placeholder="DD/MM/YYYY"
               name="ngaysinh"
               value={formData.ngaysinh}
               onChange={handleChange}
@@ -143,7 +145,7 @@ const FormRegister: React.FC = () => {
             {errors.ngaysinh && <p className='text-red-500'>{errors.ngaysinh}</p>}
           </div>
 
-          <div className='mb-4'>
+          <div className='mb-4 w-full'>
             <label htmlFor="quequan" className='block mb-2 font-bold'>Quê quán:</label>
             <input
               type="text"
@@ -154,8 +156,8 @@ const FormRegister: React.FC = () => {
               className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
-
-          <div className='mb-4'>
+          
+          <div className='mb-4 w-full'>
             <label htmlFor="Lop" className='block mb-2 font-bold'>Lớp:</label>
             <input
               type="text"
@@ -166,8 +168,8 @@ const FormRegister: React.FC = () => {
               className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
-
-          <div className='mb-4'>
+          
+          <div className='mb-4 w-full'>
             <label htmlFor="MSV" className='block mb-2 font-bold'>Mã sinh viên:</label>
             <input
               type="text"
@@ -178,7 +180,7 @@ const FormRegister: React.FC = () => {
               className='w-full p-2 border border-gray-300 rounded-md'
             />
           </div>
-
+          </div>
           <div className='mb-4'>
             <label htmlFor="email" className='block mb-2 font-bold'>Email:</label>
             <input
@@ -225,7 +227,9 @@ const FormRegister: React.FC = () => {
               className='w-full p-2 border border-gray-300 rounded-md h-24'
             />
           </div>
-
+          </div>
+          
+          <div className='w-full px-8 py-6 bg-slate-200 rounded-md mb-4 mt-8'>
           <div className='mb-4'>
             <label htmlFor="bietden" className='block mb-2 font-bold'>Bạn biết tới Liên chi qua đâu?</label>
             <textarea
@@ -269,8 +273,8 @@ const FormRegister: React.FC = () => {
                   className='w-full p-2 border border-gray-300 rounded-md h-24'
                 />
               </div>
-    
-              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md'>
+              </div>
+              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md mb-2'>
                 Submit
               </button>
             </form>

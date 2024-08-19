@@ -7,7 +7,7 @@ const Intro = () => {
     className='flex flex-col items-center justify-center h-full relative overflow-hidden z-30 pb-10'
     >
         <div className='h-full w-full bg-[#efeeff]'>
-        <img src="/SVG/tittle.svg" width={1920} alt="" className='w-full my-[4rem]'/>
+        <img src="/title.png" width={1920} alt="" className='w-full my-[4rem]'/>
         </div>
         <div
         className='h-full w-full bg-[#040224] '>
