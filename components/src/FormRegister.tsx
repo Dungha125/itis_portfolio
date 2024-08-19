@@ -274,11 +274,15 @@ const FormRegister: React.FC = () => {
                 />
               </div>
               </div>
-              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md mb-2'>
-                Submit
-              </button>
+              
             </form>
-          </div>
+            
+            
+          </div><div className='w-full flex items-center justify-center mt-4'>
+              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md min-w-[100px]'>
+                Gửi
+              </button>
+            </div>
         </div>
       );
     };

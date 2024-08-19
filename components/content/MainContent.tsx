@@ -103,7 +103,7 @@ const MainContent= () => {
           className=" absolute inset-0 bg-black backdrop-blur-md bg-opacity-50 flex items-center justify-center z-[30]"
         >
           <motion.div
-            className="bg-white rounded-lg p-8 w-[90%] mx-auto"
+            className="bg-white rounded-lg p-8 mt-[2rem] h-[80%] w-[90%] mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <FormRegister />
