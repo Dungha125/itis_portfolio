@@ -112,7 +112,7 @@ export const benefittext = [
     {
       id: "1",
       tittle: "BAN HẬU CẦN",
-      text: "Ban Hậu Cần của ITIS bới những thành viênđáng tin cậy và năng động, chịu trách nhiệm chủ yếu trong việc chuẩn bị các điều kiện vật chất cần thiết để đảm bảo mỗi sự kiện diễn ra suôn sẻ. Với tinh thần hợp tác, chúng tôi là khả năng kết nối mạch lạc giữa các bộ phận khác và là nguồn động viên quan trọng đằng sau mỗi thành công của tổ chức. Ban Hậu Cần là những người góp phần tạo nên không gian hoàn hảo cho mỗi sự kiện, đảm bảo rằng mọi điều kiện cần thiết sẽ được sắp xếp và chuẩn bị sẵn sàng.",
+      text: "Ban Hậu Cần của ITIS bới những thành viên đáng tin cậy và năng động, chịu trách nhiệm chủ yếu trong việc chuẩn bị các điều kiện vật chất cần thiết để đảm bảo mỗi sự kiện diễn ra suôn sẻ. Với tinh thần hợp tác, chúng tôi là khả năng kết nối mạch lạc giữa các bộ phận khác và là nguồn động viên quan trọng đằng sau mỗi thành công của tổ chức. Ban Hậu Cần là những người góp phần tạo nên không gian hoàn hảo cho mỗi sự kiện, đảm bảo rằng mọi điều kiện cần thiết sẽ được sắp xếp và chuẩn bị sẵn sàng.",
       style: "text-[#f6ba3c]",
       sour: "/haucan.png",
       order: "order-2",

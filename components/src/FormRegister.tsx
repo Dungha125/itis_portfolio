@@ -1,3 +1,6 @@
+"use client"
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react';
 
@@ -8,6 +11,7 @@ interface FormData {
   placeOfOrigin: string;
   className: string;
   studentCode: string;
+  major: string;
   email: string;
   facebook: string;
   describeYourself: string;
@@ -33,6 +37,7 @@ const FormRegister: React.FC = () => {
     birthDate: '',
     placeOfOrigin: '',
     className: '',
+    major:'',
     studentCode: '',
     email: '',
     facebook: '',
@@ -102,12 +107,29 @@ const FormRegister: React.FC = () => {
   };
 
   return (
-    <div className='w-full h-full flex flex-col items-center'>
-      <h1 className='text-neutral-900 w-full text-center font-bold text-2xl mb-4'>ĐĂNG KÝ</h1>
-      <div className='w-full h-auto flex flex-col z-[50] rounded-xl overflow-y-auto max-h-[70vh]'>
-        
+    <div className='w-full h-full flex flex-col items-center mt-[2rem] '>
+      <div className='h-full w-full flex flex-col items-center '>
+        <img src="/title.png" width={720} alt="" className=''/>
+        <div className='w-full px-10 flex flex-col items-center'>
+          <h1 className='w-full text-center text-neutral-800 font-semibold text-xl lg:text-2xl '>Liên chi Đoàn Khoa Công nghệ Thông tin 1 tuyển <span className='font-bold text-[#dd3b51]'>Cộng tác viên</span> năm học 2024-2025</h1>
+          <div className='w-full flex gap-4 flex-col items-center justify-center my-[2rem]'>
+            <span className=' rounded-md border-gray-800 border-solid '>
+              <ul className='flex flex-col lg:flex-row gap-4'>
+              <li className='px-4 py-3 bg-[#fcc0c0] border-[#b16969] border-2 rounded-md font-bold text-center'>Nhận CV: 05/09 - 12h00 18/09</li>
+              <li className='px-4 py-3 bg-[#bcdafc] border-[#698bb1] border-2 rounded-md font-bold text-center'>Phỏng vấn: 22/09</li>
+              <li className='px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2 rounded-md font-bold text-center'>Tranning: tháng 10/2024 - tháng 01/2025</li>
+              </ul>
+            </span>
+            <span className='text-center'>
+              <p>Đối tượng: Tất cả sinh viên Khóa D23 và D24 ngành CNTT, CNTT CLC, CNTT Việt-Nhật, KHMT, ATTT.</p>
+            </span>
+          </div>
+        </div>
+        </div>
+      <div className='w-full h-auto flex flex-col z-[30] rounded-xl overflow-y-auto mt-[2rem]'>
+        <h1 className='text-neutral-800 w-full text-center font-bold text-2xl md:text-4xl mb-4'>ĐĂNG KÝ</h1>
         <form className='w-full' onSubmit={handleSubmit}>
-          <div className='bg-slate-200 w-full rounded-md px-8 pt-6 pb-4 mb-4 shadow-lg shadow-[#b3b3b3]/50'>
+          <div className='bg-slate-200 w-full rounded-lg px-8 pt-6 pb-4 mb-5 shadow-lg shadow-[#b3b3b3]/50'>
             <div className='mb-4'>
               <label htmlFor="fullname" className='block mb-2 font-bold'>Họ và tên:</label>
               <input
@@ -195,7 +217,30 @@ const FormRegister: React.FC = () => {
                 />
               </div>
             </div>
-            <div className='mb-4'>
+            <div className='w-full flex flex-col md:flex-row items-center justify-between gap-4'>
+            <div className='mb-4 w-full'>
+              <label htmlFor="major" className='block mb-2 font-bold'>Ngành học:</label>
+              <input
+                type="text"
+                placeholder="Ngành học"
+                name="major"
+                value={formData.major}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+              </div>
+              <div className='mb-4 w-full'>
+              <label htmlFor="phoneNumber" className='block mb-2 font-bold'>Số điện thoại:</label>
+              <input
+                type="text"
+                placeholder="Số điện thoại"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+              </div>
+            <div className='mb-4 w-full'>
               <label htmlFor="email" className='block mb-2 font-bold'>Email:</label>
               <input
                 type="email"
@@ -208,7 +253,7 @@ const FormRegister: React.FC = () => {
               {errors.email && <p className='text-red-500'>{errors.email}</p>}
             </div>
 
-            <div className='mb-4'>
+            <div className='mb-4 w-full'>
               <label htmlFor="facebook" className='block mb-2 font-bold'>Facebook:</label>
               <input
                 type="text"
@@ -220,6 +265,8 @@ const FormRegister: React.FC = () => {
               />
             </div>
 
+            </div>
+            
             <div className='mb-4'>
               <label htmlFor="describeYourself" className='block mb-2 font-bold'>Giới thiệu bản thân:</label>
               <textarea
@@ -252,11 +299,11 @@ const FormRegister: React.FC = () => {
                 className='w-full p-2 border border-gray-300 rounded-md h-24'
               />
             </div>
-
+            </div>
+            <div className='bg-slate-200 w-full rounded-md px-8 pt-6 pb-4 mb-4 shadow-lg'>
             <div className='mb-4'>
               <label htmlFor="knowUsThrough" className='block mb-2 font-bold'>Biết đến chúng tôi qua:</label>
-              <input
-                type="text"
+              <textarea
                 placeholder="Biết đến chúng tôi qua đâu?"
                 name="knowUsThrough"
                 value={formData.knowUsThrough}
@@ -297,27 +344,41 @@ const FormRegister: React.FC = () => {
                 className='w-full p-2 border border-gray-300 rounded-md h-24'
               />
             </div>
-
-            <div className='mb-4'>
-              <label htmlFor="phoneNumber" className='block mb-2 font-bold'>Số điện thoại:</label>
-              <input
-                type="text"
-                placeholder="Số điện thoại"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className='w-full p-2 border border-gray-300 rounded-md'
-              />
-            </div>
-          </div>
           <p>{popupMessage}</p>
+          
+          
           <div className='flex justify-center'>
-            <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+            <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded'>
               Gửi đăng ký
             </button>
-          </div>
+          </div></div>
         </form>
       </div>
+
+      <div id='Contact' className='w-full h-full bg-transparent text-neutral-800 p-[15px] z-20 mb-4'>
+      <div className='w-full flex flex-col items-center justify-center m-auto'>
+        <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
+          <img src="/logo.svg" width={200} height={200} alt="Main Logo" />
+          <div className='w-auto h-auto md:mx-16'>
+            <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Liên hệ</h3>
+            <span className='flex w-full mb-3 '>
+              <img src="/facebook.svg" width={20} height={20} alt="Facebook" />
+              <a href="https://www.facebook.com/lcdkhoacntt1.ptit" className='ml-4'>
+                Liên chi Đoàn Khoa CNTT1 - PTIT
+              </a>
+            </span>
+            <span className='flex w-full items-center mb-3'>
+                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
+              <p className='ml-4'>033.585.0230</p>
+            </span>
+            <span className='flex w-full items-center'>
+                <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>
+                <p className='ml-4'>bch.cntt.ptit@gmail.com</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

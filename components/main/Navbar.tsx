@@ -15,13 +15,22 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
     const router = useRouter();
 
     const isActivity = pathname === '/Activity';
+    const isRegister = pathname === '/Register';
     const handleHomeClick = () => {
         router.push('/'); // Điều hướng đến trang chính
     };
-
+    const handleBackClick = () => {
+        router.back(); // Navigate back to the previous page
+    };
     return (
-        <div className='w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10'>
+        <div className={`w-full h-[65px] ${isRegister ? 'relative' : 'fixed'} top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10`}>
             <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
+            {isRegister ? (
+                    // Show only the back button when the pathname is '/Register'
+                    <button onClick={handleBackClick} className='text-gray-300 font-bold ml-[10px]'>
+                        QUAY LẠI
+                    </button>
+                ) :(<>
                 <a href={`#${linkto}`} className='h-full w-auto flex flex-row items-center'>
                     <Image
                         src="/logo.svg"
@@ -29,8 +38,8 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         width={40}
                         height={40}
                     />
-                    <span className='font-bold ml-[10px] hidden md:block text-gray-800'>
-                        {isActivity ? 'HOẠT ĐỘNG':'INFORMATION TECHNOLOGY INFORMATION SECURITY'  }
+                    <span className='font-bold ml-[10px] hidden md:block  mix-blend-difference'>
+                        {isActivity ? 'HOẠT ĐỘNG':'LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1'  }
                     </span>
                 </a>
                 <div className='w-[500px] h-full hidden lg:flex flex-row items-center justify-between md:mr-10'>
@@ -81,6 +90,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         </Link>
                     </div>
                 </div>
+                </>)}
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
     <ContactContent />
-    <div className='w-full flex items-center justify-center text-gray-600 mb-4'><p>@ WebITIS Dev by Dungha 2024</p></div></>
+    <div className='w-full flex items-center justify-center text-gray-600 mb-4'><p>@ WebITIS created by Team ITIS_Dev</p></div></>
   )
 }
 

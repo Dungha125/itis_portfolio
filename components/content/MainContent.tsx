@@ -9,17 +9,7 @@ import FormRegister from '../src/FormRegister';
 
 
 const MainContent= () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
 
-  const toggleForm = () => {
-    setIsFormVisible(!isFormVisible);
-  };
-
-  const closeForm = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.currentTarget.id === "formOverlay") {
-      setIsFormVisible(false);
-    }
-  };
  
   return (
     <>
@@ -74,8 +64,8 @@ const MainContent= () => {
         </motion.div>
         
         <motion.div variants={slideInFromBottom} className='my-4 flex lg:px-16 xl:px-20 2xl:px-24 w-full items-center justify-center lg:justify-start relative'>
-          <button onClick={toggleForm} type='button' className='w-[12rem] xl:w-[14rem] 2xl:w-[16rem] h-[3rem] xl:h-[3.5rem] 2xl:h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl xl:text-xl 2xl:text-2xl text-center text-white rounded-2xl'>
-            Ứng tuyển ngay
+          <button type='button' className='w-[12rem] xl:w-[14rem] 2xl:w-[16rem] h-[3rem] xl:h-[3.5rem] 2xl:h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl xl:text-xl 2xl:text-2xl text-center text-white rounded-2xl'>
+          <a href="/Register">Ứng tuyển ngay</a>
           </button>
         </motion.div>
         
@@ -98,24 +88,7 @@ const MainContent= () => {
         />
       </div>
       </motion.div>
-      {isFormVisible && (
-        <motion.div
-          id="formOverlay"
-          onClick={closeForm}
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ duration: 0.3 }}
-          className=" absolute inset-0 bg-black backdrop-blur-md bg-opacity-50 flex items-center justify-center z-[30]"
-        >
-          <motion.div
-            className="bg-white rounded-lg p-8 mt-[2rem] h-[80%] w-[90%] mx-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <FormRegister />
-          </motion.div>
-        </motion.div>
-      )}
+      
       
       </>
   )
