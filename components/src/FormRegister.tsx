@@ -47,6 +47,7 @@ const FormRegister: React.FC = () => {
     status: 'submitted', // default status
   });
 
+  const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -92,8 +93,10 @@ const FormRegister: React.FC = () => {
       try {
         const response = await axios.post('https://demoitis-1-t9269927.deta.app/CTV-2024', formData);
         console.log('API response:', response.data);
+        setPopupMessage('Đăng ký thành công!');
       } catch (error) {
         console.error('API error:', error);
+        setPopupMessage('Đã xảy ra lỗi. Vui lòng check lại form.');
       }
     }
   };
@@ -307,7 +310,7 @@ const FormRegister: React.FC = () => {
               />
             </div>
           </div>
-
+          <p>{popupMessage}</p>
           <div className='flex justify-center'>
             <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
               Gửi đăng ký
