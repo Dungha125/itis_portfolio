@@ -1,43 +1,50 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 interface FormData {
-  Hovaten: string;
-  gioitinh: string;
-  ngaysinh: string;
-  quequan: string;
-  Lop: string;
-  MSV: string;
+  fullname: string;
+  sex: string;
+  birthDate: string;
+  placeOfOrigin: string;
+  className: string;
+  studentCode: string;
   email: string;
   facebook: string;
-  Gioithieu: string;
-  point: string;
-  bietden: string;
+  describeYourself: string;
+  strengthness: string;
+  weakness: string;
+  knowUsThrough: string;
   reason: string;
-  wish: string;
-  cauhoi: string;
+  aspiration: string;
+  question: string;
+  phoneNumber: string;
+  status: string;
 }
 
 interface FormErrors {
-  ngaysinh?: string;
+  birthDate?: string;
   email?: string;
 }
 
 const FormRegister: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    Hovaten: '',
-    gioitinh: '',
-    ngaysinh: '',
-    quequan: '',
-    Lop: '',
-    MSV: '',
+    fullname: '',
+    sex: '',
+    birthDate: '',
+    placeOfOrigin: '',
+    className: '',
+    studentCode: '',
     email: '',
     facebook: '',
-    Gioithieu: '',
-    point: '',
-    bietden: '',
+    describeYourself: '',
+    strengthness: '',
+    weakness: '',
+    knowUsThrough: '',
     reason: '',
-    wish: '',
-    cauhoi: '',
+    aspiration: '',
+    question: '',
+    phoneNumber: '',
+    status: 'submitted', // default status
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -56,14 +63,14 @@ const FormRegister: React.FC = () => {
 
     // Validate Date of Birth
     const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
-    if (!datePattern.test(formData.ngaysinh)) {
-      errors.ngaysinh = 'Ngày sinh không hợp lệ (định dạng: DD/MM/YYYY).';
+    if (!datePattern.test(formData.birthDate)) {
+      errors.birthDate = 'Ngày sinh không hợp lệ (định dạng: DD/MM/YYYY).';
       valid = false;
     } else {
-      const date = new Date(formData.ngaysinh);
+      const date = new Date(formData.birthDate);
       const today = new Date();
       if (isNaN(date.getTime()) || date > today) {
-        errors.ngaysinh = 'Ngày sinh không tồn tại hoặc lớn hơn ngày hiện tại.';
+        errors.birthDate = 'Ngày sinh không tồn tại hoặc lớn hơn ngày hiện tại.';
         valid = false;
       }
     }
@@ -79,11 +86,15 @@ const FormRegister: React.FC = () => {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      // Proceed with form submission
-      console.log('Form data is valid:', formData);
+      try {
+        const response = await axios.post('https://demoitis-1-t9269927.deta.app/CTV-2024', formData);
+        console.log('API response:', response.data);
+      } catch (error) {
+        console.error('API error:', error);
+      }
     }
   };
 
@@ -93,199 +104,219 @@ const FormRegister: React.FC = () => {
       <div className='w-full h-auto flex flex-col z-[50] rounded-xl overflow-y-auto max-h-[70vh]'>
         
         <form className='w-full' onSubmit={handleSubmit}>
-          <div className='bg-slate-200 w-full rounded-md px-8 pt-6 pb-4 mb-4 shadow-lg shadow-[#b3b3b3]/50 '>
-          <div className='mb-4'>
-            <label htmlFor="Hovaten" className='block mb-2 font-bold'>Họ và tên:</label>
-            <input
-              type="text"
-              placeholder="Họ và tên"
-              name="Hovaten"
-              value={formData.Hovaten}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-          </div>
-          <div className='w-full flex flex-col md:flex-row items-center justify-between gap-4'>
-          <div className='mb-4 w-full'>
-            <label htmlFor="gioitinh" className='block mb-2 font-bold'>Giới tính:</label>
-            <div className='flex gap-4 items-center'>
-              <label className='flex items-center'>
-                <input
-                  type="radio"
-                  name="gioitinh"
-                  value="Nam"
-                  checked={formData.gioitinh === 'Nam'}
-                  onChange={handleChange}
-                  className='mr-2'
-                /> Nam
-              </label>
-              <label className='flex items-center'>
-                <input
-                  type="radio"
-                  name="gioitinh"
-                  value="Nữ"
-                  checked={formData.gioitinh === 'Nữ'}
-                  onChange={handleChange}
-                  className='mr-2'
-                /> Nữ
-              </label>
-            </div>
-          </div>
-
-          <div className='mb-4 w-full'>
-            <label htmlFor="ngaysinh" className='block mb-2 font-bold'>Ngày sinh:</label>
-            <input
-              type="text"
-              placeholder="DD/MM/YYYY"
-              name="ngaysinh"
-              value={formData.ngaysinh}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-            {errors.ngaysinh && <p className='text-red-500'>{errors.ngaysinh}</p>}
-          </div>
-
-          <div className='mb-4 w-full'>
-            <label htmlFor="quequan" className='block mb-2 font-bold'>Quê quán:</label>
-            <input
-              type="text"
-              placeholder="Quê quán"
-              name="quequan"
-              value={formData.quequan}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-          </div>
-          
-          <div className='mb-4 w-full'>
-            <label htmlFor="Lop" className='block mb-2 font-bold'>Lớp:</label>
-            <input
-              type="text"
-              placeholder="Lớp"
-              name="Lop"
-              value={formData.Lop}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-          </div>
-          
-          <div className='mb-4 w-full'>
-            <label htmlFor="MSV" className='block mb-2 font-bold'>Mã sinh viên:</label>
-            <input
-              type="text"
-              placeholder="Mã sinh viên"
-              name="MSV"
-              value={formData.MSV}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-          </div>
-          </div>
-          <div className='mb-4'>
-            <label htmlFor="email" className='block mb-2 font-bold'>Email:</label>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-            {errors.email && <p className='text-red-500'>{errors.email}</p>}
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="facebook" className='block mb-2 font-bold'>Facebook:</label>
-            <input
-              type="text"
-              placeholder="Facebook"
-              name="facebook"
-              value={formData.facebook}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md'
-            />
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="Gioithieu" className='block mb-2 font-bold'>Giới thiệu bản thân:</label>
-            <textarea
-              name="Gioithieu"
-              placeholder="Giới thiệu đôi nét về bản thân"
-              value={formData.Gioithieu}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'
-            />
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="point" className='block mb-2 font-bold'>Điểm mạnh - Điểm yếu:</label>
-            <textarea
-              name="point"
-              placeholder="Điểm mạnh - Điểm yếu"
-              value={formData.point}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'
-            />
-          </div>
-          </div>
-          
-          <div className='w-full px-8 py-6 bg-slate-200 rounded-md mb-4 mt-8'>
-          <div className='mb-4'>
-            <label htmlFor="bietden" className='block mb-2 font-bold'>Bạn biết tới Liên chi qua đâu?</label>
-            <textarea
-              name="bietden"
-              placeholder=""
-              value={formData.bietden}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'
-            />
-          </div>
-
-          <div className='mb-4'>
-            <label htmlFor="reason" className='block mb-2 font-bold'>Tại sao bạn quyết định tham gia ứng tuyển Liên chi?</label>
-            <textarea
-              name="reason"
-              placeholder=""
-              value={formData.reason}
-              onChange={handleChange}
-              className='w-full p-2 border border-gray-300 rounded-md h-24'
+          <div className='bg-slate-200 w-full rounded-md px-8 pt-6 pb-4 mb-4 shadow-lg shadow-[#b3b3b3]/50'>
+            <div className='mb-4'>
+              <label htmlFor="fullname" className='block mb-2 font-bold'>Họ và tên:</label>
+              <input
+                type="text"
+                placeholder="Họ và tên"
+                name="fullname"
+                value={formData.fullname}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
               />
+            </div>
+            <div className='w-full flex flex-col md:flex-row items-center justify-between gap-4'>
+              <div className='mb-4 w-full'>
+                <label htmlFor="sex" className='block mb-2 font-bold'>Giới tính:</label>
+                <div className='flex gap-4 items-center'>
+                  <label className='flex items-center'>
+                    <input
+                      type="radio"
+                      name="sex"
+                      value="Nam"
+                      checked={formData.sex === 'Nam'}
+                      onChange={handleChange}
+                      className='mr-2'
+                    /> Nam
+                  </label>
+                  <label className='flex items-center'>
+                    <input
+                      type="radio"
+                      name="sex"
+                      value="Nữ"
+                      checked={formData.sex === 'Nữ'}
+                      onChange={handleChange}
+                      className='mr-2'
+                    /> Nữ
+                  </label>
+                </div>
               </div>
-    
-              <div className='mb-4'>
-                <label htmlFor="wish" className='block mb-2 font-bold'>Mong muốn khi trở thành CTV:</label>
-                <textarea
-                  name="wish"
-                  placeholder=""
-                  value={formData.wish}
+
+              <div className='mb-4 w-full'>
+                <label htmlFor="birthDate" className='block mb-2 font-bold'>Ngày sinh:</label>
+                <input
+                  type="text"
+                  placeholder="DD/MM/YYYY"
+                  name="birthDate"
+                  value={formData.birthDate}
                   onChange={handleChange}
-                  className='w-full p-2 border border-gray-300 rounded-md h-24'
+                  className='w-full p-2 border border-gray-300 rounded-md'
                 />
+                {errors.birthDate && <p className='text-red-500'>{errors.birthDate}</p>}
               </div>
-    
-              <div className='mb-4'>
-                <label htmlFor="cauhoi" className='block mb-2 font-bold'>Bạn có câu hỏi cho chúng mình không?</label>
-                <textarea
-                  name="cauhoi"
-                  placeholder=""
-                  value={formData.cauhoi}
+
+              <div className='mb-4 w-full'>
+                <label htmlFor="placeOfOrigin" className='block mb-2 font-bold'>Quê quán:</label>
+                <input
+                  type="text"
+                  placeholder="Quê quán"
+                  name="placeOfOrigin"
+                  value={formData.placeOfOrigin}
                   onChange={handleChange}
-                  className='w-full p-2 border border-gray-300 rounded-md h-24'
+                  className='w-full p-2 border border-gray-300 rounded-md'
                 />
-              </div>
               </div>
               
-            </form>
-            
-            
-          </div><div className='w-full flex items-center justify-center mt-4'>
-              <button type="submit" className='bg-blue-500 text-white p-2 rounded-md min-w-[100px]'>
-                Gửi
-              </button>
+              <div className='mb-4 w-full'>
+                <label htmlFor="className" className='block mb-2 font-bold'>Lớp:</label>
+                <input
+                  type="text"
+                  placeholder="Lớp"
+                  name="className"
+                  value={formData.className}
+                  onChange={handleChange}
+                  className='w-full p-2 border border-gray-300 rounded-md'
+                />
+              </div>
+              
+              <div className='mb-4 w-full'>
+                <label htmlFor="studentCode" className='block mb-2 font-bold'>Mã sinh viên:</label>
+                <input
+                  type="text"
+                  placeholder="Mã sinh viên"
+                  name="studentCode"
+                  value={formData.studentCode}
+                  onChange={handleChange}
+                  className='w-full p-2 border border-gray-300 rounded-md'
+                />
+              </div>
             </div>
-        </div>
-      );
-    };
-    
-    export default FormRegister;
-    
+            <div className='mb-4'>
+              <label htmlFor="email" className='block mb-2 font-bold'>Email:</label>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+              {errors.email && <p className='text-red-500'>{errors.email}</p>}
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="facebook" className='block mb-2 font-bold'>Facebook:</label>
+              <input
+                type="text"
+                placeholder="Facebook"
+                name="facebook"
+                value={formData.facebook}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="describeYourself" className='block mb-2 font-bold'>Giới thiệu bản thân:</label>
+              <textarea
+                name="describeYourself"
+                placeholder="Giới thiệu đôi nét về bản thân"
+                value={formData.describeYourself}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="strengthness" className='block mb-2 font-bold'>Điểm mạnh:</label>
+              <textarea
+                name="strengthness"
+                placeholder="Điểm mạnh"
+                value={formData.strengthness}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="weakness" className='block mb-2 font-bold'>Điểm yếu:</label>
+              <textarea
+                name="weakness"
+                placeholder="Điểm yếu"
+                value={formData.weakness}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="knowUsThrough" className='block mb-2 font-bold'>Biết đến chúng tôi qua:</label>
+              <input
+                type="text"
+                placeholder="Biết đến chúng tôi qua đâu?"
+                name="knowUsThrough"
+                value={formData.knowUsThrough}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="reason" className='block mb-2 font-bold'>Lý do bạn chọn đăng ký vào ITIS?</label>
+              <textarea
+                name="reason"
+                placeholder="Lý do bạn chọn đăng ký vào ITIS?"
+                value={formData.reason}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="aspiration" className='block mb-2 font-bold'>Nguyện vọng khi tham gia vào ITIS?</label>
+              <textarea
+                name="aspiration"
+                placeholder="Nguyện vọng của bạn"
+                value={formData.aspiration}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="question" className='block mb-2 font-bold'>Nếu có thể, bạn muốn đặt câu hỏi nào cho chúng tôi?</label>
+              <textarea
+                name="question"
+                placeholder="Câu hỏi của bạn"
+                value={formData.question}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md h-24'
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label htmlFor="phoneNumber" className='block mb-2 font-bold'>Số điện thoại:</label>
+              <input
+                type="text"
+                placeholder="Số điện thoại"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className='w-full p-2 border border-gray-300 rounded-md'
+              />
+            </div>
+          </div>
+
+          <div className='flex justify-center'>
+            <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+              Gửi đăng ký
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default FormRegister;

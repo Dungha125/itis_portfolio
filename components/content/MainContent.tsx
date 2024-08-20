@@ -21,7 +21,6 @@ const MainContent= () => {
     }
   };
  
-
   return (
     <>
     <motion.div
@@ -87,8 +86,15 @@ const MainContent= () => {
           src="/thuyen0.png" 
           alt="" 
           className='w-full h-auto 
-          
           ' 
+          animate={{
+            x: [0, -15, 0], 
+          }}
+          transition={{
+            duration: 5, 
+            repeat: Infinity, 
+            repeatType: "mirror", 
+          }}
         />
       </div>
       </motion.div>
