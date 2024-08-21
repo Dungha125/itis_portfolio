@@ -114,7 +114,7 @@ export const benefittext = [
     {
       id: "1",
       tittle: "BAN HẬU CẦN",
-      text: "Ban Hậu Cần của ITIS bới những thành viên đáng tin cậy và năng động, chịu trách nhiệm chủ yếu trong việc chuẩn bị các điều kiện vật chất cần thiết để đảm bảo mỗi sự kiện diễn ra suôn sẻ. Với tinh thần hợp tác, chúng tôi là khả năng kết nối mạch lạc giữa các bộ phận khác và là nguồn động viên quan trọng đằng sau mỗi thành công của tổ chức. Ban Hậu Cần là những người góp phần tạo nên không gian hoàn hảo cho mỗi sự kiện, đảm bảo rằng mọi điều kiện cần thiết sẽ được sắp xếp và chuẩn bị sẵn sàng.",
+      text: "Ban Hậu Cần của ITIS bởi những thành viên đáng tin cậy và năng động, chịu trách nhiệm chủ yếu trong việc chuẩn bị các điều kiện vật chất cần thiết để đảm bảo mỗi sự kiện diễn ra suôn sẻ. Với tinh thần hợp tác, chúng tôi là khả năng kết nối mạch lạc giữa các bộ phận khác và là nguồn động viên quan trọng đằng sau mỗi thành công của tổ chức. Ban Hậu Cần là những người góp phần tạo nên không gian hoàn hảo cho mỗi sự kiện, đảm bảo rằng mọi điều kiện cần thiết sẽ được sắp xếp và chuẩn bị sẵn sàng.",
       style: "text-[#f6ba3c]",
       sour: "/haucan.png",
       order: "order-2",
@@ -161,28 +161,28 @@ export const benefittext = [
     {
       id: "2",
       title: "Kỷ niệm 25 năm thành lập Khoa CNTT 1",
-      text: "CHƯA UPDATE",
+      text: "Sáng ngày 5/5/2024, Lễ kỷ niệm 25 thành lập Khoa Công nghệ thông tin 1 đã diễn ra thành công tốt đẹp với sự tham gia của nhiều đại diện từ các trường, tổ chức, tập đoàn, doanh nghiệp lớn trong ngành, cùng với các cựu sinh viên và các thế hệ giảng viên. Đây là một cột mốc đáng nhớ, một hành trình đánh dấu sự trưởng thành và phát triển đầy tự hào của Khoa CNTT1 - Học viện Công nghệ Bưu chính Viễn thông.",
       sour: "/activity/special/25nam.jpg"
       
     },
     {
       id: "3",
       title: "ITIS NGÀY TRỞ VỀ",
-      text: "CHƯA UPDATE",
+      text: "Là sự kiện đặc biệt hướng tới kỷ niệm 10 năm thành lập, ITIS ngày trở về là cơ hội để các thành viên của đại gia đình ITIS được gặp gỡ, giao lưu, kết nối. Đồng thời đây cũng là dịp để gia đình mình cùng ôn lại kỷ niệm, thắt chặt tình cảm và tiếp bước cho những dự định, hoài bão trong tương lai.",
       sour: "/activity/special/itisngaytrove.jpg"
       
     },
     {
       id: "4",
       title: "Connect to P-Gen",
-      text: "CHƯA UPDATE",
+      text: "Chương trình giao lưu cựu sinh viên và sinh viên Khoa CNTT1 nhân dịp kỷ niệm 24 năm thành lập Khoa đã diễn ra chiều ngày 22/03/2023 và đã ghi nhận các phản hồi rất tích cực từ cộng đồng sinh viên trong khoa. ",
       sour: "/activity/special/connecttopgen.jpg"
       
     },
     {
       id: "5",
       title: "Mùa Hè Xanh 2024: Thêm nhiều sức mạnh",
-      text: "CHƯA UPDATE",
+      text: "Thực hiện kế hoạch tổ chức hoạt động Tình nguyện Hè 2024 của BCH Đoàn khối các cơ quan Trung ương. Sáng ngày 21/7, Đoàn Thanh niên Học viện Công nghệ Bưu chính Viễn thông kết hợp với Đoàn Thanh niên Trường Đại học Khoa học và Công nghệ Hà Nội đã ra quân  “Mùa hè xanh 2024 - Thêm nhiều sức mạnh” tại Xã Đông Xuân, Xã Phù Cát, Huyện Quốc Oai, Hà Nội.",
       sour: "/activity/special/mhx.jpg"
       
     },

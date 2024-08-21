@@ -23,7 +23,7 @@ const MainContent = () => {
         
         <motion.p
           variants={slideInFromLeft(0.6)}
-          className='text-xs lg:text-lg xl:text-xl 2xl:text-2xl text-neutral-700 my-5 max-w-[700px] lg:px-16 xl:px-20 2xl:px-24'>
+          className='text-xs lg:text-lg xl:text-xl 2xl:text-2xl text-neutral-200 my-5 max-w-[700px] lg:px-16 xl:px-20 2xl:px-24'>
           Học viện Công nghệ Bưu chính Viễn thông
         </motion.p>
         
@@ -50,10 +50,15 @@ const MainContent = () => {
           </motion.div>
           
         </motion.div>
+        <motion.div variants={slideInFromLeft(0.9)} className='my-4 flex lg:px-16 xl:px-20 2xl:px-24 w-full items-center justify-center lg:justify-start relative'>
+          <button type='button' className='w-[12rem] xl:w-[14rem] 2xl:w-[16rem] h-[3rem] xl:h-[3.5rem] 2xl:h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl xl:text-xl 2xl:text-2xl text-center text-white rounded-2xl'>
+          <a href="/Register">Ứng tuyển ngay</a>
+          </button>
+        </motion.div>
       </div>
       
       <motion.div variants={slideInFromBottom} className='w-full h-full flex items-center justify-center'>
-        <img src="/SVG/thuyen0.svg" alt="" className='h-full xl:h-[600px] 2xl:h-[700px]'/>
+        <img src="/thuyen0.png" alt="" className='h-full xl:h-[600px] 2xl:h-[700px]'/>
       </motion.div>
     </motion.div>
   )
