@@ -45,18 +45,18 @@ const MainContent= () => {
           
           <motion.div
             variants={slideInFromLeft(0.7)}
-            className="Welcome-box py-[8px] px-[7px] border border-[#8366e38b] opacity-[0.9]">
-            <SparklesIcon className="text-[#9074d4] mr-[10px] h-5 w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7" />
-            <h1 className="Welcome-text text-[13px] xl:text-[15px] 2xl:text-[17px]">
+            className="Welcome-box py-[8px] px-[7px] border border-[#ffffff8b] opacity-[0.9]">
+            <SparklesIcon className="text-[#ffffff] mr-[10px] h-5 w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7" />
+            <h1 className="Welcome-text text-[13px] xl:text-[15px] 2xl:text-[17px] -webkit-text-fill-color-white" style={{ WebkitTextFillColor: 'white' }}>
               ITIS_La_Nha
             </h1>
           </motion.div>
           
           <motion.div
             variants={slideInFromLeft(0.8)}
-            className="Welcome-box py-[8px] px-[7px] border border-[#8366e38b] opacity-[0.9]">
-            <SparklesIcon className="text-[#9074d4] mr-[10px] h-5 w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7" />
-            <h1 className="Welcome-text text-[13px] xl:text-[15px] 2xl:text-[17px] ">
+            className="Welcome-box py-[8px] px-[7px] border border-[#ffffff8b] opacity-[0.9]">
+            <SparklesIcon className="text-[#ffffff] mr-[10px] h-5 w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7 "  />
+            <h1 className="Welcome-text text-[13px] xl:text-[15px] 2xl:text-[17px] "style={{ WebkitTextFillColor: 'white' }}>
               Information Technology Information Security
             </h1>
           </motion.div>

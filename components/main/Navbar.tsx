@@ -26,8 +26,8 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
         <div className={`w-full h-[65px] ${isRegister ? 'relative' : 'fixed'} top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10`}>
             <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
             {isRegister ? (
-                    // Show only the back button when the pathname is '/Register'
-                    <button onClick={handleBackClick} className='text-gray-300 font-bold ml-[10px]'>
+                  
+                    <button onClick={handleBackClick} className='text-gray-300 font-bold ml-[10px] z-[30]'>
                         QUAY LẠI
                     </button>
                 ) :(<>

@@ -3,7 +3,7 @@ import IntroContent from '../content/IntroContent'
 
 const Intro = () => {
   return (
-    <section id='Intro' 
+    <section 
     className='flex flex-col items-center justify-center h-full relative overflow-hidden z-30 pb-10'
     >
         <div className='h-full w-full bg-[#efeeff] flex flex-col items-center'>
@@ -30,7 +30,7 @@ const Intro = () => {
         </div>
         </div>
         </div>
-        <div
+        <div id='Intro'
         className='h-full w-full bg-[#040224] '>
             <IntroContent ></IntroContent>
         </div>
