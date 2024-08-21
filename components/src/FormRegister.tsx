@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Popup from "./popup";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 interface FormData {
   fullname: string;
@@ -556,8 +557,8 @@ const FormRegister: React.FC = () => {
           <img src="/logo.svg" width={200} height={200} alt="Main Logo" />
           <div className='w-auto h-auto md:mx-16'>
             <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Liên hệ</h3>
-            <span className='flex w-full mb-3 '>
-              <img src="/facebook.svg" width={20} height={20} alt="Facebook" />
+            <span className='flex w-full mb-3 items-center'>
+              <FontAwesomeIcon icon={faFacebook}  width={20} height={20}/>
               <a href="https://www.facebook.com/lcdkhoacntt1.ptit" className='ml-4'>
                 Liên chi Đoàn Khoa CNTT1 - PTIT
               </a>

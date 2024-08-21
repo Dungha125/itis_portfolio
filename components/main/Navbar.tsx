@@ -20,7 +20,11 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
         router.push('/'); // Điều hướng đến trang chính
     };
     const handleBackClick = () => {
-        router.back(); // Navigate back to the previous page
+        if (isRegister) {
+            router.push('/'); // Navigate to the homepage if the current page is /Register
+        } else {
+            router.back(); // Navigate back to the previous page
+        }
     };
     return (
         <div className={`w-full h-[65px] ${isRegister ? 'relative' : 'fixed'} top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10`}>

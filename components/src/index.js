@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const benefittext = [
     {
       id: "0",
@@ -139,4 +141,50 @@ export const benefittext = [
       order1: "order-1",
       imageUrl: "/bg-benefit.png",
     },
+  ];
+
+  export const ActivitySpecialText = [
+    {
+      id: "0",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+
+    },
+    {
+      id: "1",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+      
+    },
+    {
+      id: "2",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+      
+    },
+    {
+      id: "3",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+      
+    },
+    {
+      id: "4",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+      
+    },
+    {
+      id: "5",
+      title: "Miss IT",
+      text: "",
+      sour: ""
+      
+    },
+
   ];
