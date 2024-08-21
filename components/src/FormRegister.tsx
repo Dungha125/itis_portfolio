@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useState } from "react";
 import Popup from "./popup";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface FormData {
   fullname: string;
@@ -56,7 +58,7 @@ const FormRegister: React.FC = () => {
   const [popupVisible, setPopupVisible] = useState<boolean>(false);
   const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({}); // State to hold errors
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const showPopup = (message: string) => {
     setPopupMessage(message);
     setPopupVisible(true);
@@ -76,21 +78,30 @@ const FormRegister: React.FC = () => {
       [name]: value,
     });
   };
-
+  const handleDateChange = (date: Date | null) => {
+    setFormData({
+      ...formData,
+      birthDate: date ? date.toISOString().split('T')[0] : '', // Store as YYYY-MM-DD
+    });
+  };
+  
   const validate = (): boolean => {
     let valid = true;
     let errors: FormErrors = {};
-
-    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
-    if (!datePattern.test(formData.birthDate)) {
-      errors.birthDate = "Ngày sinh không hợp lệ (định dạng: DD/MM/YYYY).";
+  
+    if (!formData.birthDate) {
+      errors.birthDate = 'Ngày sinh không hợp lệ.';
       valid = false;
     } else {
-      const [day, month, year] = formData.birthDate.split("/").map(Number);
-      const date = new Date(year, month - 1, day);
+      const date = new Date(formData.birthDate);
       const today = new Date();
+  
+      // Zero out the time component for both dates
+      date.setHours(0, 0, 0, 0);
+      today.setHours(0, 0, 0, 0);
+  
       if (isNaN(date.getTime()) || date > today) {
-        errors.birthDate = "Ngày sinh không tồn tại hoặc lớn hơn ngày hiện tại.";
+        errors.birthDate = 'Ngày sinh không tồn tại hoặc lớn hơn ngày hiện tại.';
         valid = false;
       }
     }
@@ -114,6 +125,7 @@ const FormRegister: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
+      setIsSubmitting(true); // Start loading spinner
       try {
         const response = await axios.post(
           "https://demoitis-1-t9269927.deta.app/CTV-2024",
@@ -124,6 +136,8 @@ const FormRegister: React.FC = () => {
       } catch (error) {
         console.error("API error:", error);
         showPopup("Đã xảy ra lỗi. Vui lòng check lại form.");
+      } finally {
+        setIsSubmitting(false); // Stop loading spinner
       }
     }
   };
@@ -150,7 +164,7 @@ const FormRegister: React.FC = () => {
                   Phỏng vấn: 22/09
                 </li>
                 <li className="px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2 rounded-md font-bold text-center">
-                  Tranning: tháng 10/2024 - tháng 01/2025
+                  Traning: tháng 10/2024 - tháng 01/2025
                 </li>
               </ul>
             </span>
@@ -228,7 +242,7 @@ const FormRegister: React.FC = () => {
                   Ngày sinh:
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   placeholder="DD/MM/YYYY"
                   name="birthDate"
                   value={formData.birthDate}
@@ -236,9 +250,7 @@ const FormRegister: React.FC = () => {
                   className="w-full p-2 border border-gray-300 rounded-md"
                   required
                 />
-                {errors.birthDate && (
-                  <p className="text-red-500">{errors.birthDate}</p>
-                )}
+                
               </div>
 
               <div className="mb-4 w-full">
@@ -336,9 +348,7 @@ const FormRegister: React.FC = () => {
                   />
                 
                 </div>
-                {errors.email && (
-                  <p className="text-red-500">{errors.email}</p>
-                )}
+                
               </div>
 
               <div className="mb-4 w-full">
@@ -502,9 +512,38 @@ const FormRegister: React.FC = () => {
           </div>         
           
           <div className='flex justify-center'>
-            <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded'>
-              Gửi đăng ký
-            </button>
+          <button
+    type="submit"
+    className={`bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded ${
+      isSubmitting ? "cursor-not-allowed opacity-75" : ""
+    }`}
+    disabled={isSubmitting} // Disable button while submitting
+  >
+    {isSubmitting ? (
+      <svg
+        className="animate-spin h-5 w-5 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        ></circle>
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        ></path>
+      </svg>
+    ) : (
+      "Gửi đăng ký"
+    )}
+  </button>
           </div>
           
         </form>
