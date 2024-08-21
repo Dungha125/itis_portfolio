@@ -164,7 +164,7 @@ const FormRegister: React.FC = () => {
                   Phỏng vấn: 22/09
                 </li>
                 <li className="px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2 rounded-md font-bold text-center">
-                  Traning: tháng 10/2024 - tháng 01/2025
+                  Training: tháng 10/2024 - tháng 01/2025
                 </li>
               </ul>
             </span>
@@ -247,7 +247,7 @@ const FormRegister: React.FC = () => {
                   name="birthDate"
                   value={formData.birthDate}
                   onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className="w-full p-2 border border-gray-300 rounded-md" 
                   required
                 />
                 

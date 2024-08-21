@@ -38,7 +38,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         width={40}
                         height={40}
                     />
-                    <span className='font-bold ml-[10px] hidden md:block  mix-blend-difference'>
+                    <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200': 'text-neutral-800'} `}>
                         {isActivity ? 'HOẠT ĐỘNG':'LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1'  }
                     </span>
                 </a>

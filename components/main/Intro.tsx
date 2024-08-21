@@ -15,7 +15,7 @@ const Intro = () => {
               <ul className='flex flex-col lg:flex-row gap-4'>
               <li className='px-4 py-3 bg-[#fcc0c0] border-[#b16969] border-2 rounded-md font-bold text-center'>Nhận CV: 05/09 - 12h00 18/09</li>
               <li className='px-4 py-3 bg-[#bcdafc] border-[#698bb1] border-2 rounded-md font-bold text-center'>Phỏng vấn: 22/09</li>
-              <li className='px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2 rounded-md font-bold text-center'>Traning: tháng 10/2024 - tháng 01/2025</li>
+              <li className='px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2 rounded-md font-bold text-center'>Training: tháng 10/2024 - tháng 01/2025</li>
               </ul>
             </span>
             <span className='text-center'>
