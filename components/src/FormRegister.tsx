@@ -431,7 +431,8 @@ const FormRegister: React.FC = () => {
                 required
               />
             </div>
-
+          </div>
+          <div className="bg-slate-200 w-full rounded-lg px-8 pt-6 pb-4 mb-5 shadow-lg shadow-[#b3b3b3]/50">
             <div className="mb-4">
               <label
                 htmlFor="knowUsThrough"
@@ -498,18 +499,42 @@ const FormRegister: React.FC = () => {
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
+          </div>         
+          
+          <div className='flex justify-center'>
+            <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded'>
+              Gửi đăng ký
+            </button>
           </div>
-
-          <button
-            type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
-          >
-            Đăng ký
-          </button>
+          
         </form>
         {popupVisible && (
           <Popup message={popupMessage} onClose={handleClosePopup} />
         )}
+        <div id='Contact' className='w-full h-full bg-transparent text-neutral-800 p-[15px] z-20 mb-4'>
+      <div className='w-full flex flex-col items-center justify-center m-auto'>
+        <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
+          <img src="/logo.svg" width={200} height={200} alt="Main Logo" />
+          <div className='w-auto h-auto md:mx-16'>
+            <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Liên hệ</h3>
+            <span className='flex w-full mb-3 '>
+              <img src="/facebook.svg" width={20} height={20} alt="Facebook" />
+              <a href="https://www.facebook.com/lcdkhoacntt1.ptit" className='ml-4'>
+                Liên chi Đoàn Khoa CNTT1 - PTIT
+              </a>
+            </span>
+            <span className='flex w-full items-center mb-3'>
+                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
+              <p className='ml-4'>033.585.0230</p>
+            </span>
+            <span className='flex w-full items-center'>
+                <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>
+                <p className='ml-4'>bch.cntt.ptit@gmail.com</p>
+            </span>
+          </div>
+        </div>
+      </div>
+      </div>
       </div>
     </div>
   );
