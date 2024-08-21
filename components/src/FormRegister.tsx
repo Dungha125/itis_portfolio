@@ -509,8 +509,8 @@ const FormRegister: React.FC = () => {
           
         </form>
         {popupVisible && (
-          <Popup message={popupMessage} onClose={handleClosePopup} />
-        )}
+  <Popup message={popupMessage || ""} onClose={handleClosePopup} />
+)}
         <div id='Contact' className='w-full h-full bg-transparent text-neutral-800 p-[15px] z-20 mb-4'>
       <div className='w-full flex flex-col items-center justify-center m-auto'>
         <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
