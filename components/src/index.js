@@ -147,43 +147,43 @@ export const benefittext = [
     {
       id: "0",
       title: "Miss IT",
-      text: "",
-      sour: ""
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/missit.jpg"
 
     },
     {
       id: "1",
-      title: "Miss IT",
-      text: "",
-      sour: ""
+      title: "Chào tân sinh viên PTIT",
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/ctsv.jpg"
       
     },
     {
       id: "2",
-      title: "Miss IT",
-      text: "",
-      sour: ""
+      title: "Kỷ niệm 25 năm thành lập Khoa CNTT 1",
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/25nam.jpg"
       
     },
     {
       id: "3",
-      title: "Miss IT",
-      text: "",
-      sour: ""
+      title: "ITIS NGÀY TRỞ VỀ",
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/itisngaytrove.jpg"
       
     },
     {
       id: "4",
-      title: "Miss IT",
-      text: "",
-      sour: ""
+      title: "Connect to P-Gen",
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/connecttopgen.jpg"
       
     },
     {
       id: "5",
-      title: "Miss IT",
-      text: "",
-      sour: ""
+      title: "Mùa Hè Xanh 2024: Thêm nhiều sức mạnh",
+      text: "CHƯA UPDATE",
+      sour: "/activity/special/mhx.jpg"
       
     },
 

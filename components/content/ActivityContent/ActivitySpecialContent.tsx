@@ -9,19 +9,27 @@ const ActivitySpecialContent = () => {
       <span className='text-transparent font-bold text-2xl lg:text-4xl text-center bg-clip-text bg-gradient-to-r from-[#ce48a6] to-[#0f8eaa]'>
             SỰ KIỆN ĐẶC BIỆT
     </span>
-    <div className='w-full flex flex-col items-center justify-center gap-4 px-10 lg:px-20'>
-        {ActivitySpecialText.map((item)=>(
-          <div key={item.id} className='w-full flex rounded-lg shadow-lg bg-orange-300 h-[20rem] relative'>
-            <div className='inset-0 rounded-lg p-[2rem]'>
-              <img src="/back.png" height={500} width={500} alt="" className='object-cover h-full rounded-lg' />
+    <div className='w-full flex flex-col shadow-lg items-center justify-center gap-4 px-4 sm:px-10 lg:px-20'>
+    {ActivitySpecialText.map((item) => (
+        <div 
+            key={item.id} 
+            className='w-full flex flex-col lg:flex-row rounded-lg shadow-lg bg-slate-300 h-auto lg:h-[20rem] relative overflow-hidden'
+        >
+            <div className='w-full lg:w-1/2 h-[15rem] lg:h-full overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none'>
+                <img 
+                    src={item.sour} 
+                    alt={item.title} 
+                    className='object-cover w-full h-full rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none' 
+                />
             </div>
-            <div>
-              <h1 className='w-full text-2xl font-bold'>{item.title}</h1>
+            <div className='w-full lg:w-1/2 p-4 lg:p-[2rem] flex flex-col justify-center'>
+                <h1 className='text-xl md:text-2xl font-bold mb-2'>{item.title}</h1>
+                <p className='text-base md:text-lg'>{item.text}</p>
             </div>
-          </div>
-          
-        ))}
-    </div>
+        </div>
+    ))}
+</div>
+
     </div>
   )
 }
