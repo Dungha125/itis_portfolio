@@ -30,6 +30,7 @@ interface FormData {
 }
 
 interface FormErrors {
+  phoneNumber?: string;
   birthDate?: string;
   email?: string;
 }
@@ -89,6 +90,7 @@ const FormRegister: React.FC = () => {
   const validate = (): boolean => {
     let valid = true;
     let errors: FormErrors = {};
+
   
     if (!formData.birthDate) {
       errors.birthDate = 'Ngày sinh không hợp lệ.';
@@ -115,11 +117,16 @@ const FormRegister: React.FC = () => {
 
     setErrors(errors); // Set errors to state
 
-    if (!valid) {
-      // Show the first error in a popup
-      showPopup(errors.birthDate || errors.email || "Form không hợp lệ.");
-    }
 
+    const phonePattern = /^0\d{9,10}$/;
+    if (!phonePattern.test(formData.phoneNumber)) {
+      errors.phoneNumber = "Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng số 0 và có 10-11 chữ số.";
+      valid = false;
+    }
+    if (!valid) {
+          // Show the first error in a popup
+          showPopup(errors.birthDate || errors.email || errors.phoneNumber || "Form không hợp lệ.");
+        }
     return valid;
   };
 

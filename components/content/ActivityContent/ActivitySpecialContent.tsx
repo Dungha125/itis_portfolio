@@ -3,12 +3,31 @@ import { ActivitySpecialText } from '@/components/src'
 import React from 'react'
 import {motion} from "framer-motion"
 import { slideInFromBottom, slideInFromBottomtime } from '@/ulti/motion'
+import { useInView } from 'react-intersection-observer'
 
 
 const ActivitySpecialContent = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.15,
+      });
+    
+      const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.3,
+          },
+        },
+      };
   return (
-    <motion.div initial="hidden"
-    animate="visible" variants={slideInFromBottom} className='flex flex-col items-center justify-center gap-4 w-full bg-white z-[30] pb-[4rem]'>
+    <motion.div 
+    id='special'
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={containerVariants}  className='flex flex-col items-center justify-center gap-4 w-full bg-white z-[30] pb-[4rem]'>
       <motion.span variants={slideInFromBottomtime(0.5)} className='text-transparent font-bold text-2xl lg:text-4xl text-center bg-clip-text bg-gradient-to-r from-[#ce48a6] to-[#0f8eaa] pb-[2rem]'>
             SỰ KIỆN ĐẶC BIỆT
     </motion.span>
@@ -16,7 +35,7 @@ const ActivitySpecialContent = () => {
     {ActivitySpecialText.map((item) => (
         <motion.div variants={slideInFromBottomtime(0.6 + parseInt(item.id)*0.1)}
             key={item.id} 
-            className='w-full flex flex-col lg:flex-row rounded-lg shadow-lg bg-slate-300 h-auto lg:h-[20rem] relative overflow-hidden'
+            className='w-full flex flex-col lg:flex-row rounded-2xl shadow-lg bg-info-100 h-auto lg:h-[20rem] relative overflow-hidden'
         >
             <div className='w-full lg:w-1/2 h-[15rem] lg:h-full overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none'>
                 <img 
