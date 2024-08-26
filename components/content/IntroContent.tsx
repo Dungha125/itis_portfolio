@@ -65,7 +65,7 @@ const IntroContent = () => {
           Video giới thiệu
         </motion.h3>
         <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 mb-6 px-10 lg:px-20 justify-center items-center z-[20]" >
-        <video src="/video.webm" controls></video>
+        <video src="/video.mp4" controls></video>
         </motion.div>
     </motion.div>
     
