@@ -152,6 +152,7 @@ const FormRegister: React.FC = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center mt-[2rem] ">
+      
       <div className="h-full w-full flex flex-col items-center ">
         <img src="/title.png" width={720} alt="" className="" />
         <div className="w-full px-10 flex flex-col items-center">
@@ -186,6 +187,7 @@ const FormRegister: React.FC = () => {
         </div>
       </div>
       <div className="w-full h-auto flex flex-col z-[30] rounded-xl overflow-y-auto mt-[2rem]">
+      
         <h1 className="text-neutral-800 w-full text-center font-bold text-2xl md:text-4xl mb-4">
           ĐĂNG KÝ
         </h1>
@@ -555,6 +557,7 @@ const FormRegister: React.FC = () => {
           </div>
           
         </form>
+        
         {popupVisible && (
   <Popup message={popupMessage || ""} onClose={handleClosePopup} />
 )}
@@ -581,8 +584,8 @@ const FormRegister: React.FC = () => {
           </div>
         </div>
       </div>
-      </div>
-      </div>
+      
+      </div></div>
     </div>
   );
 };

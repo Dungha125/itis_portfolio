@@ -5,7 +5,6 @@ import Intro from "@/components/main/Intro";
 import Main from "@/components/main/Main";
 import Manage from "@/components/main/Manage";
 import Room from "@/components/main/Room";
-import FormRegister from "@/components/src/FormRegister";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +15,7 @@ export default function Home() {
         <Intro></Intro>
         <Benefit></Benefit>
         <Activity></Activity>
+        <Manage></Manage>
         <Room></Room> 
         <Contact></Contact>
       </div>

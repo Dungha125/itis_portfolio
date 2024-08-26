@@ -39,7 +39,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
             <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
                 {isRegister ? (
                     <button onClick={handleBackClick} className='text-gray-300 font-bold ml-[10px] z-[30]'>
-                        QUAY LẠI
+                        <img src="/logo.svg" width={40} height={40} alt="" />
                     </button>
                 ) : (
                     <>
@@ -50,11 +50,11 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 width={40}
                                 height={40}
                             />
-                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200' : 'text-neutral-800'}`}>
+                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200' : 'text-neutral-200'}`} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
                                 {isActivity ? 'HOẠT ĐỘNG' : 'LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1'}
                             </span>
                         </a>
-                        <div className='hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-10'>
+                        <div className='hidden lg:flex w-[500px] h-full flex-row items-center justify-between md:mr-10'>
                             <div className='flex items-center justify-between border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-50 gap-4 z-50'>
                                 {isActivity ? (
                                     <a
@@ -102,7 +102,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 </Link>
                             </div>
                         </div>
-                        <div className='md:hidden flex items-center'>
+                        <div className='lg:hidden flex items-center'>
                             <button onClick={togglePopup} className='text-gray-300'>
                                 Menu
                             </button>

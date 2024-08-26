@@ -65,11 +65,7 @@ const ManageContent = () => {
         
                
             </div>
-            <div className='my-4 flex px-10 lg:px-20 w-full justify-center items-center relative'>
-          <button type='button' className='w-[12rem] h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl text-center text-white rounded-2xl'>
-            <a href="">Xem thêm</a>
-          </button>
-        </div>
+
     </motion.div>
   )
 }

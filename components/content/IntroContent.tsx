@@ -50,13 +50,13 @@ const IntroContent = () => {
 
       <div className='flex flex-col gap-3 lg:max-w-[550px] text-neutral-300 text-justify lg:ml-6'>
         <motion.p variants={slideInFromRight(0.7)} className='text-base lg:text-xl'>
-          <span className='font-bold'>Liên Chi Đoàn khoa CNTT1</span> là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
+          <span className='font-bold'>Liên chi Đoàn khoa CNTT1</span> là Liên chi Đoàn lớn nhất Học viện với khoảng hơn 5000 đoàn viên.
         </motion.p>
         <motion.p variants={slideInFromRight(0.9)} className='text-base lg:text-xl'>
-        <span className='font-bold'>Liên Chi Đoàn khoa CNTT1</span> là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
+        <span className='font-bold'>Liên chi Đoàn khoa CNTT1</span> là đơn vị đoàn thể trực thuộc khoa CNTT1-PTIT. 
           Với mục đích mang lại lợi ích của sinh viên trong khoa, đẩy mạnh các hoạt động của khoa CNTT1, 
           Liên chi Đoàn Khoa CNTT1 tạo ra nhiều sân chơi giúp sinh viên trong khoa trở nên năng động hơn trong mọi hoạt động. 
-          Là là nơi hội tụ của các bạn sinh viên 2 ngành CNTT và KHMT.
+          Là là nơi hội tụ của các bạn sinh viên ngành CNTT, CNTT CLC, KHMT, ATTT, CNTT Việt - Nhật.
         </motion.p>
         </div>
         
@@ -65,8 +65,8 @@ const IntroContent = () => {
           Video giới thiệu
         </motion.h3>
         <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 mb-6 px-10 lg:px-20 justify-center items-center " >
-        <video width="1080" controls poster='/anh1.jpg'>
-            <source src="/Facebook.mp4" type="video/mp4" />
+        <video width="1080" controls poster='/activity/malibu.jpg'>
+            <source src="/gioithieu.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
         </motion.div>
