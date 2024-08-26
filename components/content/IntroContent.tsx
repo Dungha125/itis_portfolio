@@ -66,7 +66,7 @@ const IntroContent = () => {
         </motion.h3>
         <motion.div variants={slideInFromRight(0.6)} className="w-full flex flex-col mx-20 mb-6 px-10 lg:px-20 justify-center items-center " >
         <video width="1080" controls poster="/activity/malibu.jpg">
-        <source src="/gioithieu.mp4" type="video/mp4" />
+        <source src="/videogioithieu.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
         </motion.div>
