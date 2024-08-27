@@ -43,21 +43,21 @@ const ManageContent = () => {
                 
                         <motion.div variants={slideInFromBottomtime(0.6)} className='order-2 md:order-1 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center md:mt-[8rem]' >
                                 <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/anh1.jpg" width={900} alt="" className='w-full h-full absolute rounded-[50%]' />
+                                    <img src="/NNT.png" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
                                 </div>
                                 <h1 className='font-bold text-xl text-neutral-900 w-full text-center mt-2'>Nguyễn Nhật Thành</h1>
                                 <h3 className='font-base text-base text-neutral-500 w-full text-center '>PHÓ BÍ THƯ</h3>
                         </motion.div>
                         <motion.div variants={slideInFromBottomtime(0.5)} className='order-1 md:order-2 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center' >
                                 <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/anh1.jpg" width={900} alt="" className='w-full h-full absolute rounded-[50%]' />
+                                    <img src="/HMD.JPG" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
                                 </div>
                                 <h1 className='font-bold text-xl text-neutral-900 w-full text-center  mt-2'>Hà Mạnh Dũng</h1>
                                 <h3 className='font-base text-base text-neutral-500 w-full text-center'>BÍ THƯ</h3>
                         </motion.div>
                         <motion.div variants={slideInFromBottomtime(0.6)} className='order-3 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center md:mt-[8rem]' >
                                 <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/anh1.jpg" width={900} alt="" className='w-full h-full absolute rounded-[50%]' />
+                                    <img src="/NTA.png" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
                                 </div>
                                 <h1 className='font-bold text-xl text-neutral-900 w-full text-center  mt-2'>Nguyễn Thạc Anh</h1>
                                 <h3 className='font-base text-base text-neutral-500 w-full text-center '>PHÓ BÍ THƯ</h3>

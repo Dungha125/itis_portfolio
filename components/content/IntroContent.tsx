@@ -64,7 +64,7 @@ const IntroContent = () => {
         <motion.h3 variants={slideInFromTop} className='font-normal text-2xl text-neutral-400 text-center my-3 lg:my-6'>
           Video giới thiệu
         </motion.h3>
-        <div className='w-full px-10 flex mb-[4rem] items-center justify-center'><iframe width="560" height="315" src="https://www.youtube.com/embed/d9gIJpnlRQM?si=-v9KGKfandREPhR8" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div className='w-full px-10 flex mb-[4rem] items-center justify-center'><iframe width="560" height="315" src="https://www.youtube.com/embed/d9gIJpnlRQM?si=-v9KGKfandREPhR8" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>
     </motion.div>
     
 

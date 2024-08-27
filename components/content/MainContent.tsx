@@ -30,7 +30,7 @@ const MainContent = () => {
           
           <motion.p
             variants={slideInFromLeft(0.6)}
-            className='text-xs lg:text-lg xl:text-base 2xl:text-xl text-neutral-800 my-5 max-w-[700px] lg:px-16 xl:px-20 2xl:px-24 text-center md:text-justify'
+            className='text-xs lg:text-lg xl:text-base 2xl:text-xl text-neutral-800 my-5 max-w-[700px] lg:px-16 xl:px-20 2xl:px-24 text-center text-justify'
             style={{ textShadow: '2px 2px 4px rgba(255, 255, 255, 0.4)' }}>
             Con tàu thám hiểm ITIS lừng danh cưỡi sóng vượt biển khám phá vùng đất mới, với hành trình không ngừng nghỉ và chỉ trở về bến cảng mỗi năm một lần vào mùa thu. Ngoài bổ sung lương thực và nhiên liệu thì còn có một nhiệm vụ vô cùng quan trọng, đó chính là tuyển thêm những thuỷ thủ đoàn mới đầy tiềm năng!
           </motion.p>

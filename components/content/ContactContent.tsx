@@ -9,7 +9,7 @@ const ContactContent = () => {
       <div className='w-full flex flex-col items-center justify-center m-auto'>
         <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
           <img src="/logomain.svg" width={300} height={300} alt="Main Logo" />
-          <div className='w-auto h-auto md:mx-16'>
+          <div className='w-auto h-auto md:mx-16 px-8'>
             <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Liên hệ</h3>
             <span className='flex w-full mb-3'>
               <img src="/facebook.svg" width={20} height={20} alt="Facebook" />
@@ -19,7 +19,15 @@ const ContactContent = () => {
             </span>
             <span className='flex w-full items-center mb-3'>
                 <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>033.585.0230</p>
+              <p className='ml-4'>033.585.0230 - Hà Mạnh Dũng - Bí thư</p>
+            </span>
+            <span className='flex w-full items-center mb-3'>
+                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
+              <p className='ml-4'>Nguyễn Nhật Thành - Phó Bí thư - 033.585.0230</p>
+            </span>
+            <span className='flex w-full items-center mb-3'>
+                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
+              <p className='ml-4'>Nguyễn Thạc Anh - Phó Bí thư - 033.585.0230</p>
             </span>
             <span className='flex w-full items-center'>
                 <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>
