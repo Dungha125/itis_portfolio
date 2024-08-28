@@ -103,3 +103,8 @@ html {
   background-image: linear-gradient(to right top, #2979ff, #07a787);
   border-radius: inherit;
 }
+
+.custom-placeholder::placeholder {
+  line-height: 1.25; 
+  white-space: pre-line;
+}

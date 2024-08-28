@@ -202,7 +202,7 @@ const FormRegister: React.FC = () => {
               </label>
               <input
                 type="text"
-                placeholder="Họ và tên"
+                placeholder="Họ và tên đầy đủ của bạn là gì, hãy cho chúng mình biết nhé"
                 name="fullname"
                 value={formData.fullname}
                 onChange={handleChange}
@@ -253,7 +253,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="date"
-                  placeholder="DD/MM/YYYY"
+                  placeholder="Cho chúng mình biết sinh nhật của bạn nhé"
                   name="birthDate"
                   value={formData.birthDate}
                   onChange={handleChange}
@@ -272,7 +272,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Quê quán"
+                  placeholder="Nơi bạn sinh ra ở đâu vậy?"
                   name="placeOfOrigin"
                   value={formData.placeOfOrigin}
                   onChange={handleChange}
@@ -292,7 +292,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Tên lớp"
+                  placeholder="Bạn đến từ lớp nào vậy ?"
                   name="className"
                   value={formData.className}
                   onChange={handleChange}
@@ -310,7 +310,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Mã sinh viên"
+                  placeholder="Cho chúng mình biết thêm về mã sinh viên của bạn nhé"
                   name="studentCode"
                   value={formData.studentCode}
                   onChange={handleChange}
@@ -328,7 +328,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Ngành học"
+                  placeholder="Bạn là sinh viên ngành nào vậy?"
                   name="major"
                   value={formData.major}
                   onChange={handleChange}
@@ -349,7 +349,7 @@ const FormRegister: React.FC = () => {
                 <div className="relative">
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder="Email của bạn là gì?"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -371,7 +371,7 @@ const FormRegister: React.FC = () => {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Số điện thoại"
+                    placeholder="Chúng mình liên hệ với bạn qua số điện thoại nào được nhỉ?"
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
@@ -391,7 +391,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Link Facebook"
+                  placeholder="Link Facebook các nhân của bạn"
                   name="facebook"
                   value={formData.facebook}
                   onChange={handleChange}
@@ -409,11 +409,19 @@ const FormRegister: React.FC = () => {
                 Giới thiệu bản thân:
               </label>
               <textarea
-                placeholder="Giới thiệu bản thân"
+                placeholder={`Hãy giới thiệu đôi nét về bản thân mình nhé:\n
+                - Sở thích\n
+                - Tính cách\n
+                - Kỹ năng của bản thân\n
+                - Kinh nghiệm trong tổ chức sự kiện\n
+                - ...\n
+                Mục này bạn hãy ghi một cách chi tiết nhất có thể nhé :>
+                `}
                 name="describeYourself"
                 value={formData.describeYourself}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded-md"
+                style={{ width: '100%', minHeight: '200px' }}
+                className="w-full p-2 border border-gray-300 rounded-md custom-placeholder"
                 required
               />
             </div>
@@ -465,6 +473,7 @@ const FormRegister: React.FC = () => {
                 name="knowUsThrough"
                 value={formData.knowUsThrough}
                 onChange={handleChange}
+                
                 className="w-full p-2 border border-gray-300 rounded-md"
                 required
               />
@@ -478,10 +487,11 @@ const FormRegister: React.FC = () => {
                 Lý do tham gia:
               </label>
               <textarea
-                placeholder="Lý do bạn tham gia vào Liên chi?"
+                placeholder="Lý do tại sao bạn quyết định tham gia vào Liên chi Đoàn Khoa CNTT1?"
                 name="reason"
                 value={formData.reason}
                 onChange={handleChange}
+                style={{ width: '100%', minHeight: '150px' }}
                 className="w-full p-2 border border-gray-300 rounded-md"
                 required
               />
@@ -499,6 +509,7 @@ const FormRegister: React.FC = () => {
                 name="aspiration"
                 value={formData.aspiration}
                 onChange={handleChange}
+                style={{ width: '100%', minHeight: '150px' }}
                 className="w-full p-2 border border-gray-300 rounded-md"
                 required
               />

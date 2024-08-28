@@ -23,11 +23,11 @@ const ContactContent = () => {
             </span>
             <span className='flex w-full items-center mb-3'>
                 <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>Nguyễn Nhật Thành - Phó Bí thư - 033.585.0230</p>
+              <p className='ml-4'>039.454.4566 - Nguyễn Nhật Thành - Phó Bí thư</p>
             </span>
             <span className='flex w-full items-center mb-3'>
                 <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>Nguyễn Thạc Anh - Phó Bí thư - 033.585.0230</p>
+              <p className='ml-4'>098.842.9911 - Nguyễn Thạc Anh - Phó Bí thư</p>
             </span>
             <span className='flex w-full items-center'>
                 <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>
