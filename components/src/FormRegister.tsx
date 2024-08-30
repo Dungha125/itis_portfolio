@@ -2,11 +2,12 @@
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Popup from "./popup";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { majors } from ".";
 
 interface FormData {
   fullname: string;
@@ -32,12 +33,18 @@ interface FormData {
 interface FormErrors {
   [key: string]: string;
 }
+interface Province {
+  code: string;
+  name: string;
+}
+
+
 
 const FormRegister: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     fullname: "",
     sex: "",
-    birthDate: "",
+    birthDate: '""',
     placeOfOrigin: "",
     className: "",
     major: "",
@@ -54,7 +61,7 @@ const FormRegister: React.FC = () => {
     phoneNumber: "",
     status: "submitted", // default status
   });
-
+  const [provinces, setProvinces] = useState<Province[]>([]);
   const [popupVisible, setPopupVisible] = useState<boolean>(false);
   const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({}); // State to hold errors
@@ -63,6 +70,19 @@ const FormRegister: React.FC = () => {
     setPopupMessage(message || "");
     setPopupVisible(true);
   };
+
+  useEffect(() => {
+    const fetchProvinces = async () => {
+      try {
+        const response = await axios.get('https://provinces.open-api.vn/api/');
+        setProvinces(response.data);
+      } catch (error) {
+        console.error('Error fetching provinces:', error);
+      }
+    };
+
+    fetchProvinces();
+  }, []);
 
   const handleClosePopup = () => {
     setPopupVisible(false);
@@ -82,6 +102,7 @@ const FormRegister: React.FC = () => {
     setFormData({
       ...formData,
       birthDate: date ? date.toISOString().split('T')[0] : '', // Store as YYYY-MM-DD
+      
     });
   };
   
@@ -269,15 +290,20 @@ const FormRegister: React.FC = () => {
                 >
                   Quê quán:<span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  placeholder="Nơi bạn sinh ra ở đâu vậy?"
-                  name="placeOfOrigin"
-                  value={formData.placeOfOrigin}
-                  onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                  required
-                />
+                <select
+                name="placeOfOrigin"
+                value={formData.placeOfOrigin}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+                required
+              >
+                <option value="" disabled>Chọn nơi bạn sinh ra</option>
+                {provinces.map((province) => (
+                  <option key={province.code} value={province.name}>
+                    {province.name}
+                  </option>
+                ))}
+              </select>
               </div>
             </div>
 
@@ -325,15 +351,20 @@ const FormRegister: React.FC = () => {
                 >
                   Ngành học:<span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  placeholder="Bạn là sinh viên ngành nào vậy?"
-                  name="major"
-                  value={formData.major}
-                  onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded-md"
-                  required
-                />
+                <select
+        name="major"
+        value={formData.major}
+        onChange={handleChange}
+        className="w-full p-2 border border-gray-300 rounded-md"
+        required
+      >
+        <option value="" disabled>Chọn ngành học của bạn</option>
+        {majors.map((major, index) => (
+          <option key={index} value={major}>
+            {major}
+          </option>
+        ))}
+      </select>
               </div>
             </div>
 

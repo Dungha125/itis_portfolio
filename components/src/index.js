@@ -188,3 +188,11 @@ export const benefittext = [
     },
 
   ];
+
+  export const majors = [
+    'Công nghệ thông tin',
+    'Khoa học máy tính',
+    'An toàn thông tin',
+    'Công nghệ thông tin CLC',
+    'CNTT Việt Nhật',
+  ];
