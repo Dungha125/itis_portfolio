@@ -30,9 +30,7 @@ interface FormData {
 }
 
 interface FormErrors {
-  phoneNumber?: string;
-  birthDate?: string;
-  email?: string;
+  [key: string]: string;
 }
 
 const FormRegister: React.FC = () => {
@@ -62,7 +60,7 @@ const FormRegister: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({}); // State to hold errors
   const [isSubmitting, setIsSubmitting] = useState(false);
   const showPopup = (message: string) => {
-    setPopupMessage(message);
+    setPopupMessage(message || "");
     setPopupVisible(true);
   };
 
@@ -90,7 +88,7 @@ const FormRegister: React.FC = () => {
   const validate = (): boolean => {
     let valid = true;
     let errors: FormErrors = {};
-
+    
   
     if (!formData.birthDate) {
       errors.birthDate = 'Ngày sinh không hợp lệ.';
@@ -124,9 +122,10 @@ const FormRegister: React.FC = () => {
       valid = false;
     }
     if (!valid) {
-          // Show the first error in a popup
-          showPopup(errors.birthDate || errors.email || errors.phoneNumber || "Form không hợp lệ.");
-        }
+      const errorMessages = Object.values(errors).join("\n");
+      showPopup(`Vui lòng kiểm tra lại các trường sau:\n${errorMessages}`);
+    }
+
     return valid;
   };
 
@@ -198,7 +197,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="fullname"
                 className="block mb-2 font-bold"
               >
-                Họ và tên:
+                Họ và tên:<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -216,7 +215,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="sex"
                   className="block mb-2 font-bold"
                 >
-                  Giới tính:
+                  Giới tính:<span className="text-red-500">*</span>
                 </label>
                 <div className="flex gap-4 items-center">
                   <label className="flex items-center">
@@ -249,7 +248,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="birthDate"
                   className="block mb-2 font-bold"
                 >
-                  Ngày sinh:
+                  Ngày sinh:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="date"
@@ -268,7 +267,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="placeOfOrigin"
                   className="block mb-2 font-bold"
                 >
-                  Quê quán:
+                  Quê quán:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -288,7 +287,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="className"
                   className="block mb-2 font-bold"
                 >
-                  Lớp:
+                  Lớp:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -306,11 +305,11 @@ const FormRegister: React.FC = () => {
                   htmlFor="studentCode"
                   className="block mb-2 font-bold"
                 >
-                  Mã sinh viên:
+                  Mã sinh viên:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Cho chúng mình biết thêm về mã sinh viên của bạn nhé"
+                  placeholder="Mã sinh viên của bạn là gì vậy ?"
                   name="studentCode"
                   value={formData.studentCode}
                   onChange={handleChange}
@@ -324,7 +323,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="major"
                   className="block mb-2 font-bold"
                 >
-                  Ngành học:
+                  Ngành học:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -344,7 +343,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="email"
                   className="block mb-2 font-bold"
                 >
-                  Email:
+                  Email:<span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
                   <input
@@ -366,12 +365,12 @@ const FormRegister: React.FC = () => {
                   htmlFor="phoneNumber"
                   className="block mb-2 font-bold"
                 >
-                  Số điện thoại:
+                  Số điện thoại:<span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Chúng mình liên hệ với bạn qua số điện thoại nào được nhỉ?"
+                    placeholder="Chúng mình liên hệ với bạn qua số điện thoại nào ?"
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
@@ -387,7 +386,7 @@ const FormRegister: React.FC = () => {
                   htmlFor="facebook"
                   className="block mb-2 font-bold"
                 >
-                  Facebook:
+                  Facebook:<span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -406,7 +405,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="describeYourself"
                 className="block mb-2 font-bold"
               >
-                Giới thiệu bản thân:
+                Giới thiệu bản thân:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder={`Hãy giới thiệu đôi nét về bản thân mình nhé:\n
@@ -431,7 +430,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="strengthness"
                 className="block mb-2 font-bold"
               >
-                Điểm mạnh:
+                Điểm mạnh:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder="Điểm mạnh của bạn là gì?"
@@ -448,7 +447,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="weakness"
                 className="block mb-2 font-bold"
               >
-                Điểm yếu:
+                Điểm yếu:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder="Điểm yếu của bạn là gì?"
@@ -466,7 +465,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="knowUsThrough"
                 className="block mb-2 font-bold"
               >
-                Bạn biết đến Liên chi qua:
+                Bạn biết đến Liên chi qua:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder="Bạn biết đến Liên chi qua đâu?"
@@ -484,7 +483,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="reason"
                 className="block mb-2 font-bold"
               >
-                Lý do tham gia:
+                Lý do tham gia:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder="Lý do tại sao bạn quyết định tham gia vào Liên chi Đoàn Khoa CNTT1?"
@@ -502,7 +501,7 @@ const FormRegister: React.FC = () => {
                 htmlFor="aspiration"
                 className="block mb-2 font-bold"
               >
-                Nguyện vọng:
+                Nguyện vọng:<span className="text-red-500">*</span>
               </label>
               <textarea
                 placeholder="Nguyện vọng của bạn khi tham gia Liên chi?"
@@ -569,24 +568,28 @@ const FormRegister: React.FC = () => {
           
         </form>
         
-        {popupVisible && (
-  <Popup message={popupMessage || ""} onClose={handleClosePopup} />
-)}
-        <div id='Contact' className='w-full h-full bg-transparent text-neutral-800 p-[15px] z-20 mb-4'>
+      
+  {popupVisible && <Popup message={popupMessage || ""} onClose={handleClosePopup} />}
+
+    <div className='w-full h-full bg-transparent text-neutral-800 z-20 mb-4 items-center justify-center flex my-4'>
       <div className='w-full flex flex-col items-center justify-center m-auto'>
         <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
-          <img src="/logo.svg" width={200} height={200} alt="Main Logo" />
-          <div className='w-auto h-auto md:mx-16'>
-            <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Liên hệ</h3>
-            <span className='flex w-full mb-3 items-center'>
+          <img src="/logo.svg" width={200} height={200} alt="Main Logo"/>
+          <div className='w-auto h-auto md:mx-16 px-[1rem]'>
+            <h3 className='font-bold text-[16px] lg:text-[24px] mb-4'>Thông tin liên hệ</h3>
+            <span className='flex w-full mb-3 items-center '>
               <FontAwesomeIcon icon={faFacebook}  width={20} height={20}/>
               <a href="https://www.facebook.com/lcdkhoacntt1.ptit" className='ml-4'>
                 Liên chi Đoàn Khoa CNTT1 - PTIT
               </a>
             </span>
             <span className='flex w-full items-center mb-3'>
-                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>033.585.0230</p>
+                <FontAwesomeIcon icon={faPhone} width={20} height={20} className="flex justify-items-start"/>
+              <span>
+                <p className='ml-4'>033.585.0230 - Hà Mạnh Dũng - Bí thư</p>
+                <p className='ml-4'>039.454.4566 - Nguyễn Nhật Thành - Phó Bí thư</p>
+                <p className='ml-4'>098.842.9911 - Nguyễn Thạc Anh - Phó Bí thư</p>
+              </span>
             </span>
             <span className='flex w-full items-center'>
                 <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>

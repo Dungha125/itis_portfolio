@@ -19,16 +19,14 @@ const ContactContent = () => {
             </span>
             <span className='flex w-full items-center mb-3'>
                 <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>033.585.0230 - Hà Mạnh Dũng - Bí thư</p>
+              <span>
+                <p className='ml-4'>033.585.0230 - Hà Mạnh Dũng - Bí thư</p>
+                <p className='ml-4'>039.454.4566 - Nguyễn Nhật Thành - Phó Bí thư</p>
+                <p className='ml-4'>098.842.9911 - Nguyễn Thạc Anh - Phó Bí thư</p>
+              </span>
             </span>
-            <span className='flex w-full items-center mb-3'>
-                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>039.454.4566 - Nguyễn Nhật Thành - Phó Bí thư</p>
-            </span>
-            <span className='flex w-full items-center mb-3'>
-                <FontAwesomeIcon icon={faPhone} width={20} height={20}/>
-              <p className='ml-4'>098.842.9911 - Nguyễn Thạc Anh - Phó Bí thư</p>
-            </span>
+            
+            
             <span className='flex w-full items-center'>
                 <FontAwesomeIcon icon={faEnvelope} width={20} height={20}/>
                 <p className='ml-4'>bch.cntt.ptit@gmail.com</p>
