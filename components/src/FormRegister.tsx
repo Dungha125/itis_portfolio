@@ -258,7 +258,7 @@ const FormRegister: React.FC = () => {
               </label>
               <input
                 type="text"
-                placeholder="Họ và tên đầy đủ của bạn là gì, hãy cho chúng mình biết nhé"
+                placeholder="Họ và tên đầy đủ của bạn là gì? Hãy cho chúng mình biết nhé"
                 name="fullname"
                 value={formData.fullname}
                 onChange={handleChange}
@@ -353,7 +353,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Bạn đến từ lớp nào vậy ?"
+                  placeholder="VD: D24CQ..."
                   name="className"
                   value={formData.className}
                   onChange={handleChange}
@@ -371,7 +371,7 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Mã sinh viên của bạn là gì vậy ?"
+                  placeholder="VD: B24DC..."
                   name="studentCode"
                   value={formData.studentCode}
                   onChange={handleChange}
@@ -475,18 +475,17 @@ const FormRegister: React.FC = () => {
                 Giới thiệu bản thân:<span className="text-red-500">*</span>
               </label>
               <textarea
-                placeholder={`Hãy giới thiệu đôi nét về bản thân mình nhé:\n
+                placeholder={`Bạn hãy giới thiệu chi tiết về bản thân mình nhé:\n
                 - Sở thích\n
                 - Tính cách\n
                 - Kỹ năng của bản thân\n
                 - Kinh nghiệm trong tổ chức sự kiện\n
-                - ...\n
-                Mục này bạn hãy ghi một cách chi tiết nhất có thể nhé :>
+                ...
                 `}
                 name="describeYourself"
                 value={formData.describeYourself}
                 onChange={handleChange}
-                style={{ width: '100%', minHeight: '200px' }}
+                style={{ width: '100%', minHeight: '200px', lineHeight:'1'}}
                 className="w-full p-2 border border-gray-300 rounded-md custom-placeholder"
           
               />

@@ -1,10 +1,50 @@
 "use client";
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import {motion} from "framer-motion";
 import { slideInFromBottom, slideInFromBottomtime } from '@/ulti/motion';
 import { manager } from '../src';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+interface ContactCardProps {
+  name: string;
+  role: string;
+  phone: string;
+  email: string;
+  imageSrc: string;
+  className:string;
+}
+
+const ContactCard: React.FC<ContactCardProps>= ({ name, role, phone, email, imageSrc, className }) => {
+  const [showPhone, setShowPhone] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+
+  return (
+      <motion.div variants={slideInFromBottomtime(0.6)} className={`${className} md:order-1 w-full h-[20rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center `}>
+          <div className='rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
+              <img src={imageSrc} alt="" className='w-full h-full object-cover absolute rounded-[50%]' />
+          </div>
+          <h1 className='font-bold text-xl text-neutral-900 w-full text-center mt-2'>{name}</h1>
+          <h3 className='font-base text-base text-neutral-500 w-full text-center'>{role}</h3>
+          <div className='flex mt-4 space-x-4'>
+              <FontAwesomeIcon 
+                  icon={faPhone} 
+                  className='text-neutral-700 cursor-pointer' 
+                  onClick={() => setShowPhone(!showPhone)} 
+              />
+              {showPhone && <span className='text-sm text-neutral-700'>{phone}</span>}
+              <FontAwesomeIcon 
+                  icon={faEnvelope} 
+                  className='text-neutral-700 cursor-pointer' 
+                  onClick={() => setShowEmail(!showEmail)} 
+              />
+              {showEmail && <span className='text-sm text-neutral-700'>{email}</span>}
+          </div>
+      </motion.div>
+  );
+};
 
 const ManageContent = () => {
 
@@ -40,28 +80,31 @@ const ManageContent = () => {
                 Giới thiệu Ban chấp hành nhiệm kỳ 2024 - 2026
             </motion.h3>
             <div className='flex flex-col md:flex-row w-full items-center justify-center pb-4 px-10 lg:px-20 gap-3 md:gap-8'>
-                
-                        <motion.div variants={slideInFromBottomtime(0.6)} className='order-2 md:order-1 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center md:mt-[8rem]' >
-                                <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/NNT.png" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
-                                </div>
-                                <h1 className='font-bold text-xl text-neutral-900 w-full text-center mt-2'>Nguyễn Nhật Thành</h1>
-                                <h3 className='font-base text-base text-neutral-500 w-full text-center '>PHÓ BÍ THƯ</h3>
-                        </motion.div>
-                        <motion.div variants={slideInFromBottomtime(0.5)} className='order-1 md:order-2 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center' >
-                                <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/HMD.JPG" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
-                                </div>
-                                <h1 className='font-bold text-xl text-neutral-900 w-full text-center  mt-2'>Hà Mạnh Dũng</h1>
-                                <h3 className='font-base text-base text-neutral-500 w-full text-center'>BÍ THƯ</h3>
-                        </motion.div>
-                        <motion.div variants={slideInFromBottomtime(0.6)} className='order-3 w-full h-[16rem] drop-shadow shadow-lg shadow-slate-400 bg-white rounded-lg flex flex-col items-center md:mt-[8rem]' >
-                                <div className=' rounded-[50%] bg-black w-[8rem] h-[8rem] relative mt-8'>
-                                    <img src="/NTA.png" width={900} height={900} alt="" className='w-full h-full absolute rounded-[50%]' />
-                                </div>
-                                <h1 className='font-bold text-xl text-neutral-900 w-full text-center  mt-2'>Nguyễn Thạc Anh</h1>
-                                <h3 className='font-base text-base text-neutral-500 w-full text-center '>PHÓ BÍ THƯ</h3>
-                        </motion.div>
+            <ContactCard 
+            name="Nguyễn Nhật Thành" 
+            role="PHÓ BÍ THƯ" 
+            phone="039.454.4566" 
+            email="thanhtobot159@gmail.com" 
+            imageSrc="/NNT.png" 
+            className='order-2 md:mt-[8rem]'
+        />
+        <ContactCard 
+            name="Hà Mạnh Dũng" 
+            role="BÍ THƯ" 
+            phone="033.585.0230" 
+            email="dungha122405@gmail.com" 
+            imageSrc="/HMD.JPG" 
+            className='order-1'
+        />
+        <ContactCard 
+            name="Nguyễn Thạc Anh" 
+            role="PHÓ BÍ THƯ" 
+            phone="098.842.9911" 
+            email="thacanh04@gmail.com" 
+            imageSrc="/NTA.png" 
+            className='order-3 md:mt-[8rem]'
+        />
+              
         
                
             </div>
