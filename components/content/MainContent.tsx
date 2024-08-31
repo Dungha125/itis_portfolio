@@ -18,7 +18,7 @@ const MainContent = () => {
         <div className='flex flex-col items-center gap-3 lg:items-start text-justify h-full w-full justify-center'>
           <motion.div
             variants={slideInFromLeft(0.5)}
-            className='text-neutral-800 font-bold flex flex-col text-center lg:text-justify gap-6 mt-6 text-6xl xl:text-7xl 2xl:text-8xl h-auto w-auto lg:px-16 xl:px-20 2xl:px-24'>
+            className='text-neutral-800 font-bold flex flex-col text-center lg:text-start gap-6 mt-6 text-6xl xl:text-7xl 2xl:text-8xl h-auto w-auto lg:px-16 xl:px-20 2xl:px-24'>
             <span>
               Welcome!
               <br />We are 
