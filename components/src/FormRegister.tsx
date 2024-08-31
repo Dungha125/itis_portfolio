@@ -40,6 +40,7 @@ interface Province {
 
 
 
+
 const FormRegister: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     fullname: "",
@@ -150,8 +151,43 @@ const FormRegister: React.FC = () => {
     return valid;
   };
 
+  const fieldNamesMapping: { [key: string]: string } = {
+    fullname: "Họ và tên",
+    birthDate: "Ngày sinh",
+    email: "Email",
+    phoneNumber: "Số điện thoại",
+    sex: "Giới tính",
+    placeOfOrigin: "Quê quán",
+    className: "Lớp",
+    major: "Ngành học",
+    studentCode: "Mã sinh viên",
+    describeYourself: "Giới thiệu bản thân",
+    facebook: "Facebook",
+    strengthness: "Điểm mạnh",
+    weakness: "Điểm yếu",
+    knowUsThrough: "Bạn biết đến Liên chi qua",
+    reason: "Lý do bạn muốn trở thành CTV của Liên chi",
+    aspiration: "Nguyện vọng"
+};
+
+  const validateRequiredFields = () => {
+    const requiredFields = ["fullname", "birthDate", "email", "phoneNumber","sex","placeOfOrigin","className","major","studentCode","describeYourself","facebook","strengthness",
+      "weakness","knowUsThrough","reason","aspiration"
+    ]; 
+    const missingFields = requiredFields.filter(field => !formData[field as keyof FormData]?.trim());
+    return missingFields.map(field => fieldNamesMapping[field]);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const missingFields = validateRequiredFields();
+
+    if (missingFields.length > 0) {
+      showPopup(`Vui lòng điền các mục sau: ${missingFields.join(", ")}`);
+      return; 
+    }
+
     if (validate()) {
       setIsSubmitting(true); // Start loading spinner
       try {
@@ -171,7 +207,7 @@ const FormRegister: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center mt-[2rem] ">
+    <div className="w-full h-full flex flex-col items-center mt-[2rem] py-[4rem]">
       
       <div className="h-full w-full flex flex-col items-center ">
         <img src="/title.png" width={720} alt="" className="" />
@@ -199,8 +235,8 @@ const FormRegister: React.FC = () => {
             </span>
             <span className="text-center">
               <p>
-                Đối tượng: Tất cả sinh viên Khóa D23 và D24 ngành CNTT, CNTT
-                CLC, CNTT Việt-Nhật, KHMT, ATTT.
+                Đối tượng: Các bạn sinh viên Khóa D23 và D24 ngành <span className="font-bold text-red-500 text-xl">CNTT, CNTT
+                CLC, CNTT Việt-Nhật, KHMT, ATTT</span>
               </p>
             </span>
           </div>
@@ -227,7 +263,7 @@ const FormRegister: React.FC = () => {
                 value={formData.fullname}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+                
               />
             </div>
             <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
@@ -278,7 +314,7 @@ const FormRegister: React.FC = () => {
                   value={formData.birthDate}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md" 
-                  required
+                 
                 />
                 
               </div>
@@ -295,7 +331,7 @@ const FormRegister: React.FC = () => {
                 value={formData.placeOfOrigin}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+                
               >
                 <option value="" disabled>Chọn nơi bạn sinh ra</option>
                 {provinces.map((province) => (
@@ -322,7 +358,7 @@ const FormRegister: React.FC = () => {
                   value={formData.className}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  required
+                 
                 />
               </div>
 
@@ -340,7 +376,7 @@ const FormRegister: React.FC = () => {
                   value={formData.studentCode}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  required
+                 
                 />
               </div>
 
@@ -356,7 +392,7 @@ const FormRegister: React.FC = () => {
         value={formData.major}
         onChange={handleChange}
         className="w-full p-2 border border-gray-300 rounded-md"
-        required
+     
       >
         <option value="" disabled>Chọn ngành học của bạn</option>
         {majors.map((major, index) => (
@@ -384,7 +420,7 @@ const FormRegister: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full p-2 border border-gray-300 rounded-md"
-                    required
+               
                   />
                 
                 </div>
@@ -406,7 +442,7 @@ const FormRegister: React.FC = () => {
                     value={formData.phoneNumber}
                     onChange={handleChange}
                     className="w-full p-2 border border-gray-300 rounded-md"
-                    required
+              
                   />
                   
                 </div>
@@ -421,12 +457,12 @@ const FormRegister: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Link Facebook các nhân của bạn"
+                  placeholder="Link Facebook cá nhân của bạn"
                   name="facebook"
                   value={formData.facebook}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  required
+               
                 />
               </div>
             </div>
@@ -452,7 +488,7 @@ const FormRegister: React.FC = () => {
                 onChange={handleChange}
                 style={{ width: '100%', minHeight: '200px' }}
                 className="w-full p-2 border border-gray-300 rounded-md custom-placeholder"
-                required
+          
               />
             </div>
 
@@ -469,7 +505,7 @@ const FormRegister: React.FC = () => {
                 value={formData.strengthness}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+           
               />
             </div>
 
@@ -486,7 +522,7 @@ const FormRegister: React.FC = () => {
                 value={formData.weakness}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+           
               />
             </div>
           </div>
@@ -505,7 +541,7 @@ const FormRegister: React.FC = () => {
                 onChange={handleChange}
                 
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+        
               />
             </div>
 
@@ -523,7 +559,7 @@ const FormRegister: React.FC = () => {
                 onChange={handleChange}
                 style={{ width: '100%', minHeight: '150px' }}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+             
               />
             </div>
 
@@ -541,7 +577,7 @@ const FormRegister: React.FC = () => {
                 onChange={handleChange}
                 style={{ width: '100%', minHeight: '150px' }}
                 className="w-full p-2 border border-gray-300 rounded-md"
-                required
+           
               />
             </div>
 
