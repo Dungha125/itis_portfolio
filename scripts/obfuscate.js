@@ -2,14 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const JavaScriptObfuscator = require('javascript-obfuscator');
 
-const buildPath = path.join(__dirname, '../.next/static');
+const directories = [
+  path.join(__dirname, '../.next/static'),
+  path.join(__dirname, '../.next/server'),  // Thêm thư mục server
+  path.join(__dirname, '../.next/pages')  // Thêm thư mục pages
+];
 
 const obfuscateFiles = (dir) => {
   fs.readdirSync(dir).forEach(file => {
     const fullPath = path.join(dir, file);
     if (fs.lstatSync(fullPath).isDirectory()) {
       obfuscateFiles(fullPath);
-    } else if (file.endsWith('.js')) { 
+    } else if (file.endsWith('.js')) {
       const code = fs.readFileSync(fullPath, 'utf8');
       const obfuscatedCode = JavaScriptObfuscator.obfuscate(code, {
         compact: true,
@@ -20,8 +24,10 @@ const obfuscateFiles = (dir) => {
   });
 };
 
-if (fs.existsSync(buildPath)) {
-  obfuscateFiles(buildPath);
-} else {
-  console.log(`Build path not found: ${buildPath}`);
-}
+directories.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    obfuscateFiles(dir);
+  } else {
+    console.log(`Build path not found: ${dir}`);
+  }
+});
