@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/obfuscate.js",
+    "build": "npx tsc && node scripts/obfuscate.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -41,6 +41,6 @@
     "react-intersection-observer": "^9.10.3",
     "tailwindcss": "^3.4.1",
     "three": "^0.166.1",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }
