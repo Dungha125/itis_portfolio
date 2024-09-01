@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/obfuscate.js",
+    "build": "next build",
+    "postbuild": "node scripts/obfuscate.js",
     "start": "next start",
     "lint": "next lint"
   },

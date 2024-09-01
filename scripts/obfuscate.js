@@ -1,4 +1,3 @@
-// scripts/obfuscate.js
 const fs = require('fs');
 const path = require('path');
 const JavaScriptObfuscator = require('javascript-obfuscator');
@@ -10,7 +9,7 @@ const obfuscateFiles = (dir) => {
     const fullPath = path.join(dir, file);
     if (fs.lstatSync(fullPath).isDirectory()) {
       obfuscateFiles(fullPath);
-    } else if (file.endsWith('.js')) {
+    } else if (file.endsWith('.js') || file.endsWith('.tsx')) {
       const code = fs.readFileSync(fullPath, 'utf8');
       const obfuscatedCode = JavaScriptObfuscator.obfuscate(code, {
         compact: true,
@@ -21,4 +20,8 @@ const obfuscateFiles = (dir) => {
   });
 };
 
-obfuscateFiles(buildPath);
+if (fs.existsSync(buildPath)) {
+  obfuscateFiles(buildPath);
+} else {
+  console.log(`Build path not found: ${buildPath}`);
+}
