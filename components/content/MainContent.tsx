@@ -19,7 +19,7 @@ const MainContent = () => {
           <motion.div
             variants={slideInFromLeft(0.5)}
             className='text-neutral-800 font-bold flex flex-col text-center lg:text-start gap-6 mt-6 text-6xl xl:text-7xl 2xl:text-8xl h-auto w-auto lg:px-16 xl:px-20 2xl:px-24'>
-            <span>
+            <span className='kanit-bold-italic'>
               Welcome!
               <br />We are 
               <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#ce48a6] to-[#0f8eaa]'>

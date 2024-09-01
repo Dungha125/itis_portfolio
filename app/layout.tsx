@@ -7,8 +7,8 @@ import Navbar from "@/components/main/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ITIS LA NHA",
-  description: "This is Itis portfolio",
+  title: "LCĐ KHOA CNTT1 - PTIT",
+  description: "This is Itis web",
   icons:{
     icon: "/favicon.ico?v=1",
     apple: "/apple-touch-icon.png?v=4",

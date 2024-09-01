@@ -5,7 +5,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <main className="h-full w-full">
+    <main className="h-full w-full kanit-regular">
       <div className="flex flex-col gap-10">
         <Main />
       </div>
