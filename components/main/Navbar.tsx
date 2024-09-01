@@ -4,6 +4,9 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { usePathname, useRouter } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 type Props = {
     linkto: string;
@@ -104,7 +107,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         </div>
                         <div className='lg:hidden flex items-center'>
                             <button onClick={togglePopup} className='text-gray-300'>
-                                Menu
+                            <FontAwesomeIcon icon={faBars} style={{color: "#ffffff", fontSize:"20px"}}  />
                             </button>
                             {showPopup && (
                                 <div className='absolute top-[65px] right-0 bg-[#020213d2] border border-[#7042f861] w-[250px] p-4 rounded-lg shadow-lg'>
