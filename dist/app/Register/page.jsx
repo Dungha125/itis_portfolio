@@ -1,10 +1,1 @@
-import Main from '@/components/main/RegisterMain/Main';
-import React from 'react';
-var page = function () {
-    return (<main className="h-full w-full">
-      <div className="flex flex-col gap-10">
-        <Main />
-      </div>
-    </main>);
-};
-export default page;
+'use strict';var _0x4af4aa=_0xa0ce;(function(_0x1e0c38,_0x4c5df2){var _0x121016=_0xa0ce,_0x694d73=_0x1e0c38();while(!![]){try{var _0x377088=parseInt(_0x121016(0xc4))/0x1+-parseInt(_0x121016(0xbb))/0x2*(parseInt(_0x121016(0xc2))/0x3)+parseInt(_0x121016(0xc9))/0x4+parseInt(_0x121016(0xc3))/0x5+parseInt(_0x121016(0xbc))/0x6+-parseInt(_0x121016(0xc6))/0x7*(-parseInt(_0x121016(0xc1))/0x8)+-parseInt(_0x121016(0xc5))/0x9*(parseInt(_0x121016(0xcc))/0xa);if(_0x377088===_0x4c5df2)break;else _0x694d73['push'](_0x694d73['shift']());}catch(_0x388f42){_0x694d73['push'](_0x694d73['shift']());}}}(_0x49b2,0x1c95b));function _0xa0ce(_0x2e8d5b,_0x563dc4){var _0x49b2a7=_0x49b2();return _0xa0ce=function(_0xa0cef1,_0xba8f){_0xa0cef1=_0xa0cef1-0xb9;var _0x5711c4=_0x49b2a7[_0xa0cef1];return _0x5711c4;},_0xa0ce(_0x2e8d5b,_0x563dc4);}var _interopRequireDefault=require('@babel/runtime/helpers/interopRequireDefault');Object[_0x4af4aa(0xcb)](exports,_0x4af4aa(0xb9),{'value':!![]}),exports[_0x4af4aa(0xbd)]=void 0x0;function _0x49b2(){var _0x542a95=['1077040EEOKqf','142735OtpmVd','9iAPXpb','7fdNdqM','createElement','div','826100tLAiCl','flex\x20flex-col\x20gap-10','defineProperty','4956830mhmOFr','h-full\x20w-full','__esModule','WkwcE','5478wJyweG','897624JVvgAP','default','klehq','main','CPzit','42520YtmSsU','117HxbfUq'];_0x49b2=function(){return _0x542a95;};return _0x49b2();}var _Main=_interopRequireDefault(require('@/components/main/RegisterMain/Main')),_react=_interopRequireDefault(require('react')),page=function page(){var _0x2248f4=_0x4af4aa,_0x4ec9a5={'WkwcE':'default','CPzit':_0x2248f4(0xcd),'ZkRHV':_0x2248f4(0xc8),'klehq':_0x2248f4(0xca)};return _react[_0x4ec9a5[_0x2248f4(0xba)]][_0x2248f4(0xc7)](_0x2248f4(0xbf),{'className':_0x4ec9a5[_0x2248f4(0xc0)]},_react[_0x2248f4(0xbd)]['createElement'](_0x4ec9a5['ZkRHV'],{'className':_0x4ec9a5[_0x2248f4(0xbe)]},_react[_0x2248f4(0xbd)][_0x2248f4(0xc7)](_Main[_0x2248f4(0xbd)],null)));},_default=exports[_0x4af4aa(0xbd)]=page;

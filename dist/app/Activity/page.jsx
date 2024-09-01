@@ -1,16 +1,1 @@
-import ActivityAnnual from '@/components/main/ActivityMain/ActivityAnnual';
-import ActivitySpecial from '@/components/main/ActivityMain/ActivitySpecial';
-import Main from '@/components/main/ActivityMain/Main';
-import Contact from '@/components/main/Contact';
-import React from 'react';
-var page = function () {
-    return (<main className="h-full w-full">
-      <div className="flex flex-col">
-        <Main></Main>
-        <ActivityAnnual></ActivityAnnual>
-        <ActivitySpecial></ActivitySpecial>
-        <Contact></Contact>
-      </div>
-    </main>);
-};
-export default page;
+'use strict';function _0x9006(_0x7b4055,_0x5cd538){var _0x28d03e=_0x28d0();return _0x9006=function(_0x900617,_0xbeafef){_0x900617=_0x900617-0x184;var _0x252a4e=_0x28d03e[_0x900617];return _0x252a4e;},_0x9006(_0x7b4055,_0x5cd538);}var _0x48a3bb=_0x9006;(function(_0x4ead37,_0x4a47c6){var _0x42bf70=_0x9006,_0x1f99cd=_0x4ead37();while(!![]){try{var _0x1abc36=parseInt(_0x42bf70(0x197))/0x1+-parseInt(_0x42bf70(0x187))/0x2*(-parseInt(_0x42bf70(0x194))/0x3)+parseInt(_0x42bf70(0x18f))/0x4*(-parseInt(_0x42bf70(0x192))/0x5)+parseInt(_0x42bf70(0x193))/0x6*(-parseInt(_0x42bf70(0x18d))/0x7)+parseInt(_0x42bf70(0x190))/0x8*(-parseInt(_0x42bf70(0x184))/0x9)+parseInt(_0x42bf70(0x196))/0xa+parseInt(_0x42bf70(0x18b))/0xb*(parseInt(_0x42bf70(0x188))/0xc);if(_0x1abc36===_0x4a47c6)break;else _0x1f99cd['push'](_0x1f99cd['shift']());}catch(_0x40ebf5){_0x1f99cd['push'](_0x1f99cd['shift']());}}}(_0x28d0,0x552b3));function _0x28d0(){var _0x2f5093=['2121511qBWcok','h-full\x20w-full','4eEQtfc','5576504MopmNi','createElement','3417850hxZJKp','12aUNNUT','51iUtchi','div','76150FhzNOG','97038bVhyMm','BpSxf','@/components/main/ActivityMain/Main','9tOaVtH','flex\x20flex-col','GLdoT','30326wvPSwC','209544ygNXoM','react','main','1243bYtARB','default'];_0x28d0=function(){return _0x2f5093;};return _0x28d0();}var _interopRequireDefault=require('@babel/runtime/helpers/interopRequireDefault');Object['defineProperty'](exports,'__esModule',{'value':!![]}),exports['default']=void 0x0;var _ActivityAnnual=_interopRequireDefault(require('@/components/main/ActivityMain/ActivityAnnual')),_ActivitySpecial=_interopRequireDefault(require('@/components/main/ActivityMain/ActivitySpecial')),_Main=_interopRequireDefault(require(_0x48a3bb(0x199))),_Contact=_interopRequireDefault(require('@/components/main/Contact')),_react=_interopRequireDefault(require(_0x48a3bb(0x189))),page=function page(){var _0x546af2=_0x48a3bb,_0x36ca42={'BpSxf':_0x546af2(0x18c),'GLdoT':_0x546af2(0x18a),'DJVPL':_0x546af2(0x18e),'LDGIc':_0x546af2(0x195),'klVpO':_0x546af2(0x185)};return _react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_0x36ca42[_0x546af2(0x186)],{'className':_0x36ca42['DJVPL']},_react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_0x36ca42['LDGIc'],{'className':_0x36ca42['klVpO']},_react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_Main[_0x546af2(0x18c)],null),_react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_ActivityAnnual[_0x36ca42[_0x546af2(0x198)]],null),_react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_ActivitySpecial[_0x36ca42['BpSxf']],null),_react[_0x36ca42[_0x546af2(0x198)]][_0x546af2(0x191)](_Contact[_0x36ca42[_0x546af2(0x198)]],null)));},_default=exports[_0x48a3bb(0x18c)]=page;

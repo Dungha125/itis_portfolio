@@ -1,14 +1,1 @@
-import React from 'react';
-import FormRegister from '@/components/src/FormRegister';
-var Main = function () {
-    return (<div className='flex flex-col h-full w-full px-2 lg:px-[4rem] bg-transparent' style={{
-            backgroundImage: 'url(/back.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-        }}>
-    
-        <FormRegister />
-    </div>);
-};
-export default Main;
+'use strict';var _0x3b2919=_0x16e8;function _0x9563(){var _0xf5a0a0=['888kVDgbe','default','zScTN','PKUCL','441PhCyOe','1992BQEjrN','defineProperty','861641OYmxBw','jWhxN','15267vYtOBP','8725qAmrcv','SisAQ','5834480UGKznV','fixed','__esModule','31381TczjGC','26992yVUyaM','45881KOjWBI','@babel/runtime/helpers/interopRequireDefault','12fWByqf','194rUaoeZ','aPKSA','createElement','react','center','url(/back.png)','flex\x20flex-col\x20h-full\x20w-full\x20px-2\x20lg:px-[4rem]\x20bg-transparent'];_0x9563=function(){return _0xf5a0a0;};return _0x9563();}(function(_0x4ab866,_0x53972c){var _0x43adbb=_0x16e8,_0x186798=_0x4ab866();while(!![]){try{var _0xcfc35e=-parseInt(_0x43adbb(0x10f))/0x1+parseInt(_0x43adbb(0x112))/0x2*(-parseInt(_0x43adbb(0x107))/0x3)+parseInt(_0x43adbb(0x11e))/0x4*(parseInt(_0x43adbb(0x108))/0x5)+parseInt(_0x43adbb(0x119))/0x6*(-parseInt(_0x43adbb(0x10d))/0x7)+-parseInt(_0x43adbb(0x10e))/0x8*(-parseInt(_0x43adbb(0x11d))/0x9)+parseInt(_0x43adbb(0x10a))/0xa+-parseInt(_0x43adbb(0x105))/0xb*(-parseInt(_0x43adbb(0x111))/0xc);if(_0xcfc35e===_0x53972c)break;else _0x186798['push'](_0x186798['shift']());}catch(_0x4c2c64){_0x186798['push'](_0x186798['shift']());}}}(_0x9563,0x7863d));var _interopRequireDefault=require(_0x3b2919(0x110));function _0x16e8(_0x513c9a,_0x1ba468){var _0x9563c6=_0x9563();return _0x16e8=function(_0x16e8b2,_0x87ffb6){_0x16e8b2=_0x16e8b2-0x104;var _0xe04913=_0x9563c6[_0x16e8b2];return _0xe04913;},_0x16e8(_0x513c9a,_0x1ba468);}Object[_0x3b2919(0x104)](exports,_0x3b2919(0x10c),{'value':!![]}),exports[_0x3b2919(0x11a)]=void 0x0;var _react=_interopRequireDefault(require(_0x3b2919(0x115))),_FormRegister=_interopRequireDefault(require('@/components/src/FormRegister')),Main=function Main(){var _0xae9978=_0x3b2919,_0x9c267d={'jWhxN':_0xae9978(0x11a),'zScTN':_0xae9978(0x118),'aPKSA':_0xae9978(0x117),'PKUCL':'cover','SisAQ':_0xae9978(0x116),'njmvI':_0xae9978(0x10b)};return _react[_0x9c267d[_0xae9978(0x106)]][_0xae9978(0x114)]('div',{'className':_0x9c267d[_0xae9978(0x11b)],'style':{'backgroundImage':_0x9c267d[_0xae9978(0x113)],'backgroundSize':_0x9c267d[_0xae9978(0x11c)],'backgroundPosition':_0x9c267d[_0xae9978(0x109)],'backgroundAttachment':_0x9c267d['njmvI']}},_react[_0xae9978(0x11a)][_0xae9978(0x114)](_FormRegister[_0xae9978(0x11a)],null));},_default=exports[_0x3b2919(0x11a)]=Main;
