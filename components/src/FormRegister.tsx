@@ -192,7 +192,7 @@ const FormRegister: React.FC = () => {
       setIsSubmitting(true); // Start loading spinner
       try {
         const response = await axios.post(
-          "https://demoitis-1-t9269927.deta.app/CTV-2024",
+          "https://lcdkhoacntt1-1-c9938135.deta.app/api/ctv-2024",
           formData
         );
         console.log("API response:", response.data);
