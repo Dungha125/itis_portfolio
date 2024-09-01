@@ -2,7 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const JavaScriptObfuscator = require('javascript-obfuscator');
 
-const buildPath = path.join(__dirname, '../.next/static');
+const directories = [
+  path.join(__dirname, '../.next/static'),
+  path.join(__dirname, '../components'), 
+  path.join(__dirname, '../app'),
+];
 
 const obfuscateFiles = (dir) => {
   fs.readdirSync(dir).forEach(file => {
@@ -20,8 +24,10 @@ const obfuscateFiles = (dir) => {
   });
 };
 
-if (fs.existsSync(buildPath)) {
-  obfuscateFiles(buildPath);
-} else {
-  console.log(`Build path not found: ${buildPath}`);
-}
+directories.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    obfuscateFiles(dir);
+  } else {
+    console.log(`Build path not found: ${dir}`);
+  }
+});
