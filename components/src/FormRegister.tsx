@@ -191,10 +191,7 @@ const FormRegister: React.FC = () => {
     if (validate()) {
       setIsSubmitting(true); // Start loading spinner
       try {
-        const response = await axios.post(
-          "https://demoitis-1-t9269927.deta.app/CTV-2024",
-          formData
-        );
+        const response = await axios.post(`${process.env.API_URL}/CTV-2024`, formData);
         console.log("API response:", response.data);
         showPopup("Đăng ký thành công!");
       } catch (error) {
