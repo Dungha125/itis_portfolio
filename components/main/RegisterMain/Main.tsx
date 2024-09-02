@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className='flex flex-col h-full w-full px-2 lg:px-[4rem] bg-transparent'
     style={{
-      backgroundImage: 'url(/back.png)',
+      backgroundImage: 'url(/backfix.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed' 
