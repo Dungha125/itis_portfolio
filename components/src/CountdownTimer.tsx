@@ -73,10 +73,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ openingTime, closingTim
   }
 
   return (
-    <div className='flex flex-col items-center justify-center w-full'>
-      <div className='w-full text-center flex justify-center items-center text-xl font-semibold'>
+    <div className='flex flex-col items-center justify-center min-w-[700px] lg:px-16 xl:px-20 2xl:px-24'>
+      <div className='text-center text-xl font-semibold '>
         {phase === 'opening' ? (
-          <div className='bg-slate-100 text-red-600 rounded-xl px-2 py-2'>
+          <div className='bg-slate-100 text-red-600 rounded-xl px-2 py-2 '>
             Mở đơn sau: {timeLeft.days} ngày {timeLeft.hours} giờ {timeLeft.minutes} phút {timeLeft.seconds} giây
           </div>
         ) : (
