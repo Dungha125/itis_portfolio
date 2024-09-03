@@ -37,7 +37,7 @@ const MainContent = () => {
           
         
           <CountdownTimer 
-              openingTime={new Date('2024-09-05T00:00:00')} 
+              openingTime={new Date('2024-09-05T20:00:00')} 
               closingTime={new Date('2024-09-18T12:00:00')} 
 />
           
