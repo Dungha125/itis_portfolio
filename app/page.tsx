@@ -1,6 +1,7 @@
 import Activity from "@/components/main/Activity";
 import Benefit from "@/components/main/Benefit";
 import Contact from "@/components/main/Contact";
+import Fandq from "@/components/main/Fandq";
 import Intro from "@/components/main/Intro";
 import Main from "@/components/main/Main";
 import Manage from "@/components/main/Manage";
@@ -17,6 +18,7 @@ export default function Home() {
         <Activity></Activity>
         <Manage></Manage>
         <Room></Room> 
+        <Fandq></Fandq>
         <Contact></Contact>
       </div>
     </main>

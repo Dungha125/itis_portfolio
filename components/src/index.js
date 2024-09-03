@@ -196,3 +196,34 @@ export const benefittext = [
     'Công nghệ thông tin CLC',
     'CNTT Việt Nhật',
   ];
+
+  export const faqData = [
+    {
+      question: "Liên chi khác CLB như thế nào?",
+      answer: "Updating..."
+    },
+    {
+      question: "Hình thức tuyển CTV Liên chi?",
+      answer: "Updating..."
+    },
+    {
+      question: "Sinh viên năm 3, năm 4 có thể tham gia ứng tuyển được không?",
+      answer: "Updating..."
+    },
+    {
+      question: "Liên chi là tổ chức chạy sự kiện, vậy có dạy lập trình không?",
+      answer: "Updating..."
+    },
+    {
+      question: "Có được tham gia cả Liên chi và CLB không?",
+      answer: "Updating..."
+    },
+    {
+      question: "Chưa có kỹ năng về tổ chức sự kiện có thể tham gia Liên chi được hay không?",
+      answer: "Updating..."
+    },
+    {
+      question: "Nhận được quyền lợi gì khi tham gia vào Liên chi?",
+      answer: "Updating..."
+    },
+  ];

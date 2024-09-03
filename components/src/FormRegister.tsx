@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { majors } from ".";
+import FandqContent from "../content/FandqContent";
 
 interface FormData {
   fullname: string;
@@ -596,7 +597,7 @@ const FormRegister: React.FC = () => {
               />
             </div>
           </div>         
-          
+          <FandqContent/>
           <div className='flex justify-center'>
           <button
     type="submit"
