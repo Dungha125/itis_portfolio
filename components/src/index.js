@@ -214,7 +214,7 @@ export const benefittext = [
         "- CLB: Câu lạc bộ thường tập trung vào các sở thích hoặc mục tiêu cụ thể của các thành viên. Các thành viên tham gia CLB thường có cùng sở thích, ví dụ: CLB thể thao, CLB IT,... Mục tiêu chính của CLB là tạo ra một môi trường cho các thành viên thực hiện và thảo luận về sở thích hoặc mục tiêu đó.",
         "Về phạm vi:",
         "- Liên chi: LCK thường hoạt động trên phạm vi lớn hơn, đại diện cho toàn bộ khoa hoặc ngành học trong một trường học và thường được tổ chức và quản lý bởi trường hoặc khoa.",
-        "- CLB: Các CLB thường có phạm vi hẹp hơn và tập trung vào một lĩnh vực cụ thể hoặc sở thích chung của các thành viên. Chúng thường được tổ chức và quản lý bởi các thành viên tự nguyện hoặc sinh viên.",
+        "- CLB: Các CLB thường có phạm vi hẹp hơn và tập trung vào một lĩnh vực cụ thể hoặc sở thích chung của các thành viên. Các CLB thường được tổ chức và quản lý bởi các thành viên tự nguyện hoặc sinh viên.",
         "Tóm lại, CLB và LCK đều là các tổ chức hoạt động trong môi trường trường học nhưng có mục tiêu và phạm vi khác nhau, với LCK thường có mục tiêu và phạm vi rộng hơn và liên quan đến công tác thanh thiếu niên và sinh viên, trong khi CLB tập trung vào các sở thích hoặc mục tiêu cụ thể của các thành viên."
       ]
     },
