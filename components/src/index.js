@@ -199,18 +199,18 @@ export const benefittext = [
 
   export const faqData = [
     {
-      question: "Liên Chi Đoàn Khoa CNTT1 là một tổ chức thế nào?",
+      question: "Liên chi Đoàn Khoa CNTT1 là một tổ chức thế nào?",
       answer: [
         "Liên chi Đoàn Khoa CNTT1 (có tên gọi thân mật ITIS) là Liên Chi Đoàn lớn nhất Học viện, trực thuộc Khoa CNTT1. Hiện tại Liên chi Đoàn đang có khoảng 100 thành viên và khoảng 5000 Đoàn viên của các ngành CNTT, ATTT, KHMT, CNTT CLC, CNTT Việt - Nhật.",
-        "Trong suốt quá trình hình thành và phát triển, Liên Chi Đoàn đã và đang đồng hành cùng Khoa CNTT1 nỗ lực hết mình với mục tiêu đẩy mạnh các hoạt động học tập, nghiên cứu khoa học, đồng thời tạo ra nhiều sân chơi giúp các bạn sinh viên trong khoa thỏa mãn đam mê, giải tỏa căng thẳng và luôn đồng hành cùng các bạn sinh viên trong khoa trong quá trình học tập tại Học viện."
+        "Trong suốt quá trình hình thành và phát triển, Liên chi Đoàn đã và đang đồng hành cùng Khoa CNTT1 nỗ lực hết mình với mục tiêu đẩy mạnh các hoạt động học tập, nghiên cứu khoa học, đồng thời tạo ra nhiều sân chơi giúp các bạn sinh viên trong khoa thỏa mãn đam mê, giải tỏa căng thẳng và luôn đồng hành cùng các bạn sinh viên trong khoa trong quá trình học tập tại Học viện."
       ]
     },
     {
       question: "Liên chi khác CLB như thế nào?",
       answer: [
-        "CLB (Câu lạc bộ) và Liên Chi Đoàn Khoa (LCK) là hai loại tổ chức hoạt động trong môi trường trường học, nhưng chúng có mục tiêu và hoạt động khác nhau:",
+        "CLB (Câu lạc bộ) và Liên chi Đoàn Khoa (LCK) là hai loại tổ chức hoạt động trong môi trường trường học, nhưng chúng có mục tiêu và hoạt động khác nhau:",
         "Về mục tiêu:",
-        "- Liên chi: Liên Chi Đoàn Khoa thường có mục tiêu rộng hơn và thường liên quan đến công tác thanh thiếu niên và sinh viên, cũng như phát triển xã hội. LCK thường là tổ chức đại diện cho toàn bộ khoa hoặc ngành học trong một trường đại học hoặc cao đẳng. Mục tiêu của LCK bao gồm việc thúc đẩy tình đoàn kết, tổ chức các hoạt động văn hóa và xã hội, và tham gia vào các hoạt động cộng đồng và công tác xã hội.",
+        "- Liên chi: Liên chi Đoàn Khoa thường có mục tiêu rộng hơn và thường liên quan đến công tác thanh thiếu niên và sinh viên, cũng như phát triển xã hội. LCK thường là tổ chức đại diện cho toàn bộ khoa hoặc ngành học trong một trường đại học hoặc cao đẳng. Mục tiêu của LCK bao gồm việc thúc đẩy tình đoàn kết, tổ chức các hoạt động văn hóa và xã hội, và tham gia vào các hoạt động cộng đồng và công tác xã hội.",
         "- CLB: Câu lạc bộ thường tập trung vào các sở thích hoặc mục tiêu cụ thể của các thành viên. Các thành viên tham gia CLB thường có cùng sở thích, ví dụ: CLB thể thao, CLB IT,... Mục tiêu chính của CLB là tạo ra một môi trường cho các thành viên thực hiện và thảo luận về sở thích hoặc mục tiêu đó.",
         "Về phạm vi:",
         "- Liên chi: LCK thường hoạt động trên phạm vi lớn hơn, đại diện cho toàn bộ khoa hoặc ngành học trong một trường học và thường được tổ chức và quản lý bởi trường hoặc khoa.",
@@ -229,12 +229,12 @@ export const benefittext = [
       ]
     },
     {
-      question: "Liên Chi Đoàn Khoa CNTT1 tuyển CTV những khóa nào?",
-      answer: "Hầu như Liên Chi sẽ chỉ mở đơn cho các bạn năm nhất, tất nhiên vẫn sẽ có thể tuyển cả năm hai nhưng rất ít."
+      question: "Liên chi Đoàn Khoa CNTT1 tuyển CTV những khóa nào?",
+      answer: "Hầu như Liên chi sẽ chỉ mở đơn cho các bạn năm nhất, tất nhiên vẫn sẽ có thể tuyển cả năm hai nhưng rất ít."
     },
     {
       question: "Liên chi là tổ chức chạy sự kiện, vậy có dạy lập trình không?",
-      answer: "ITIS không phải CLB học thuật mà là nơi phát triển các kỹ năng mềm và tổ chức sự kiện của khoa. Tuy nhiên khi các bạn vào Liên Chi các bạn sẽ được học các lớp học code như C/C++ và có thể là các khóa thuật toán cùng với các tài liệu chỉ lưu hành nội bộ được soạn và dạy bởi những anh chị khóa trên"
+      answer: "ITIS không phải CLB học thuật mà là nơi phát triển các kỹ năng mềm và tổ chức sự kiện của khoa. Tuy nhiên khi các bạn vào Liên chi các bạn sẽ được học các lớp học code như C/C++ và có thể là các khóa thuật toán cùng với các tài liệu chỉ lưu hành nội bộ được soạn và dạy bởi những anh chị khóa trên"
     },
     {
       question: "Có được tham gia cả Liên chi và CLB không?",
