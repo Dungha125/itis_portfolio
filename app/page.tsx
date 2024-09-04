@@ -18,7 +18,7 @@ export default function Home() {
         <Activity></Activity>
         <Manage></Manage>
         <Room></Room> 
-        
+        <Fandq/>
         <Contact></Contact>
       </div>
     </main>
