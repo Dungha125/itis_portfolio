@@ -212,7 +212,7 @@ export const benefittext = [
     },
     {
       question: "Liên chi là tổ chức chạy sự kiện, vậy có dạy lập trình không?",
-      answer: "Updating..."
+      answer: "Khi trở thành CTV của Liên chi, các bạn "
     },
     {
       question: "Có được tham gia cả Liên chi và CLB không?",

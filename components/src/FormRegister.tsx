@@ -597,7 +597,7 @@ const FormRegister: React.FC = () => {
               />
             </div>
           </div>         
-          <FandqContent/>
+          {/*<FandqContent/>*/}
           <div className='flex justify-center'>
           <button
     type="submit"
