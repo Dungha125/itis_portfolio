@@ -51,27 +51,8 @@ const MainContent = () => {
           </motion.div>
           
         </motion.div>
-        <motion.div variants={slideInFromLeft(0.9)} className='my-4 flex lg:px-16 xl:px-20 2xl:px-24 w-full items-center justify-center lg:justify-start relative'>
-        <CountdownTimer
-              openingTime={new Date('2024-09-05T00:00:00')} 
-              closingTime={new Date('2024-09-18T12:00:00')} />
-              
-        </motion.div>
-        <motion.div variants={slideInFromBottom} className='lg:px-16 xl:px-20 2xl:px-24'>
-            <div className='rounded-md border-gray-800 border-solid'>
-              <ul className='flex flex-col lg:flex-row gap-4'>
-                <li className='px-4 py-3 bg-[#fcc0c0] border-[#b16969] border-2  rounded-md font-medium text-xs text-center'>
-                  Nhận CV <br /> 05/09 - 12h00 18/09
-                </li>
-                <li className='px-4 py-3 bg-[#bcdafc] border-[#698bb1] border-2  rounded-md font-medium text-xs text-center'>
-                  Phỏng vấn <br /> 22/09
-                </li>
-                <li className='px-4 py-3 bg-[#c2ffc5] border-[#69b195] border-2  rounded-md font-medium text-xs text-center'>
-                  Training<br /> tháng 10/2024 - tháng 01/2025
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+        
+        
       </div>
       
       <motion.div variants={slideInFromBottom} className='w-full h-full flex items-center justify-center'>
