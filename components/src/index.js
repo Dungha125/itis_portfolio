@@ -230,7 +230,7 @@ export const benefittext = [
     },
     {
       question: "Liên chi Đoàn Khoa CNTT1 tuyển CTV những khóa nào?",
-      answer: "Hầu như Liên chi sẽ chỉ mở đơn cho các bạn năm nhất, tất nhiên vẫn sẽ có thể tuyển cả năm hai nhưng rất ít."
+      answer: "Hằng năm, Liên chi Đoàn chủ yếu tuyển các bạn sinh viên năm nhất. Ngoài ra Liên chi cũng rất chào đón các bạn năm 2 trở lên có mong muốn tham gia vào Liên chi, trao nhiệt huyết của mình để cùng Liên chi phát triển."
     },
     {
       question: "Liên chi là tổ chức chạy sự kiện, vậy có dạy lập trình không?",
