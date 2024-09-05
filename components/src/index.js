@@ -34,7 +34,7 @@ export const benefittext = [
     },
     {
       id: "2",
-      text: "ITIS CUP 2020",
+      text: "ITIS CUP 2023",
       imageUrl: "/anh3.jpg",
     },
   ];
@@ -95,7 +95,7 @@ export const benefittext = [
     },
     {
       id: "2",
-      text: "ITIS CUP 2020",
+      text: "ITIS CUP 2023",
       imageUrl: "/anh3.jpg",
     },
   ];

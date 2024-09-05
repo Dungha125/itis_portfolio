@@ -87,7 +87,7 @@ const Carousel = () => {
         alt="..." />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-        <h5 className="text-3xl font-bold relative z-10">ITIS CUP 2020</h5>
+        <h5 className="text-3xl font-bold relative z-10">ITIS CUP 2023</h5>
       </div>
       <div className="w-full h-full inset-0 absolute bg-gradient-to-t from-[#000000a0] to-transparent"></div>
     </div>
