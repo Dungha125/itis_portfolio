@@ -222,7 +222,7 @@ export const benefittext = [
       question: "Hình thức tuyển CTV Liên chi?",
       answer: [
         "CTV Liên chi Đoàn Khoa Công nghệ Thông tin 1 được tuyển thông qua 3 vòng xét duyệt:",
-        "Vòng CV: Tuyển chọn qua thông tin trên CV được các ứng cử viên điền qua form đăng ký",
+        "Vòng CV: Tuyển chọn qua thông tin trên CV được các ứng cử viên điền qua form đăng ký.",
         "Vòng phỏng vấn: Qua việc phỏng vấn, chúng tôi hiểu rõ hơn về các ứng cử viên, từ đó chọn ra người phù hợp để đi tiếp.",
         "Vòng Training: Các CTV tập sự sẽ được thử thách ở vòng Training với một số hoạt động chung, mang tính tập thể. Qua đó các bạn sẽ xây dựng được tinh thần đoàn kết, hỗ trợ nhau trong công việc, bộc lộ kỹ năng cá nhân…",
         "Vượt qua vòng Training thì xin chúc mừng các bạn vì đã trở thành CTV chính thức của Liên chi Đoàn Khoa Công nghệ Thông tin 1."
@@ -234,7 +234,7 @@ export const benefittext = [
     },
     {
       question: "Liên chi là tổ chức chạy sự kiện, vậy có dạy lập trình không?",
-      answer: "ITIS không phải CLB học thuật mà là nơi phát triển các kỹ năng mềm và tổ chức sự kiện của khoa. Tuy nhiên khi các bạn vào Liên chi các bạn sẽ được học các lớp học code như C/C++ và có thể là các khóa thuật toán cùng với các tài liệu chỉ lưu hành nội bộ được soạn và dạy bởi những anh chị khóa trên"
+      answer: "ITIS không phải CLB học thuật mà là nơi phát triển các kỹ năng mềm và tổ chức sự kiện của khoa. Tuy nhiên khi các bạn vào Liên chi các bạn sẽ được học các lớp học code như C/C++ và có thể là các khóa thuật toán cùng với các tài liệu chỉ lưu hành nội bộ được soạn và dạy bởi những anh chị khóa trên."
     },
     {
       question: "Có được tham gia cả Liên chi và CLB không?",
