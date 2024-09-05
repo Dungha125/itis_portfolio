@@ -9,6 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { majors } from ".";
 import FandqContent from "../content/FandqContent";
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   fullname: string;
@@ -68,10 +69,13 @@ const FormRegister: React.FC = () => {
   const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({}); // State to hold errors
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formVisible, setFormVisible] = useState(true);
   const showPopup = (message: string) => {
     setPopupMessage(message || "");
     setPopupVisible(true);
   };
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchProvinces = async () => {
@@ -198,6 +202,7 @@ const FormRegister: React.FC = () => {
         );
         console.log("API response:", response.data);
         showPopup("Đăng ký thành công!");
+        setFormVisible(false);
       } catch (error) {
         console.error("API error:", error);
         showPopup("Đã xảy ra lỗi. Vui lòng check lại form.");
@@ -248,6 +253,7 @@ const FormRegister: React.FC = () => {
         <h1 className="text-neutral-800 w-full text-center font-bold text-2xl md:text-4xl mb-4">
           ĐĂNG KÝ
         </h1>
+        {formVisible ? (
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="bg-slate-200 w-full rounded-lg px-8 pt-6 pb-4 mb-5 shadow-lg shadow-[#b3b3b3]/50">
             <div className="mb-4">
@@ -634,6 +640,11 @@ const FormRegister: React.FC = () => {
           </div>
           
         </form>
+        ) : (
+          <div className="w-full text-center font-bold bg-slate-100 p-[3rem] rounded-xl text-xl lg:text-3xl">
+            <p>BẠN ĐÃ ĐĂNG KÝ THÀNH CÔNG, VUI LÒNG QUAY TRỞ LẠI TRANG CHỦ</p>
+          </div>
+        )}
         
       
   {popupVisible && <Popup message={popupMessage || ""} onClose={handleClosePopup} />}
