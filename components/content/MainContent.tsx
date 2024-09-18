@@ -35,11 +35,6 @@ const MainContent = () => {
             Con tàu thám hiểm ITIS lừng danh cưỡi sóng vượt biển khám phá vùng đất mới, với hành trình không ngừng nghỉ và chỉ trở về bến cảng mỗi năm một lần vào mùa thu. Ngoài bổ sung lương thực và nhiên liệu thì còn có một nhiệm vụ vô cùng quan trọng, đó chính là tuyển thêm những thuỷ thủ đoàn mới đầy tiềm năng!
           </motion.p>
           
-        
-          <CountdownTimer 
-              openingTime={new Date('2024-09-05T20:00:00')} 
-              closingTime={new Date('2024-09-18T12:00:00')} 
-/>
           
           <motion.div variants={slideInFromBottom} className='lg:px-16 xl:px-20 2xl:px-24'>
             <div className='rounded-md border-gray-800 border-solid'>
