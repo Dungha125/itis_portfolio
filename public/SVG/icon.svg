@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #70ccf2;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #4e78ce;
+      }
+
+      .cls-3 {
+        fill: #86e7f5;
+      }
+    </style>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard 1">
+    <path class="cls-1" d="M544.086,17.231l-3.632,90.131h0l-80.718,36.427h0l3.633-90.131h0l80.717-36.427h0Z" transform="translate(-300)"/>
+    <path id="Rectangle_2_copy_3" data-name="Rectangle 2 copy 3" class="cls-2" d="M411.836,96.628l-1.1,27.377h0L386.214,135.07h0l1.1-27.377h0l24.518-11.065h0Z" transform="translate(-300)"/>
+    <path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-2" d="M517.155,157.387l-2.7,66.992h0l-60,27.076h0l2.7-66.993h0l60-27.075h0Z" transform="translate(-300)"/>
+    <path id="Rectangle_2_copy_2" data-name="Rectangle 2 copy 2" class="cls-3" d="M406.351,169.267l-2.172,53.894h0l-48.266,21.782h0l2.172-53.894h0l48.266-21.782h0Z" transform="translate(-300)"/>
+  </g>
+</svg>

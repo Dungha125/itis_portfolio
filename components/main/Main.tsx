@@ -3,11 +3,16 @@ import MainContent from '../content/MainContent';
 
 const Main = () => {
   return (
-    <div className='relative flex flex-col items-center justify-center w-full min-h-screen bg-white'>
-      <div className='absolute inset-0'>
-        <img src="/backfix.png" height={1500} alt="" className='object-cover h-full w-full' />
+    <div className='relative flex flex-col md:flex-row items-center justify-center w-full min-h-screen bg-white lg:px-20 xl:px-32 2xl:px-40'>
+      <MainContent /> 
+      <div className="w-full md:w-1/2 flex justify-center">
+        <img 
+          src="./SVG/icon.svg" 
+          alt="icon" 
+          className="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto" 
+        />
       </div>
-       <MainContent /> 
+       
     </div>
   );
 };

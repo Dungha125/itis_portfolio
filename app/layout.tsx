@@ -24,7 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#0d0d10] overflow-y-scroll overflow-x-hidden`}>
-        <StarsCanvas></StarsCanvas>
         <Navbar linkto="Intro"></Navbar>
         {children}</body>
     </html>

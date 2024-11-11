@@ -53,7 +53,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 width={40}
                                 height={40}
                             />
-                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200' : 'text-neutral-200'}`} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
+                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200' : 'text-blue-950'}`} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
                                 {isActivity ? 'HOẠT ĐỘNG' : 'LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1'}
                             </span>
                         </a>

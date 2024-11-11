@@ -22,6 +22,7 @@
     "@heroicons/react": "^2.1.4",
     "antd": "^5.20.5",
     "axios": "^1.7.4",
+    "itis_portfolio": "file:",
     "next": "^14.2.4",
     "react": "^18",
     "react-datepicker": "^7.3.0",
@@ -33,7 +34,7 @@
   },
   "devDependencies": {
     "@react-three/drei": "^9.108.1",
-    "@react-three/fiber": "^8.16.8",
+    "@react-three/fiber": "^8.17.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
