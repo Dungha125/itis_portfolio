@@ -4,15 +4,11 @@ import IntroContent from '../content/IntroContent'
 const Intro = () => {
   return (
     <section 
-    className='flex flex-col items-center justify-center h-full relative overflow-hidden z-30 pb-10'
+    className='flex flex-col items-center justify-center relative z-30 '
     >
         <div id='Intro'
-        className='h-full w-full bg-[#040224] '>
+        className='h-full w-full bg-[#040224] py-6 md:py-10'>
             <IntroContent ></IntroContent>
-        </div>
-        <div className='w-full h-full relative -z-9'>
-          <img src="/ITIS LA NHA.png" width={1920} alt="" className='absolute -top-6 lg:-top-8 z-10 rotate-20 w-full' />
-          <img src="/section.svg" width={1920} alt="" className='rotate-180 mb-0 relative pt-4 lg:pt-8 w-full'/>
         </div>
         
     </section>
