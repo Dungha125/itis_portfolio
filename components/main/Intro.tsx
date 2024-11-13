@@ -7,7 +7,7 @@ const Intro = () => {
     className='flex flex-col items-center justify-center relative z-30 '
     >
         <div id='Intro'
-        className='h-full w-full bg-[#040224] py-6 md:py-10'>
+        className='h-max w-full bg-[#040224]'>
             <IntroContent ></IntroContent>
         </div>
         

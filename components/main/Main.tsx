@@ -7,7 +7,7 @@ const Main = () => {
       <MainContent /> 
       <div className="w-full md:w-1/2 flex justify-center items-center h-full">
         <img 
-          src="./logo.svg" 
+          src="./SVG/icon.svg" 
           alt="icon" 
           className="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto" 
         />

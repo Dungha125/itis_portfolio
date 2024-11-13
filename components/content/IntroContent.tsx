@@ -6,8 +6,15 @@ import { slideInFromBottom, slideInFromRight, slideInFromTop } from '@/ulti/moti
 
 const IntroContent = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-[30]">
-      <div className="flex flex-col items-center w-full space-y-4 lg:space-y-6">
+    <div
+      className="flex flex-col md:flex-row items-center justify-center min-h-screen w-full z-[30] bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("/anh1.jpg")',
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-[#121416bd] to-[#000000d8] z-[10]"></div>
+      
+      <div className="flex flex-col items-center w-full space-y-4 lg:space-y-6 z-[20]">
         <h3 className="font-normal text-2xl text-neutral-400 text-center">
           Giới thiệu
         </h3>
@@ -41,7 +48,7 @@ const IntroContent = () => {
       </div>
 
       {/* Video Section */}
-      <div className="flex flex-col items-center w-full space-y-4">
+      <div className="flex flex-col items-center w-full space-y-4 z-[20]">
         <h3 className="font-normal text-2xl text-neutral-400 text-center">
           Video giới thiệu
         </h3>
