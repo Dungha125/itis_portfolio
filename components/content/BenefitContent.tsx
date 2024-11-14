@@ -32,12 +32,12 @@ const BenefitContent = () => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants} 
-      className="flex flex-col items-center justify-center gap-4 w-full z-[30]">
-        <motion.h5 variants={slideInFromBottom} className='font-medium text-xs lg:text-xl text-neutral-400 text-center  px-10 lg:px-20'>
+      className="flex flex-col items-center justify-center gap-4 w-full py-6 z-[30]">
+        <motion.h5 variants={slideInFromBottom} className='font-medium text-xs lg:text-3xl text-[#4e78ce] text-center  px-10 lg:px-20'>
           Bạn sẽ nhận được gì khi trở thành
         </motion.h5>
-        <motion.h1 variants={slideInFromBottom} className='font-bold text-center text-2xl lg:text-4xl text-white px-10 lg:px-20'>
-          Thành viên Liên chi Đoàn Khoa CNTT1
+        <motion.h1 variants={slideInFromBottom} className='font-extrabold text-center text-4xl lg:text-6xl text-[#4e78ce] px-10 lg:px-20'>
+          ITIS-ER
         </motion.h1>
 
         <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-4'>

@@ -6,10 +6,10 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 const ContactContent = () => {
   return (
-    <div id='Contact' className='w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] z-20'>
+    <div id='Contact' className='w-full h-full bg-[#4e78ce] text-gray-200 shadow-lg p-[15px] z-20'>
       <div className='w-full flex flex-col items-center justify-center m-auto'>
         <div className='w-full h-full flex flex-row items-center justify-center flex-wrap'>
-          <img src="/logomain.svg" width={300} height={300} alt="Main Logo" />
+          <img src="../SVG/icon.svg" width={300} height={300} alt="Main Logo" />
           <div className='w-auto h-auto md:mx-16 px-8'>
             <h3 className='font-bold text-[16px] lg:text-[24px] mb-4 w-full md:text-left text-center'>Liên hệ</h3>
             <span className='flex w-full mb-3 items-center flex-col md:flex-row gap-4'>

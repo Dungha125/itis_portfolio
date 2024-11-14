@@ -29,13 +29,21 @@ const AvtivityHomeContent = () => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants} 
-      className="flex flex-col items-center justify-center gap-4 w-full z-[30]">
-        <motion.h1 variants={slideInFromBottom} className='font-bold text-center px-10 lg:px-20 text-2xl lg:text-4xl mt-4'>
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-cyan-900'>Hoạt động</span>
+      className="flex flex-col lg:flex-row items-center justify-center gap-4 w-full z-[30] mt-12 lg:mt-0">
+        <div >
+       
+        <motion.h1 variants={slideInFromBottom} className='text-center px-10 lg:px-20 text-3xl lg:text-6xl'>
+            <span className='text-[#4e78ce] font-extrabold'>HOẠT ĐỘNG</span>
         </motion.h1>
         <motion.p variants={slideInFromBottom} className='text-center px-10 lg:px-20 text-xs lg:text-base text-neutral-600'>
             Hằng năm, Liên chi tham gia tổ chức và hỗ trợ nhiều hoạt động của Đoàn, Khoa và Học viện
         </motion.p>
+        <motion.div variants={slideInFromBottom} className='my-2 flex px-10 lg:px-20 w-full justify-center items-center relative'>
+          <button type='button' className='w-[12rem] h-[3rem] bg-[#4e78ce] font-medium text-xl text-center text-white rounded-full'>
+            <a href="/Activity">Xem thêm</a>
+          </button>
+        </motion.div>
+        </div>
 
         <div className='flex flex-wrap items-center justify-center  px-10 lg:px-20 gap-4 mt-4 lg:pt-8'>
           {activity.map((item)=>(
@@ -78,11 +86,6 @@ const AvtivityHomeContent = () => {
           </motion.div>
           ))}
         </div>
-        <motion.div variants={slideInFromBottom} className='my-4 flex px-10 lg:px-20 w-full justify-center items-center relative'>
-          <button type='button' className='w-[12rem] h-[4rem] bg-gradient-to-r from-[#af4496] to-[#43139c] hover:bg-gradient-to-l font-medium text-xl text-center text-white rounded-2xl'>
-            <a href="/Activity">Xem thêm</a>
-          </button>
-        </motion.div>
       </motion.div>
   )
 }
