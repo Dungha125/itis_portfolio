@@ -87,14 +87,14 @@ const ManageContent = () => {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={containerVariants}
-        className='flex flex-col items-center justify-center w-full gap-4 '>
-            <motion.h3 variants={slideInFromBottom} className='font-base text-xs lg:text-xl text-neutral-400 text-center w-full'>
+        className='flex flex-col items-center justify-center w-full gap-4 bg-white'>
+            <motion.h3 variants={slideInFromBottom} className='font-base text-xs lg:text-xl text-neutral-700 text-center w-full'>
                 Điều hành
             </motion.h3>
-            <motion.h1 variants={slideInFromBottom} className='font-bold text-2xl lg:text-4xl text-neutral-50 text-center w-full'>
+            <motion.h1 variants={slideInFromBottom} className='font-bold text-3xl lg:text-5xl text-[#485197] text-center w-full'>
                 Ban chấp hành
             </motion.h1>
-            <motion.h3 variants={slideInFromBottom} className='font-base text-xs lg:text-[1rem] text-neutral-400 text-center w-full'>
+            <motion.h3 variants={slideInFromBottom} className='font-base text-xs lg:text-[1rem] text-neutral-700 text-center w-full'>
                 Giới thiệu Ban chấp hành nhiệm kỳ 2024 - 2026
             </motion.h3>
             <div className='flex flex-col md:flex-row w-full items-center justify-center px-6 gap-3 md:gap-8'>

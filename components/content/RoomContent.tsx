@@ -32,11 +32,11 @@ const RoomContent = () => {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={containerVariants} 
-        className="flex flex-col items-center justify-center gap-4 w-full z-[30]">
+        className="flex flex-col items-center justify-center gap-4 w-full z-[30] py-20">
           <motion.h5 variants={slideInFromBottom} className='font-medium text-xs lg:text-xl text-neutral-400 text-center  px-10 lg:px-20'>
             Liên chi hoạt động với
           </motion.h5>
-          <motion.h1 variants={slideInFromBottom} className='font-bold text-center text-2xl lg:text-4xl text-white px-10 lg:px-20'>
+          <motion.h1 variants={slideInFromBottom} className='font-bold text-center text-2xl lg:text-4xl text-[#485197] px-10 lg:px-20'>
             4 BAN
           </motion.h1>
   
