@@ -1,6 +1,4 @@
 
-import Contact from '@/components/main/Contact'
-import Main from '@/components/main/RegisterMain/Main'
 import ConvertPage from '@/components/main/ToolsMain/ConvertHeic'
 import React from 'react'
 
