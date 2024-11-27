@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function ConvertPage() {
+const ConvertPage = () => {
   const [files, setFiles] = useState<File[]>([]); // Lưu nhiều file
   const [loading, setLoading] = useState<boolean>(false);
   const [downloadUrls, setDownloadUrls] = useState<{ url: string; name: string }[]>([]); // Lưu URL và tên gốc
@@ -133,3 +133,5 @@ export default function ConvertPage() {
     </div>
   );
 }
+
+export default ConvertPage
