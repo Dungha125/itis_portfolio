@@ -91,6 +91,9 @@ const ConvertPage = () => {
 
   return (
     <div className="mt-12 text-neutral-700 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+      <span className='w-full font-bold text-neutral-600 text-center'>
+        <h1 className='text-2xl my-[2rem]'>Chuyển đổi HEIC sang JPG</h1>
+      </span>
       <div className="mb-4">
         <input 
           type="file" 
