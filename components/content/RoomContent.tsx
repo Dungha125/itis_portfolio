@@ -58,15 +58,15 @@ const RoomContent = () => {
                     className="absolute inset-0.5 bg-n-8 -z-10 "
                     style={{ clipPath: "url(#benefits)" }}
                   >
-                    <div className='absolute z-20 bg-white h-full w-full bottom-0 flex items-center'>
-                      <img src={item.sour} width={900} height={900} alt="" className='opacity-20'/>
-                      </div>
+                    <div className='absolute z-20 bg-white h-full w-full bottom-0 right-0 flex items-center justify-end'>
+                      <img src={item.sour} width={300} height={300} alt="" className='opacity-20'/>
+                    </div>
                     <div className="absolute inset-0">
                       {item.imageUrl && (
                         <img
                           src={item.imageUrl}
-                          width={900}
-                          height={900}
+                          width={500}
+                          height={500}
                           className="w-full h-full object-cover"
                         />
                       )}

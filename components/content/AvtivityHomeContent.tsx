@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { slideInFromBottom, slideInFromBottomtime, slideInFromLeft } from '@/ulti/motion';
 import ClipPath from '@/public/ClipPath';
 import { activity } from '../src';
+import Link from 'next/link';
 
 const AvtivityHomeContent = () => {
     const { ref, inView } = useInView({
@@ -39,8 +40,10 @@ const AvtivityHomeContent = () => {
             Hằng năm, Liên chi tham gia tổ chức và hỗ trợ nhiều hoạt động của Đoàn, Khoa và Học viện
         </motion.p>
         <motion.div variants={slideInFromBottom} className='my-2 flex px-10 lg:px-20 w-full justify-center items-center relative'>
-          <button type='button' className='w-[12rem] h-[3rem] bg-[#4e78ce] font-medium text-xl text-center text-white rounded-full'>
-            <a href="/Activity">Xem thêm</a>
+          <button type='button' className='w-[12rem] h-[3rem] bg-[#4e78ce] hover:bg-[#3a5a9a] font-medium text-xl text-center text-white rounded-full'>
+          <Link href="/Activity">
+            Xem thêm
+          </Link>
           </button>
         </motion.div>
         </div>
