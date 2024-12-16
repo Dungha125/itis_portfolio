@@ -153,7 +153,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                     >
                                         {isActivity ? 'Đặc biệt' : 'Phòng Ban'}
                                     </Link>
-                                    <a href="/Tools">
+                                    <a href="/Tools" className='text-white'>
                                         Công cụ
                                     </a>
                                     <Link
