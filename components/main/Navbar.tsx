@@ -17,7 +17,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
 
     const pathname = usePathname();
     const router = useRouter();
-
+    const isHome = pathname === '/';
     const isActivity = pathname === '/Activity';
     const isRegister = pathname === '/Register';
 
@@ -59,7 +59,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         </a>
                         <div className='hidden lg:flex w-[500px] h-full flex-row items-center justify-between md:mr-10'>
                             <div className='flex items-center justify-between border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-50 gap-4 z-50'>
-                                {isActivity ? (
+                                {!isHome ? (
                                     <a
                                         onClick={handleHomeClick}
                                         className='cursor-pointer'
@@ -95,6 +95,9 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 >
                                     {isActivity ? 'Đặc biệt' : 'Phòng Ban'}
                                 </Link>
+                                <a href="/Tools">
+                                    Công cụ
+                                </a>
                                 <Link
                                     to="Contact"
                                     smooth={true}

@@ -249,3 +249,6 @@ export const benefittext = [
       answer: "Được sự hỗ trợ trực tiếp từ các thầy cô trong khoa, khi trở thành thành viên của Liên chi, các bạn sẽ được tiếp xúc và làm việc trực tiếp cùng các thầy cô. Được tham gia các hoạt động vui chơi được tổ chức một cách chuyên nghiệp. Ngoài ra sẽ được học các kĩ năng như: kĩ năng tổ chức sự kiện, kỹ năng thuyết trình, kĩ năng làm việc nhóm,... Đồng thời các bạn sẽ trực tiếp tham gia tổ chức cá nhân hoạt động quy mô Khoa và Học viện. Đặc biệt các bạn còn được các anh chị hỗ trợ trong việc học C/C++, thuật toán cùng các môn học khác."
     },
   ];
+
+
+ 
