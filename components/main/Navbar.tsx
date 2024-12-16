@@ -114,7 +114,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                             </button>
                             {showPopup && (
                                 <div className='absolute top-[65px] right-0 bg-[#020213d2] border border-[#7042f861] w-[250px] p-4 rounded-lg shadow-lg'>
-                                    {isActivity ? (
+                                    {!isHome ? (
                                         <a
                                             onClick={handleHomeClick}
                                             className='block py-2 cursor-pointer text-white'
@@ -153,6 +153,9 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                     >
                                         {isActivity ? 'Đặc biệt' : 'Phòng Ban'}
                                     </Link>
+                                    <a href="/Tools">
+                                        Công cụ
+                                    </a>
                                     <Link
                                         to="Contact"
                                         smooth={true}
