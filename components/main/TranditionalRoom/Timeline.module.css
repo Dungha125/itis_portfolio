@@ -1,0 +1,197 @@
+.timelineContainer {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .timelineContainer:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.80);
+    content: "";
+  }
+  
+  .timelineHeader {
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+  
+  .timelineHeaderTitle {
+    color: #485197;
+    font-size: 58px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .timelineHeaderSubtitle {
+    color: rgb(94, 94, 94);
+    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0;
+    font-weight: normal;
+  }
+  
+  .timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+  }
+  
+  .timelineItem {
+    padding: 40px 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+  
+  .timelineItemActive {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .timelineItem:nth-child(even) {
+    align-self: flex-end;
+  }
+  
+  .timelineImg {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .timelineContentTitle {
+    font-size: 30px;
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+  }
+  
+  .timelineContentDesc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .timeline-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  
+  .timeline-header__title {
+    color: #fff;
+    font-size: 58px;
+    font-family: "Oswald", sans-serif;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .timeline-header__subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  @media (max-width: 768px) {
+    .timelineHeader {
+      height: 40vh;
+    }
+
+    .timelineContainer
+    {
+        padding: 0 8rem
+    }
+
+    .timelineImg
+    {
+        border-radius: 12px;
+    }
+  
+    .timelineHeaderTitle {
+      font-size: 48px;
+    }
+  
+    .timelineHeaderSubtitle {
+      font-size: 14px;
+    }
+  
+    .timeline {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  
+    .timelineItem {
+      width: 100%;
+      padding: 20px 0;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    .timelineContentTitle {
+      font-size: 24px;
+    }
+  
+    .timelineContentDesc {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timelineHeader {
+      height: 30vh;
+    }
+
+    .timelineContainer
+    {
+        padding: 0 4rem
+    }
+  
+    .timelineHeaderTitle {
+      font-size: 28px;
+    }
+  
+    .timelineHeaderSubtitle {
+      font-size: 8px;
+    }
+  
+    .timelineItem {
+      width: 100%;
+      padding: 15px 0;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    .timelineContentTitle {
+      font-size: 22px;
+    }
+  
+    .timelineContentDesc {
+      font-size: 12px;
+    }
+  }
+  

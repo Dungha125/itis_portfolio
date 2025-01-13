@@ -7,7 +7,6 @@ import { usePathname, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-
 type Props = {
     linkto: string;
 };
@@ -38,11 +37,11 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
     };
 
     return (
-        <div className={`w-full h-[65px] ${isRegister ? 'fixed' : 'fixed'} top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#020213d2] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10`}>
+        <div className={`w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#ffffffd8] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10`}>
             <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
                 {isRegister ? (
                     <button onClick={handleBackClick} className='text-gray-300 font-bold ml-[10px] z-[30]'>
-                        <img src="/logo.svg" width={40} height={40} alt="" />
+                        <img src="/logo.svg" width={40} height={40} alt="logo" />
                     </button>
                 ) : (
                     <>
@@ -53,7 +52,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 width={40}
                                 height={40}
                             />
-                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-neutral-200' : 'text-blue-950'}`} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
+                            <span className={`font-bold ml-[10px] hidden md:block ${isActivity ? 'text-blue-950' : 'text-blue-950'}`} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
                                 {isActivity ? 'HOẠT ĐỘNG' : 'LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1'}
                             </span>
                         </a>
@@ -95,7 +94,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                 >
                                     {isActivity ? 'Đặc biệt' : 'Phòng Ban'}
                                 </Link>
-                                <a href="/Tools">
+                                <a href="/Tools" className='cursor-pointer'>
                                     Công cụ
                                 </a>
                                 <Link
@@ -110,7 +109,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                         </div>
                         <div className='lg:hidden flex items-center'>
                             <button onClick={togglePopup} className='text-gray-300'>
-                            <FontAwesomeIcon icon={faBars} style={{color: "#ffffff", fontSize:"20px"}}  />
+                                <FontAwesomeIcon icon={faBars} style={{ color: "gray", fontSize: "20px" }} />
                             </button>
                             {showPopup && (
                                 <div className='absolute top-[65px] right-0 bg-[#020213d2] border border-[#7042f861] w-[250px] p-4 rounded-lg shadow-lg'>
@@ -153,7 +152,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                                     >
                                         {isActivity ? 'Đặc biệt' : 'Phòng Ban'}
                                     </Link>
-                                    <a href="/Tools" className='text-white'>
+                                    <a href="/Tools" className='block py-2 cursor-pointer text-white'>
                                         Công cụ
                                     </a>
                                     <Link
