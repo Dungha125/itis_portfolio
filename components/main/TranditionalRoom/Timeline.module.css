@@ -30,11 +30,12 @@
   }
   
   .timelineHeaderTitle {
-    color: #485197;
+    color: #20275e;
     font-size: 58px;
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     margin: 0;
+    z-index: 10;
   }
   
   .timelineHeaderSubtitle {
@@ -44,6 +45,7 @@
     letter-spacing: 5px;
     margin: 10px 0 0;
     font-weight: normal;
+    z-index: 10;
   }
   
   .timeline {

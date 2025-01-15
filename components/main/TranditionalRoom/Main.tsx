@@ -36,11 +36,19 @@ const Main: React.FC = () => {
 
   return (
     <>
-      <div className={styles.timelineHeader}>
+      <div
+        className="w-full bg-white h-[70vw] md:h-screen flex flex-col items-center justify-center px-4 text-center"
+        style={{ 
+          backgroundImage: 'url("/anh1.jpg")',
+          backgroundSize: 'cover', // Hoặc "contain" nếu muốn toàn bộ ảnh được hiển thị
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat', }}
+      > <div className="absolute inset-0 bg-gradient-to-r from-[#e6e6e6dd] via-[#d0e7ffd3] to-[#85bfe8d8]"></div>
         <h2 className={styles.timelineHeaderTitle}>PHÒNG TRUYỀN THỐNG</h2>
         <h3 className={styles.timelineHeaderSubtitle}>
           LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1
         </h3>
+        
       </div>
       <div className={styles.timelineContainer} id="timeline-1">
         <div className={styles.timeline}>
