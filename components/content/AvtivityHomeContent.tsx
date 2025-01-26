@@ -41,7 +41,7 @@ const AvtivityHomeContent = () => {
         </motion.p>
         <motion.div variants={slideInFromBottom} className='my-2 flex px-10 lg:px-20 w-full justify-center items-center relative'>
           <button type='button' className='w-[12rem] h-[3rem] bg-[#4e78ce] hover:bg-[#3a5a9a] font-medium text-xl text-center text-white rounded-full'>
-          <Link href="/Activity">
+          <Link href="/Phongtruyenthong">
             Xem thêm
           </Link>
           </button>
