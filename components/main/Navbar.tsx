@@ -81,19 +81,19 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                 
                 <div className="md:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        {isMenuOpen ? <X size={30} /> : <Menu size={25} />}
+                        {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
                     </button>
                 </div>
                 
                 <div className={`absolute top-[65px] right-0 w-2/3 bg-white shadow-md flex flex-col md:flex-row md:static md:w-auto md:bg-transparent md:shadow-none transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"} md:translate-x-0`}>
                     {isLoggedIn ? (
                         <>
-                            <Link href="/" className="px-4 py-2 text-blue-500 hover:underline">Trang chủ</Link>
-                            <Link href="/DanhSachNhanSu" className="px-4 py-2 text-blue-500 hover:underline">Danh sách nhân sự</Link>
-                            <Link href="/TaiKhoanCaNhan" className="px-4 py-2 text-blue-500 hover:underline">Tài khoản cá nhân</Link>
+                            <Link href="/" className="px-4 py-2 text-blue-950 font-medium hover:bg-blue-100 rounded-md">Trang chủ</Link>
+                            <Link href="/DanhSachNhanSu" className="px-4 py-2 text-blue-950 font-medium hover:bg-blue-100 rounded-md">Danh sách nhân sự</Link>
+                            <Link href="/TaiKhoanCaNhan" className="px-4 py-2 text-blue-950 font-medium hover:bg-blue-100 rounded-md">Tài khoản cá nhân</Link>
                             <button
                                 onClick={handleLogout}
-                                className="px-4 bg-red-500 rounded-md py-2 text-white font-bold"
+                                className="px-4 bg-red-500 rounded-md py-2 text-white font-bold hover:bg-red-600"
                             >
                                 Đăng xuất
                             </button>
@@ -101,7 +101,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                     ) : (
                         <button
                             onClick={() => setShowPopupLogin(true)}
-                            className="px-4 bg-blue-500 rounded-md py-2 text-white font-bold"
+                            className="px-4 bg-blue-500 rounded-md py-2 text-white font-bold hover:bg-blue-600"
                         >
                             Đăng nhập
                         </button>
