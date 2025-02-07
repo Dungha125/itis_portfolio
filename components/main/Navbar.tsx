@@ -3,7 +3,9 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import axios from "axios";
+import { Menu, X } from "lucide-react";
 
 type Props = {
     linkto: string;
@@ -13,13 +15,13 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
     const [showPopupLogin, setShowPopupLogin] = useState(false);
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Kiểm tra trạng thái đăng nhập
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const pathname = usePathname();
     const router = useRouter();
     const isRegister = pathname === "/Register";
 
-    // Kiểm tra token khi trang load
     useEffect(() => {
         const token = localStorage.getItem("accessToken");
         if (token) {
@@ -50,10 +52,9 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
             );
 
             if (response.status === 200) {
-                // Lưu token vào localStorage
                 localStorage.setItem("accessToken", response.data.access_token);
                 setShowPopupLogin(false);
-                setIsLoggedIn(true); // Cập nhật trạng thái đăng nhập
+                setIsLoggedIn(true);
                 router.push("/Phongtruyenthong");
             }
         } catch (error) {
@@ -71,20 +72,29 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
     return (
         <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#ffffffd8] md:bg-[#03001417] md:backdrop-blur-md z-50 px-10">
             <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-                <a href={`#${linkto}`} className="h-full w-auto flex flex-row items-center">
+                <Link href={`#${linkto}`} className="h-full w-auto flex flex-row items-center">
                     <Image src="/logo.svg" alt="logo" width={40} height={40} />
                     <span className="font-bold ml-[10px] hidden md:block text-blue-950">
                         LIÊN CHI ĐOÀN KHOA CÔNG NGHỆ THÔNG TIN 1
                     </span>
-                </a>
-
-                <div className="flex flex-row gap-2">
+                </Link>
+                
+                <div className="md:hidden">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        {isMenuOpen ? <X size={30} /> : <Menu size={25} />}
+                    </button>
+                </div>
+                
+                <div className={`absolute top-[65px] right-0 w-2/3 bg-white shadow-md flex flex-col md:flex-row md:static md:w-auto md:bg-transparent md:shadow-none transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"} md:translate-x-0`}>
                     {isLoggedIn ? (
                         <>
-                            <button onClick={() => router.push("/dashboard")} className="px-4 bg-green-500 rounded-md py-2 text-white font-bold">
-                                Dashboard
-                            </button>
-                            <button onClick={handleLogout} className="px-4 bg-red-500 rounded-md py-2 text-white font-bold">
+                            <Link href="/" className="px-4 py-2 text-blue-500 hover:underline">Trang chủ</Link>
+                            <Link href="/DanhSachNhanSu" className="px-4 py-2 text-blue-500 hover:underline">Danh sách nhân sự</Link>
+                            <Link href="/TaiKhoanCaNhan" className="px-4 py-2 text-blue-500 hover:underline">Tài khoản cá nhân</Link>
+                            <button
+                                onClick={handleLogout}
+                                className="px-4 bg-red-500 rounded-md py-2 text-white font-bold"
+                            >
                                 Đăng xuất
                             </button>
                         </>
@@ -98,7 +108,7 @@ const Navbar: React.FC<Props> = ({ linkto }) => {
                     )}
                 </div>
             </div>
-
+            
             {showPopupLogin && (
                 <div className="w-screen h-screen bg-black bg-opacity-50 flex items-center justify-center z-50 fixed top-0 left-0">
                     <form

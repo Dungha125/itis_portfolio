@@ -26,6 +26,7 @@
     "formidable": "^3.5.2",
     "heic-convert": "^2.1.0",
     "itis_portfolio": "file:",
+    "lucide-react": "^0.474.0",
     "next": "^14.2.4",
     "node-fetch": "^3.3.2",
     "react": "^18",
