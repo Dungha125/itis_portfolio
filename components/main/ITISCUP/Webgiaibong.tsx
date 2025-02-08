@@ -83,7 +83,7 @@ const Webgiaibong = () => {
             <h1 className='text-xl text-red-600 font-bold my-4'>LỊCH THI ĐẤU</h1>
             <div className='w-full px-4 gap-2'>
               {matches.map((match)=>(
-                <div className='w-full flex justify-between items-center border-b-2'>
+                <div key={match.id} className='w-full flex justify-between items-center border-b-2'>
                   <p className='w-full text-gray-500 text-base'>{match.date} | {match.time}</p>
                   <span className='w-full flex items-center justify-center flex-col'>
                     <p className='text-gray-500 text-base'>{match.type}</p>
