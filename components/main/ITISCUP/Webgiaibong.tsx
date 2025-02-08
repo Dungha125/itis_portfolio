@@ -112,7 +112,7 @@ const Webgiaibong = () => {
           <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>VÒNG LOẠI TRỰC TIẾP</a>
      </div>
       {/*CONTENT*/}
-      <div className='w-full p-4 flex h-full mt-2'>
+      <div className='w-full p-4 flex lg:flex-row flex-col h-full mt-2'>
         {/*LỊCH THI ĐẤU*/}
         <div className='w-full h-full border-r-2 border-gray-400 px-4'>
             <h1 className='text-xl text-red-600 font-bold my-4'>LỊCH THI ĐẤU</h1>
@@ -130,9 +130,9 @@ const Webgiaibong = () => {
             </div>
         </div>
         {/*TAB*/}
-        <div className='w-[30%] h-full hidden md:block'>
+        <div className='w-full lg:w-[30%] h-full'>
             {/*BẢNG XẾP HẠNG*/}
-            <div className='w-full md:w-2/3 p-4'>
+            <div className='w-full p-4'>
           <h1 className='text-xl text-red-600 font-bold my-4'>BẢNG XẾP HẠNG</h1>
           <select
             value={selectedGroup}
@@ -156,7 +156,7 @@ const Webgiaibong = () => {
             </thead>
             <tbody>
               {groups[selectedGroup].map((team) => (
-                <tr key={team.id} className='text-center'>
+                <tr key={team.id} className={`text-center ${team.id == 1 ? 'bg-green-200' : team.id == 2 ? 'bg-green-100' : ''}`}>
                   <td className='border border-gray-400 p-2'>{team.team}</td>
                   <td className='border border-gray-400 p-2'>{team.played}</td>
                   <td className='border border-gray-400 p-2'>{team.win}</td>
