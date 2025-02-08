@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -16,7 +16,40 @@ const matches = [
   { id: 10,type: 'Bán Kết', team1: 'Team S', team2: 'Team T', time: '16:00', date: '2025-02-23' , result: '0 - 0'},
   { id: 11,type: 'Tranh 3-4', team1: 'Team U', team2: 'Team V', time: '18:00', date: '2025-02-23' , result: '0 - 0'},
   { id: 12,type: 'Chung kết', team1: 'Team W', team2: 'Team X', time: '20:00', date: '2025-02-23' , result: '0 - 0'}
-]
+];
+
+const groups = {
+  A: [
+    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 6 },
+    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
+    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
+    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+  ],
+  B: [
+    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 7 },
+    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
+    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
+    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+  ], // Thêm dữ liệu bảng B
+  C: [
+    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 8 },
+    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
+    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
+    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+  ], // Thêm dữ liệu bảng C
+  D: [
+    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 9 },
+    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
+    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
+    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+  ], // Thêm dữ liệu bảng D
+};
+
+const topScorers = [
+  { id: 1, player: 'Player 1', team: 'Team A', goals: 5 },
+  { id: 2, player: 'Player 2', team: 'Team B', goals: 4 },
+  { id: 3, player: 'Player 3', team: 'Team C', goals: 3 },
+];
 
 const Webgiaibong = () => {
   const settings = {
@@ -50,32 +83,34 @@ const Webgiaibong = () => {
     ],
   }
 
+  const [selectedGroup, setSelectedGroup] = useState<'A' | 'B' | 'C' | 'D'>('A')
+
   return (
     <div className='w-full h-full flex flex-col items-center justify-center'>
       {/*MAIN*/}
-      <div className='h-screen w-full items-center flex flex-col bg-[#e4e4e4]'>
+      <div className='h-full w-full items-center flex flex-col bg-[#e4e4e4]'>
         <img src="/itiscup/cover-01.svg" alt="Cover" className='object-cover w-full mt-[65px]' />
         {/* Slider trận đấu */}
-        <div className="w-full max-w-6xl px-8">
+        </div>
+        <div className="w-full max-w-6xl p-4 my-2">
             <Slider {...settings}>
             {matches.map((match) => (
-                <div key={match.id} className="px-4 py-1">
-                <div className="bg-white shadow-lg rounded-lg px-4 py-[0.2rem] text-center">
-                    <p className='text-xs text-gray-500'>{match.type}</p>
-                    <p className="text-lg font-bold">{match.team1} vs {match.team2}</p>
-                    <p className="text-sm text-gray-500">{match.date} - {match.time}</p>
-                </div>
+                <div key={match.id} className="px-2 sm:px-3">
+                  <div className="bg-white shadow-lg rounded-lg px-4 py-2 text-center">
+                    <p className="text-[10px] sm:text-xs text-gray-500">{match.type}</p>
+                    <p className="text-sm sm:text-lg font-bold">{match.team1} vs {match.team2}</p>
+                    <p className="text-[10px] sm:text-sm text-gray-500">{match.date} - {match.time}</p>
+                  </div>
                 </div>
             ))}
             </Slider>
         </div>
-      </div>
+      
       {/*NAVBAR*/}
       <div className='w-full h-[3rem] border-t-2 border-b-2 border-red-700 flex flex-row justify-center'>
-          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>LỊCH THI ĐẤU</a>
-          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>BẢNG XẾP HẠNG</a>
-          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>THÀNH TÍCH</a>
-      </div>
+          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>TỔNG QUAN</a>
+          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>VÒNG LOẠI TRỰC TIẾP</a>
+     </div>
       {/*CONTENT*/}
       <div className='w-full p-4 flex h-full mt-2'>
         {/*LỊCH THI ĐẤU*/}
@@ -97,13 +132,66 @@ const Webgiaibong = () => {
         {/*TAB*/}
         <div className='w-[30%] h-full hidden md:block'>
             {/*BẢNG XẾP HẠNG*/}
-            <div className='w-full px-4'>
-              Bảng xếp hạng
-            </div>
-            {/*TOP*/}
-            <div className='w-full px-4'>
-              Vua phá lưới
-            </div>
+            <div className='w-full md:w-2/3 p-4'>
+          <h1 className='text-xl text-red-600 font-bold my-4'>BẢNG XẾP HẠNG</h1>
+          <select
+            value={selectedGroup}
+            onChange={(e) => setSelectedGroup(e.target.value as 'A' | 'B' | 'C' | 'D')}
+            className='mb-4 p-2 border rounded'>
+            {Object.keys(groups).map((group) => (
+              <option key={group} value={group}>Bảng {group}</option>
+            ))}
+          </select>
+          <table className='w-full border-collapse border border-gray-400'>
+            <thead>
+              <tr className='bg-gray-200'>
+                <th className='border border-gray-400 p-2'>Đội</th>
+                <th className='border border-gray-400 p-2'>Trận</th>
+                <th className='border border-gray-400 p-2'>Thắng</th>
+                <th className='border border-gray-400 p-2'>Hòa</th>
+                <th className='border border-gray-400 p-2'>Thua</th>
+                <th className='border border-gray-400 p-2'>HS</th>
+                <th className='border border-gray-400 p-2'>Điểm</th>
+              </tr>
+            </thead>
+            <tbody>
+              {groups[selectedGroup].map((team) => (
+                <tr key={team.id} className='text-center'>
+                  <td className='border border-gray-400 p-2'>{team.team}</td>
+                  <td className='border border-gray-400 p-2'>{team.played}</td>
+                  <td className='border border-gray-400 p-2'>{team.win}</td>
+                  <td className='border border-gray-400 p-2'>{team.draw}</td>
+                  <td className='border border-gray-400 p-2'>{team.loss}</td>
+                  <td className='border border-gray-400 p-2'>{team.gd}</td>
+                  <td className='border border-gray-400 p-2 font-bold'>{team.points}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Top Vua Phá Lưới */}
+        <div className='w-full  p-4'>
+          <h1 className='text-xl text-red-600 font-bold my-4'>TOP VUA PHÁ LƯỚI</h1>
+          <table className='w-full border-collapse border border-gray-400'>
+            <thead>
+              <tr className='bg-gray-200'>
+                <th className='border border-gray-400 p-2'>Cầu thủ</th>
+                <th className='border border-gray-400 p-2'>Đội</th>
+                <th className='border border-gray-400 p-2'>Bàn thắng</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topScorers.map((player) => (
+                <tr key={player.id} className='text-center'>
+                  <td className='border border-gray-400 p-2'>{player.player}</td>
+                  <td className='border border-gray-400 p-2'>{player.team}</td>
+                  <td className='border border-gray-400 p-2 font-bold'>{player.goals}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         </div>    
       </div>
     </div>
