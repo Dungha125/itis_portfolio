@@ -117,3 +117,9 @@ html {
   line-height: 1; 
   white-space: pre-line;
 }
+
+.bracket {
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+}

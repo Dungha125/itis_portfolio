@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { Dir } from 'fs';
+
 
 const matches = [
   { id: 1,type: 'Bảng A', team1: 'Team A', team2: 'Team B', time: '14:00', date: '2025-02-23', result: '0 - 0'},
@@ -17,6 +19,24 @@ const matches = [
   { id: 11,type: 'Tranh 3-4', team1: 'Team U', team2: 'Team V', time: '18:00', date: '2025-02-23' , result: '0 - 0'},
   { id: 12,type: 'Chung kết', team1: 'Team W', team2: 'Team X', time: '20:00', date: '2025-02-23' , result: '0 - 0'}
 ];
+
+
+const loaitructiep = {
+  quarterFinals: [
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0, time: '06-04-2025', type:'Tứ kết' },
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0, time: '06-04-2025', type:'Tứ kết' },
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0, time: '06-04-2025', type:'Tứ kết' },
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0, time: '06-04-2025', type:'Tứ kết' },
+  ],
+  semiFinals: [
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0 },
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0 },
+  ],
+  finals: [
+    { team1: "CXĐ", score1: 0, team2: "CXĐ", score2: 0 },
+  ],
+  champion: "🏆 CXĐ",
+};
 
 const groups = {
   A: [
@@ -84,6 +104,28 @@ const Webgiaibong = () => {
   }
 
   const [selectedGroup, setSelectedGroup] = useState<'A' | 'B' | 'C' | 'D'>('A')
+  const [statusTongquan, setStatusTongquan] = useState<boolean>(false);
+
+  const handleclick = (status:boolean) => {
+    setStatusTongquan(status);
+  };
+  
+  const MatchBox = ({ match, bgColor }: { match: any; bgColor: string }) => {
+    return (
+      <div className={`relative flex flex-col border rounded-md ${bgColor} w-[22rem] text-center shadow-md p-2 mb-4`}>
+          <h2 className='w-full text-center text-sm '>{match.type}</h2>
+          <span className='w-full flex flex-row items-center justify-between border-b-2'>
+            <p className="font-bold">{match.team1}</p>
+            <p className="text-lg  text-gray-800  py-1">{match.score1}</p>
+          </span>
+          <span className='w-full flex flex-row items-center justify-between'>
+            <p className="font-bold">{match.team1}</p>
+            <p className="text-lg text-gray-800  py-1">{match.score1}</p>
+          </span>
+        
+      </div>
+    );
+  };
 
   return (
     <div className='w-full h-full flex flex-col items-center justify-center'>
@@ -108,10 +150,42 @@ const Webgiaibong = () => {
       
       {/*NAVBAR*/}
       <div className='w-full h-[3rem] border-t-2 border-b-2 border-red-700 flex flex-row justify-center'>
-          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>TỔNG QUAN</a>
-          <a href="" className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>VÒNG LOẠI TRỰC TIẾP</a>
+          <span onClick={() => handleclick(false)} className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>TỔNG QUAN</span>
+          <span onClick={() => handleclick(true)} className='w-full  text-center font-bold text-red-500 hover:border-b-4 hover:border-red-400 flex items-center justify-center'>VÒNG LOẠI TRỰC TIẾP</span>
      </div>
       {/*CONTENT*/}
+      {
+        statusTongquan ? (
+          <div className="w-full p-6 flex flex-col items-center mt-4">
+      <h1 className="text-2xl font-bold text-red-600 mb-6">VÒNG LOẠI TRỰC TIẾP</h1>
+
+      <div className="flex items-center gap-8 p-5 overflow-x-hidden bg-gray-100 flex-col lg:flex-row">
+      {/* Quarter Finals */}
+      <div className="flex flex-col items-center">
+        <h2 className="text-lg font-semibold text-blue-600 mb-4">Tứ Kết</h2>
+        {loaitructiep.quarterFinals.map((match, index) => (
+          <MatchBox key={index} match={match} bgColor="bg-white-300" />
+        ))}
+      </div>
+
+      {/* Semi Finals */}
+      <div className="flex flex-col items-center ">
+        <h2 className="text-lg font-semibold text-green-600 mb-4">Bán Kết</h2>
+        {loaitructiep.semiFinals.map((match, index) => (
+          <MatchBox key={index} match={match} bgColor="bg-white-200" />
+        ))}
+      </div>
+
+      {/* Final */}
+      <div className="flex flex-col items-center ">
+        <h2 className="text-lg font-semibold text-yellow-600 mb-4">Chung Kết</h2>
+        {loaitructiep.finals.map((match, index) => (
+          <MatchBox key={index} match={match} bgColor="bg-white-200" />
+        ))}
+      </div>
+    </div>
+    </div>
+          ):(
       <div className='w-full p-4 flex lg:flex-row flex-col h-full mt-2'>
         {/*LỊCH THI ĐẤU*/}
         <div className='w-full h-full border-r-2 border-gray-400 px-4'>
@@ -130,7 +204,7 @@ const Webgiaibong = () => {
             </div>
         </div>
         {/*TAB*/}
-        <div className='w-full lg:w-[30%] h-full'>
+        <div className='w-full lg:w-[30%] h-full flex items-center justify-center flex-col'>
             {/*BẢNG XẾP HẠNG*/}
             <div className='w-full p-4'>
           <h1 className='text-xl text-red-600 font-bold my-4'>BẢNG XẾP HẠNG</h1>
@@ -145,13 +219,14 @@ const Webgiaibong = () => {
           <table className='w-full border-collapse border border-gray-400'>
             <thead>
               <tr className='bg-gray-200'>
-                <th className='border border-gray-400 p-2'>Đội</th>
+                <th className='border border-gray-400 p-2'>Team</th>
                 <th className='border border-gray-400 p-2'>Trận</th>
-                <th className='border border-gray-400 p-2'>Thắng</th>
-                <th className='border border-gray-400 p-2'>Hòa</th>
-                <th className='border border-gray-400 p-2'>Thua</th>
-                <th className='border border-gray-400 p-2'>HS</th>
-                <th className='border border-gray-400 p-2'>Điểm</th>
+                <th className='border border-gray-400 p-2'>W</th>
+                <th className='border border-gray-400 p-2'>D</th>
+                <th className='border border-gray-400 p-2'>L</th>
+                <th className='border border-gray-400 p-2'>H/s</th>
+                <th className='border border-gray-400 p-2'>Point</th>
+        
               </tr>
             </thead>
             <tbody>
@@ -194,6 +269,9 @@ const Webgiaibong = () => {
         </div>
         </div>    
       </div>
+          )
+      }
+      
     </div>
   )
 }
