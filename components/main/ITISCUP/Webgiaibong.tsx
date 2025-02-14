@@ -6,20 +6,44 @@ import { Dir } from 'fs';
 
 
 const matches = [
-  { id: 1,type: 'Bảng A', team1: 'Team A', team2: 'Team B', time: '14:00', date: '2025-02-23', result: '0 - 0'},
-  { id: 2,type: 'Bảng A', team1: 'Team C', team2: 'Team D', time: '16:00', date: '2025-02-23', result: '0 - 0' },
-  { id: 3,type: 'Bảng B', team1: 'Team E', team2: 'Team F', time: '18:00', date: '2025-02-23', result: '0 - 0'},
-  { id: 4,type: 'Bảng B', team1: 'Team G', team2: 'Team H', time: '20:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 5,type: 'Bảng C', team1: 'Team I', team2: 'Team J', time: '14:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 6,type: 'Bảng C', team1: 'Team K', team2: 'Team L', time: '16:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 7,type: 'Bảng D', team1: 'Team M', team2: 'Team N', time: '18:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 8,type: 'Bảng D', team1: 'Team O', team2: 'Team P', time: '20:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 9,type: 'Tứ Kết', team1: 'Team Q', team2: 'Team R', time: '14:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 10,type: 'Bán Kết', team1: 'Team S', team2: 'Team T', time: '16:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 11,type: 'Tranh 3-4', team1: 'Team U', team2: 'Team V', time: '18:00', date: '2025-02-23' , result: '0 - 0'},
-  { id: 12,type: 'Chung kết', team1: 'Team W', team2: 'Team X', time: '20:00', date: '2025-02-23' , result: '0 - 0'}
+  //LUOT TRAN 1
+  { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'FC Thổi Bọt', time: '09:00', date: '2025-02-23', result: '0 - 0'},
+  { id: 2,type: 'Bảng A', team1: 'D24CN02', team2: 'FC NGHỆ', time: '09:00', date: '2025-02-23', result: '0 - 0'},
+  { id: 3,type: 'Bảng B', team1: 'FC Lock', team2: 'FC Nhặt', time: '09:00', date: '2025-02-23', result: '0 - 0'},
+  { id: 4,type: 'Bảng B', team1: 'Vinamilk FC', team2: 'VN02', time: '09:00', date: '2025-02-23' , result: '0 - 0'},
+  { id: 5,type: 'Bảng C', team1: 'CE01', team2: 'CE04-24', time: '13:30', date: '2025-02-23' , result: '0 - 0'},
+  { id: 6,type: 'Bảng C', team1: 'FC Dưỡng Sinh', team2: 'BallHub', time: '13:30', date: '2025-02-23' , result: '0 - 0'},
+  { id: 7,type: 'Bảng D', team1: 'CNTT-03B', team2: 'FC Low Tech', time: '13:30', date: '2025-02-23' , result: '0 - 0'},
+  { id: 8,type: 'Bảng E', team1: 'FC Tứ Quý', team2: 'ITIS YOUNG', time: '13:30', date: '2025-02-23' , result: '0 - 0'},
+  { id: 9,type: 'Bảng F', team1: 'D23KH02', team2: 'D22KH02', time: '14:30', date: '2025-02-23' , result: '0 - 0'},
+  //LUOT TRAN 2
+  { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'FC NGHỆ', time: '13:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 2,type: 'Bảng A', team1: 'D24CN02', team2: 'FC Thổi Bọt', time: '13:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 3,type: 'Bảng B', team1: 'FC Lock', team2: 'VN02', time: '13:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 4,type: 'Bảng B', team1: 'Vinamilk FC', team2: 'FC Nhặt', time: '13:30', date: '2025-03-02' , result: '0 - 0'},
+  { id: 5,type: 'Bảng C', team1: 'CE01', team2: 'BallHub', time: '14:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 6,type: 'Bảng C', team1: 'FC Dưỡng Sinh', team2: 'CE04-24', time: '14:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 7,type: 'Bảng D', team1: 'CNTT-03B', team2: 'CE03', time: '14:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 8,type: 'Bảng E', team1: 'D24CQCE06-B', team2: 'ITIS YOUNG', time: '14:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 9,type: 'Bảng F', team1: 'FC Bóng Hồng', team2: 'D22KH02', time: '15:30', date: '2025-03-02', result: '0 - 0'},
+  //LUOT TRAN 3
+  { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'D24CN02', time: '13:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 2,type: 'Bảng A', team1: 'FC NGHỆ', team2: 'FC Thổi Bọt', time: '13:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 3,type: 'Bảng B', team1: 'FC Lock', team2: 'Vinamilk FC', time: '13:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 4,type: 'Bảng B', team1: 'VN02', team2: 'FC Nhặt', time: '13:30', date: '2025-03-09' , result: '0 - 0'},
+  { id: 5,type: 'Bảng C', team1: 'CE01', team2: 'FC Dưỡng Sinh', time: '14:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 6,type: 'Bảng C', team1: 'CE04-24', team2: 'BallHub', time: '14:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 7,type: 'Bảng D', team1: 'CE03', team2: 'FC Low Tech', time: '14:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 8,type: 'Bảng E', team1: 'FC Tứ Quý', team2: 'D24CQCE06-B', time: '14:30', date: '2025-03-09', result: '0 - 0'},
+  { id: 9,type: 'Bảng F', team1: 'D23KH02', team2: 'FC Bóng Hồng', time: '15:30', date: '2025-03-09', result: '0 - 0'},
+
 ];
 
+const matchRounds = {
+  '2025-02-23': 'Lượt trận 1',
+  '2025-03-02': 'Lượt trận 2',
+  '2025-03-09': 'Lượt trận 3',
+};
 
 const loaitructiep = {
   quarterFinals: [
@@ -40,35 +64,43 @@ const loaitructiep = {
 
 const groups = {
   A: [
-    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 6 },
-    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
-    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
-    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+    { id: 1, team: 'GV-CNTT', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 2, team: 'FC Thổi Bọt', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 3, team: 'D24CN02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 4, team: 'FC NGHỆ', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ],
   B: [
-    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 7 },
-    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
-    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
-    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+    { id: 1, team: 'FC Lock', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 2, team: 'FC Nhặt', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 3, team: 'Vinamilk FC', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 4, team: 'VN02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng B
   C: [
-    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 8 },
-    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
-    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
-    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+    { id: 1, team: 'CE01', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'CE04-24', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC Dưỡng Sinh', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 4, team: 'BallHub', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng C
   D: [
-    { id: 1, team: 'Team A', played: 3, win: 2, draw: 0, loss: 1, gd: 5, points: 9 },
-    { id: 2, team: 'Team B', played: 3, win: 1, draw: 1, loss: 1, gd: 2, points: 4 },
-    { id: 3, team: 'Team C', played: 3, win: 1, draw: 0, loss: 2, gd: -1, points: 3 },
-    { id: 4, team: 'Team D', played: 3, win: 0, draw: 1, loss: 2, gd: -6, points: 1 },
+    { id: 1, team: 'CNTT-03B', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'FC Low Tech', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC CE03', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+  ], // Thêm dữ liệu bảng D
+  E: [
+    { id: 1, team: 'FC Tứ Quý', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'D24CQCE06-B', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'ITIS YOUNG', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+  ], // Thêm dữ liệu bảng D
+  F: [
+    { id: 1, team: 'D23KH02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'D22KH02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC Bóng Hồng', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng D
 };
 
 const topScorers = [
-  { id: 1, player: 'Player 1', team: 'Team A', goals: 5 },
-  { id: 2, player: 'Player 2', team: 'Team B', goals: 4 },
-  { id: 3, player: 'Player 3', team: 'Team C', goals: 3 },
+  { id: 1, player: 'CXĐ', team: 'CXĐ', goals: 0 },
+
 ];
 
 const Webgiaibong = () => {
@@ -103,7 +135,7 @@ const Webgiaibong = () => {
     ],
   }
 
-  const [selectedGroup, setSelectedGroup] = useState<'A' | 'B' | 'C' | 'D'>('A')
+  const [selectedGroup, setSelectedGroup] = useState<'A' | 'B' | 'C' | 'D' | 'E' | 'F'>('A')
   const [statusTongquan, setStatusTongquan] = useState<boolean>(false);
 
   const handleclick = (status:boolean) => {
@@ -140,7 +172,7 @@ const Webgiaibong = () => {
                 <div key={match.id} className="px-2 sm:px-3">
                   <div className="bg-white shadow-lg rounded-lg px-4 py-2 text-center">
                     <p className="text-[10px] sm:text-xs text-gray-500">{match.type}</p>
-                    <p className="text-sm sm:text-lg font-bold">{match.team1} vs {match.team2}</p>
+                    <p className="text-base font-bold">{match.team1} vs {match.team2}</p>
                     <p className="text-[10px] sm:text-sm text-gray-500">{match.date} - {match.time}</p>
                   </div>
                 </div>
@@ -189,28 +221,35 @@ const Webgiaibong = () => {
       <div className='w-full p-4 flex lg:flex-row flex-col h-full mt-2'>
         {/*LỊCH THI ĐẤU*/}
         <div className='w-full h-full border-r-2 border-gray-400 px-4'>
-            <h1 className='text-xl text-red-600 font-bold my-4'>LỊCH THI ĐẤU</h1>
-            <div className='w-full px-4 gap-2'>
-              {matches.map((match)=>(
-                <div key={match.id} className='w-full flex justify-between items-center border-b-2'>
-                  <p className='w-full text-gray-500 text-base'>{match.date} | {match.time}</p>
-                  <span className='w-full flex items-center justify-center flex-col'>
-                    <p className='text-gray-500 text-base'>{match.type}</p>
-                    <p className='text-gray-800 text-base font-bold'>{match.team1} - {match.team2}</p>
-                  </span>
-                  <p className='w-full text-gray-800 text-base text-center'>{match.result}</p>
-                </div>
-              ))}
-            </div>
+          <h1 className='text-xl text-red-600 font-bold my-4'>LỊCH THI ĐẤU</h1>
+          <div className='w-full px-4 gap-2'>
+            {Object.entries(matchRounds).map(([date, roundName]) => (
+              <div key={date} className="mb-6">
+                <h2 className="text-lg text-blue-600 font-bold my-2">{roundName} - {date}</h2>
+                {matches
+                  .filter((match) => match.date === date)
+                  .map((match) => (
+                    <div key={`${match.date}-${match.id}`} className='w-full flex justify-between items-center border-b-2'>
+                      <p className='w-full text-gray-500 text-base'>{match.time}</p>
+                      <span className='w-full flex items-center justify-center flex-col'>
+                        <p className='text-gray-500 text-base'>{match.type}</p>
+                        <p className='text-gray-800 text-base font-bold'>{match.team1} - {match.team2}</p>
+                      </span>
+                      <p className='w-full text-gray-800 text-base text-center'>{match.result}</p>
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
         </div>
         {/*TAB*/}
-        <div className='w-full lg:w-[30%] h-full flex items-center justify-center flex-col'>
+        <div className='w-full lg:w-[40%] h-full flex items-center justify-center flex-col'>
             {/*BẢNG XẾP HẠNG*/}
-            <div className='w-full p-4'>
+            <div className='w-full p-2'>
           <h1 className='text-xl text-red-600 font-bold my-4'>BẢNG XẾP HẠNG</h1>
           <select
             value={selectedGroup}
-            onChange={(e) => setSelectedGroup(e.target.value as 'A' | 'B' | 'C' | 'D')}
+            onChange={(e) => setSelectedGroup(e.target.value as 'A' | 'B' | 'C' | 'D' | 'E' | 'F')}
             className='mb-4 p-2 border rounded'>
             {Object.keys(groups).map((group) => (
               <option key={group} value={group}>Bảng {group}</option>
@@ -219,7 +258,7 @@ const Webgiaibong = () => {
           <table className='w-full border-collapse border border-gray-400'>
             <thead>
               <tr className='bg-gray-200'>
-                <th className='border border-gray-400 p-2'>Team</th>
+                <th className='border border-gray-400 p-2 max-w-[150px]'>Team</th>
                 <th className='border border-gray-400 p-2'>Trận</th>
                 <th className='border border-gray-400 p-2'>W</th>
                 <th className='border border-gray-400 p-2'>D</th>
@@ -232,7 +271,7 @@ const Webgiaibong = () => {
             <tbody>
               {groups[selectedGroup].map((team) => (
                 <tr key={team.id} className={`text-center ${team.id == 1 ? 'bg-green-200' : team.id == 2 ? 'bg-green-100' : ''}`}>
-                  <td className='border border-gray-400 p-2'>{team.team}</td>
+                  <td className='border border-gray-400 p-2 max-w-[150px]'>{team.team}</td>
                   <td className='border border-gray-400 p-2'>{team.played}</td>
                   <td className='border border-gray-400 p-2'>{team.win}</td>
                   <td className='border border-gray-400 p-2'>{team.draw}</td>
