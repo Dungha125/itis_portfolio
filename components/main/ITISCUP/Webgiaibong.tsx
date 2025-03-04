@@ -17,15 +17,15 @@ const matches = [
   { id: 8,type: 'Bảng E', team1: 'FC Tứ Quý', team2: 'ITIS YOUNG', time: '13:30', date: '2025-02-23' , result: '0 - 0'},
   { id: 9,type: 'Bảng F', team1: 'D23KH02', team2: 'D22KH02', time: '14:30', date: '2025-02-23' , result: '0 - 0'},
   //LUOT TRAN 2
-  { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'FC NGHỆ', time: '13:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 2,type: 'Bảng A', team1: 'D24CN02', team2: 'FC Thổi Bọt', time: '13:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 3,type: 'Bảng B', team1: 'FC Lock', team2: 'VN02', time: '13:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 4,type: 'Bảng B', team1: 'Vinamilk FC', team2: 'FC Nhặt', time: '13:30', date: '2025-03-02' , result: '0 - 0'},
-  { id: 5,type: 'Bảng C', team1: 'CE01', team2: 'BallHub', time: '14:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 6,type: 'Bảng C', team1: 'FC Dưỡng Sinh', team2: 'CE04-24', time: '14:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 7,type: 'Bảng D', team1: 'CNTT-03B', team2: 'CE03', time: '14:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 8,type: 'Bảng E', team1: 'D24CQCE06-B', team2: 'ITIS YOUNG', time: '14:30', date: '2025-03-02', result: '0 - 0'},
-  { id: 9,type: 'Bảng F', team1: 'FC Bóng Hồng', team2: 'D22KH02', time: '15:30', date: '2025-03-02', result: '0 - 0'},
+  { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'FC NGHỆ', time: '13:30', date: '2025-03-02', result: '3 - 3'},
+  { id: 2,type: 'Bảng A', team1: 'D24CN02', team2: 'FC Thổi Bọt', time: '13:30', date: '2025-03-02', result: '2 - 2'},
+  { id: 3,type: 'Bảng B', team1: 'FC Lock', team2: 'VN02', time: '13:30', date: '2025-03-02', result: '1 - 2'},
+  { id: 4,type: 'Bảng B', team1: 'Vinamilk FC', team2: 'FC Nhặt', time: '13:30', date: '2025-03-02' , result: '1 - 6'},
+  { id: 5,type: 'Bảng C', team1: 'CE01', team2: 'BallHub', time: '14:30', date: '2025-03-02', result: '1 - 5'},
+  { id: 6,type: 'Bảng C', team1: 'FC Dưỡng Sinh', team2: 'CE04-24', time: '14:30', date: '2025-03-02', result: '4 - 4'},
+  { id: 7,type: 'Bảng D', team1: 'CNTT-03B', team2: 'CE03', time: '14:30', date: '2025-03-02', result: '2 - 0'},
+  { id: 8,type: 'Bảng E', team1: 'D24CQCE06-B', team2: 'ITIS YOUNG', time: '14:30', date: '2025-03-02', result: '0 - 4'},
+  { id: 9,type: 'Bảng F', team1: 'FC Bóng Hồng', team2: 'D22KH02', time: '15:30', date: '2025-03-02', result: '3 - 0'},
   //LUOT TRAN 3
   { id: 1,type: 'Bảng A', team1: 'GV-CNTT', team2: 'D24CN02', time: '13:30', date: '2025-03-09', result: '0 - 0'},
   { id: 2,type: 'Bảng A', team1: 'FC NGHỆ', team2: 'FC Thổi Bọt', time: '13:30', date: '2025-03-09', result: '0 - 0'},
@@ -64,37 +64,37 @@ const loaitructiep = {
 
 const groups = {
   A: [
-    { id: 1, team: 'GV-CNTT', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
-    { id: 2, team: 'FC Thổi Bọt', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
-    { id: 3, team: 'D24CN02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
-    { id: 4, team: 'FC NGHỆ', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'GV-CNTT', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 2, team: 'FC Thổi Bọt', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 3, team: 'D24CN02', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 4, team: 'FC NGHỆ', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ],
   B: [
-    { id: 1, team: 'FC Lock', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
-    { id: 2, team: 'FC Nhặt', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
-    { id: 3, team: 'Vinamilk FC', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 4, team: 'VN02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'FC Lock', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 2, team: 'FC Nhặt', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0 },
+    { id: 3, team: 'Vinamilk FC', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 4, team: 'VN02', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng B
   C: [
-    { id: 1, team: 'CE01', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 2, team: 'CE04-24', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 3, team: 'FC Dưỡng Sinh', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 4, team: 'BallHub', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'CE01', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'CE04-24', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC Dưỡng Sinh', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 4, team: 'BallHub', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng C
   D: [
-    { id: 1, team: 'CNTT-03B', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 2, team: 'FC Low Tech', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 3, team: 'FC CE03', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'CNTT-03B', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'FC Low Tech', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC CE03', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng D
   E: [
-    { id: 1, team: 'FC Tứ Quý', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 2, team: 'D24CQCE06-B', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 3, team: 'ITIS YOUNG', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'FC Tứ Quý', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'D24CQCE06-B', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'ITIS YOUNG', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng D
   F: [
-    { id: 1, team: 'D23KH02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 2, team: 'D22KH02', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
-    { id: 3, team: 'FC Bóng Hồng', played: 0, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 1, team: 'D23KH02', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 2, team: 'D22KH02', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
+    { id: 3, team: 'FC Bóng Hồng', played: 2, win: 0, draw: 0, loss: 0, gd: 0, points: 0},
   ], // Thêm dữ liệu bảng D
 };
 
