@@ -36,6 +36,11 @@ const matches = [
   { id: 7,type: 'Bảng D', team1: 'CE03', team2: 'FC Low Tech', time: '14:30', date: '2025-03-09', result: '0 - 6'},
   { id: 8,type: 'Bảng E', team1: 'FC Tứ Quý', team2: 'D24CQCE06-B', time: '14:30', date: '2025-03-09', result: '4 - 1'},
   { id: 9,type: 'Bảng F', team1: 'D23KH02', team2: 'FC Bóng Hồng', time: '15:30', date: '2025-03-09', result: '2 - 0'},
+  //TỨ Kết
+  { id: 1,type: 'Tứ kết', team1: 'FC Vinamilk', team2: 'FC Low Tech', time: '15:00', date: '2025-03-16', result: '0 - 0'},
+  { id: 2,type: 'Tứ kết', team1: 'FC Tứ Quý', team2: 'FC Dưỡng sinh', time: '15:00', date: '2025-03-16', result: '0 - 0'},
+  { id: 3,type: 'Tứ kết', team1: 'FC Thổi bọt', team2: 'D23KH02', time: '15:00', date: '2025-03-16', result: '0 - 0'},
+  { id: 4,type: 'Tứ kết', team1: 'ITIS YOUNG', team2: 'FC BallHub', time: '15:00', date: '2025-03-16' , result: '0 - 0'},
 
 ];
 
@@ -43,6 +48,7 @@ const matchRounds = {
   '2025-02-23': 'Lượt trận 1',
   '2025-03-02': 'Lượt trận 2',
   '2025-03-09': 'Lượt trận 3',
+  '2025-03-16': 'Tứ kết'
 };
 
 const loaitructiep = {
